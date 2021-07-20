@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Phát triển ứng dụng nhỏ mô phỏng câu chuyện Adam và Eva
+    // Viết một lớp lấy tên là Apple, với mỗi quả táo đều có những đặc điểm sau đây:
+
+   // + Có khối lượng.
+
+    //+ Khi tạo ra quả táo đã có khối lượng mặc định là 10 đv.
+    class apple {
+        constructor(weight) {
+            this.weight = weight
+
+        }
+    }
+    // khai báo lớp human
+    class human {
+        constructor(name, gender, weight) {
+            this.name = name
+            this.gender = gender
+            this.weight = weight
+        }
+        talk(){
+            alert('le văn diệp');
+        }
+        eat(appObj){
+            if (appObj.weight > 0){
+                this.weight = this.weight + appObj.weight;
+                alert('human đã ăn táo:' + this.weight)
+            }
+        }
+    }
+    let appObj = new apple('10');
+    let humanObj = new human('adam','male',70)
+    humanObj.talk();
+    humanObj.eat(appObj)
+    catObjTest.eat(ratObjTest);
+</script>
+</body>
+</html>

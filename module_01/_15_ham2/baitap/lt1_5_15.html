@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Tìm tên ngôi sao
+    function indexOfArray(value) {
+        let ngoiSao = ['Polaris','Aldebaran','Deneb','Vega','Altair','Dubhe','Regulus'];
+        return ngoiSao.indexOf(value)
+
+    }
+    let chomSao = ['Ursa Minor','Tarurus','Cygnus','Lyra','Aquila','Ursa Major','Leo']
+    let tenNgoisao = prompt("Nhập tên ngôi sao");
+    let temp = indexOfArray(tenNgoisao);
+    if(temp==-1){
+        alert('Không tìm thấy')
+    } else {
+        alert('Chòm sao của ngôi sao '+ tenNgoisao +' là '+ chomSao[temp])
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Amount</th>
+        <th>From Currency</th>
+        <th>To Currency</th>
+        <th></th>
+    </tr>
+    <tr>
+        <td>
+            <input id="money" type="number">
+        </td>
+        <td>
+            <select>
+                <option value="vn">VietNam</option>
+            </select>
+        </td>
+        <td>
+            <select>
+                <option value="usd">USD</option>
+            </select>
+        </td>
+        <td>
+            <input type="button" value="Convert" onclick="convertMoney()">
+        </td>
+    </tr>
+
+    <tr>
+        <td colspan="4" id="result">
+        </td>
+    </tr>
+</table>
+</body>
+<script>
+    function convertMoney(){
+        let money = document.getElementById("money").value;
+        console.log("tien nguoi dung nhap vao: "+ money);
+        let result = money/24000;
+        document.getElementById("result").innerHTML = "<button onclick='abc()'>ABC</button>";
+    }
+</script>
+</html>

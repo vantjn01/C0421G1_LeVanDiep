@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function gradingStudents(grades) {
+        let finalGrades = []
+        for (let grade of grades) {
+            // if grade < 38, return grade
+            // if grade % 5 < 3, return grade
+            if (grade < 38 || grade % 5 < 3) {
+                finalGrades.push(grade)
+            } else {
+                // else return grade + (5 - grade % 5)
+                finalGrades.push(grade + (5 - (grade % 5)))
+            }
+        }
+        return finalGrades
+    }
+
+    console.log(gradingStudents([73, 67, 38, 33]));
+</script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>[*Bài tập] Ứng dụng quản lý sản phẩm sử dụng hàm</h1>
+<p>
+    Mô tả<br>
+    Ứng dụng quản lý sản phẩm có các chức năng sau:<br>
+    Hiển thị danh sách sản phẩm<br>
+    Có thể thêm một sản phẩm mới vào danh sách<br>
+    Có thể sửa tên của sản phẩm trong danh sách<br>
+    Có thể xoá một sản phẩm khỏi danh sách<br>
+</p>
+<h1>Add New Product</h1>
+<input type="text" id="themSP" placeholder="New Product">
+<input type="button" onclick="add()" value="Add">
+<br>
+<div id="formEdit"></div>
+<div>
+    <h2>Display all product</h2>
+    <div id="tableProduct"></div>
+</div>
+<script>
+    let products = [
+        "Sony Xperia",
+        "Samsung Galaxy",
+        "Nokia 6",
+    ];
+    function show() {
+        let tableProduct = "<table>";
+        for (let i = 0; i < products.length; i++) {
+            tableProduct += `
+          <tr>
+            <td>${products[i]}</td>
+            <td><button onclick="showEdit(${i})">Edit</button></td>
+            <td><button onclick="remove(${i})">Delete</button></td>
+          </tr>
+          `;
+        }
+        tableProduct += "</table>";
+        document.getElementById("tableProduct").innerHTML = tableProduct;
+    }
+    show();
+    function add() {
+        let temp = document.getElementById("themSP");
+        products.push(temp.value);
+        show();
+    }
+    function remove(i) {
+        products.splice(i,1);
+        show();
+    }
+    function showEdit(index) {
+        document.getElementById("formEdit").innerHTML = `
+          <input id="edit" type="text" name="" value='${products[index]}'>
+          <button onclick="update(${index});">Update</button>
+          `
+        document.getElementById("edit").focus();
+    }
+    function update(index) {
+        products[index] = document.getElementById("edit").value;
+        document.getElementById("formEdit").innerHTML = "";
+        show();
+    }
+</script>
+</body>
+</html>

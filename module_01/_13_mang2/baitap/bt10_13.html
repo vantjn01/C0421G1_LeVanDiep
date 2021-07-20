@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai6</title>
+</head>
+<body>
+<script>
+    // "V is in the array" còn lại in ra "V is not in the array
+        let a = [];
+        let check = false;
+        let i = parseInt(prompt('Bạn muốn độ dài mảng là bao nhiêu :'));
+        for (let j = 0; j < i; j++) {
+            a[j] = parseInt(prompt('Nhập vào giá trị thứ ' + j));
+        }
+        let v = parseInt(prompt('Nhập số nguyên cần so sánh:'));
+        for (let x = 0; x < i; x++)
+            if (a[x] === v) {
+                check = true;
+                document.write("V is in the array")
+            }
+        if (check === false) {
+            document.write("V is not in the array")
+        }
+</script>
+</body>
+</html>

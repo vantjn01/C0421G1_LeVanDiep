@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = parseInt(prompt("Nhập số phút đã gọi: "));
+    let b;
+    if (a<=50) {
+        b = (a*600) + 25000;
+        alert("Tổng cước phí là: " + b);
+    } else if (a<=200) {
+        b = (a - 50)*400 + 55000;
+        alert("Tổng cước phí là: " + b);
+    }   else {
+        b = (a - 200)*200 + 115000;
+        alert("Tổng cước phí là: " + b);
+    }
+</script>
+</body>
+</html>

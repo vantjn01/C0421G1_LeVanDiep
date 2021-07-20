@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function plusMinus(arr) {
+        const maxLength = arr.length;
+        let soDuong = 0;
+        let soAm = 0;
+        let zero = 0;
+        for (let i = 0; i < maxLength; i++) {
+            if (Math.sign(arr[i]) === 1) soDuong++;
+            else if (Math.sign(arr[i]) === -1) soAm++;
+            else zero++;
+        }
+
+        return (
+           soDuong / maxLength +
+            "\n" +
+            soAm / maxLength +
+            "\n" +
+            zero / maxLength
+        );
+    }
+    alert("Tỉ lệ số dương, số âm, số 0 với độ dài của mảng lần lượt là :" +plusMinus([-4, 3, -9, 0, 4, 1]));
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//sử dụng đệ quy để kiểm tra một từ có phải là từ đối xứng không?
+function isPalindrome(str,i,j) {
+if(i>=j) {
+return true;
+}
+if(str[0] !== str[str.length-1]) {
+return false;
+} else {
+i++;
+j--;
+return isPalindrome(str,i,j);
+}
+}
+let check_str = prompt('Please enter string: ');
+if (isPalindrome(check_str,0,check_str.length-1)) {
+document.write(check_str + ' is a palindrome')
+}
+else {
+document.write(check_str + ' is NOT a palindrome!')
+}
+</script>
+</body>
+</html>

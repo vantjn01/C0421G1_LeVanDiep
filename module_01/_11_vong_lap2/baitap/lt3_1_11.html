@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // bài 3: 20 số đầu tiên của fibonacci
+    // 2 số đầu cố định là:
+    // X = 0 và X1 = 1
+    // các số sau: Xn = X(n-1)+X(n-2)
+    // ==> x2 = 1 x3=2  x3=3   x4=5
+    // ==> 3 số đầu: 0; 1; 1
+    //  */
+
+    let x = 0;
+    let x1 = 1;
+    let xn;
+    for(n=0; n<=20; n++) {
+        if(n<2) {
+            document.write(n+'<br>')
+        }
+        else {
+            xn=x+x1;
+            x=x1;   //cập nhật lại biến x
+            x1=xn  // cập nhật lại biến x1
+            document.write(xn + '<br>');
+        }
+    }
+</script>
+</body>
+</html>

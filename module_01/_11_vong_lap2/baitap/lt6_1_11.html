@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+// bài 6: tổng của 30 số đầu tiên chia hết cho 7
+    let n = 1;
+    let count = 1;
+    let sum = 0;
+    while (n > 0) {
+        if (n % 7 == 0) {
+            sum += n;
+            document.write("Day la so thu " + count + " : " + n + "<br>");
+            if (count == 30) {
+                document.write("Tong cua 30 so chia het cho 7 la: " + sum);
+                break;
+            }
+            count++;
+        }
+        n++;
+    }
+</script>
+</body>
+</html>

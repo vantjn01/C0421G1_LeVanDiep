@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function checkNum(str) {
+        let temp = parseInt(str);
+        if (isNaN(temp)) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+            let str = prompt("Nhap chuoi can kiem tra: ");
+            if (checkNum(str)) {
+                alert("ky tự số");
+            } else {
+                alert("Ko phai ky tự số");
+            }
+</script>
+</body>
+</html>

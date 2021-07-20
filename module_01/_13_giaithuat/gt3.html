@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+// bài 4: tong n số đầu tiên của Sn
+let x1=1;
+let xn= parseInt(prompt('nhập n'))
+let sum=0;
+for(i=1;i<=xn;i++) {
+if (i<2) {
+sum=1;
+document.write(x1 + '<br>')
+}
+else {
+xi=1/i;
+sum=sum+(1/i)
+document.write(xi + '<br>')
+}
+}
+document.write('tổng các số đầu tiên' + sum)
+</script>
+</body>
+</html>

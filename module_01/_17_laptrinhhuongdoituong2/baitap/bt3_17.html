@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Viết một lớp mô tả đối tượng chuột lấy tên là Rat, với những đặc điểm được mô tả như sau:
+    //
+    //     Có thuộc tính tên.
+    //
+    //     Có thuộc tính khối lượng.
+    //
+    //     Có thuộc tính tốc độ.
+    //
+    //     Có thuộc tính mô tả trạng thái: sống, chết.
+    //
+    //     Có khả năng thực hiện hành vi kêu (ví dụ “chít, chít”)
+
+    class Rat {
+        constructor(name, weight, speed, status) {
+            this.name = name;
+            this.weight = weight;
+            this.speed = speed;
+            // song, chet
+            this.status = status;
+        }
+
+        growl() {
+            alert("Chit, chit");
+        }
+    }
+
+    // Viết một lớp mô tả đối tượng mèo lấy tên là Cat với những đặc điểm được mô tả như sau:
+    //
+    //     Có thuộc tính tên.
+    //
+    //     Có thuộc tính khối lượng.
+    //
+    //     Có thuộc tính tốc độ di chuyển tối đa.
+    //
+    //     Có khả năng thực hiện hành vi kêu (ví dụ: “meo meo”).
+    //
+    // Có khả năng bắt chuột, mỗi lần chỉ bắt được một con.
+    // Chỉ bắt được chuột khi tốc độ của mèo lớn hơn tốc độ của chuột.
+    //
+    //     Có khả năng ăn thịt chuột. Chỉ ăn chuột còn sống.
+    //     Khi ăn, khối lượng của mèo tăng lên tương ứng.
+
+    class Cat {
+        constructor(name, weight, speed) {
+            this.name = name;
+            this.weight = weight;
+            this.speed = speed;
+        }
+
+        growl() {
+            alert("Meow meow");
+        }
+
+        catch(ratObj) {
+            if (this.speed > ratObj.speed) {
+                alert(this.name + " da bat duoc " + ratObj.name);
+            } else {
+                alert(this.name + " khong bat duoc " + ratObj.name);
+            }
+        }
+
+        eat(ratObj) {
+            if (ratObj.status === "song") {
+                // this.weight = this.weight + ratObj.weight;
+                this.weight += ratObj.weight;
+                alert("Meo an chuot. Khoi luong meo la: " + this.weight);
+            } else {
+                alert("Chuot da chet, hoi qua!");
+            }
+        }
+    }
+    //TH1: toc do meo > toc do chuot (chuot con song).
+
+    // let ratObjTest = new Rat("Jerry", 2, 10, "song");
+    // let catObjTest = new Cat("Tom", 5, 12);
+
+    // ratObjTest.growl();
+    // catObjTest.growl();
+    // catObjTest.catch(ratObjTest);
+    // catObjTest.eat(ratObjTest);
+
+    // TH2: toc do meo < toc do chuot (chuot con song).
+
+    let ratObjTest = new Rat("Jerry", 2, 10, "song");
+    let catObjTest = new Cat("Tom", 5, 8);
+
+    ratObjTest.growl();
+    catObjTest.growl();
+    catObjTest.catch(ratObjTest);
+    // catObjTest.eat(ratObjTest);
+</script>
+</body>
+</html>

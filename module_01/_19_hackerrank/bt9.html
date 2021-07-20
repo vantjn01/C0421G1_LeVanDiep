@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function birthdayCakeCandles(candles) {
+        //sort the array
+        let sortedCandles = candles.sort(function(a,b) {
+            return a-b
+        });
+        //start with the highest candle
+        let i = sortedCandles.length-1;
+        //khởi tạo một biến đếm có bao nhiêu cây nến cao nhất
+        var tallest;
+        //kiểm tra xem mảng có trống không
+        if (i>=0) {
+            tallest = 1
+        } else {
+            return 'there are no candles'
+        }
+        //chạy một vòng lặp miễn là các phần tử cao nhất bằng nhau
+        while(sortedCandles[i]===sortedCandles[i-1]) {
+            tallest++;
+            i--;
+        }
+        return tallest;
+    }
+
+    alert(birthdayCakeCandles([1,2,4,2,4,4]));
+</script>
+</body>
+</html>

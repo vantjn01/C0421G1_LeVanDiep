@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    do {
+        let a = parseInt(prompt("Nhập số thứ tự thức uống: "));
+        let sluong = 0;
+        let tongtien = 0;
+        let total = 0;
+        switch (a) {
+            case 1:
+                sluong = parseInt(prompt("Nhập số lượng cafe/15.000 "));
+                tongtien = 15000*sluong;
+                document.write("Tổng tiền: " + tongtien);
+                break;
+            case 2:
+                sluong = parseInt(prompt("Nhập số lượng cam vắt/30.000: "));
+                tongtien = 30000*sluong;
+                document.write("Tổng tiền: " +tongtien);
+                break;
+            case 3:
+                sluong = parseInt(prompt("Nhập số lượng nước ép cà rốt/25000 "));
+                tongtien = 25000*sluong;
+                document.write("Tổng tiền: " +tongtien);
+                break;
+            case 4:
+                sluong = parseInt(prompt("Nhập số lượng nước ép cà chua/20.000 "));
+                tongtien = 20000*sluong;
+                document.write("Tổng tiền: " +tongtien);
+                break;
+            case 5:
+                sluong= parseInt(prompt("Nhập số lượng nước lọc/10000 "));
+                tongtien = 10000*sluong;
+                document.write("Tổng tiền: " +tongtien);
+                break;
+            case 6:
+                sluong = parseInt(prompt("Nước dừa, 40.000. Nhập số lượng: "));
+                tongtien = 40000*sluong;
+                document.write("Tổng tiền: " +tongtien);
+                break;
+            case 7:
+                alert("Thoát gọi món");
+        }
+        total+= tongtien;
+    } while (a<7);
+
+</script>
+</body>
+</html>

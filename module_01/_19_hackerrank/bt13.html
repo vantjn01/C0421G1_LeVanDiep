@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    const x1 = 0;
+    const v1 = 3;
+    const x2 = 4;
+    const v2 = 2;
+
+    function kangaroo(x1, v1, x2, v2) {
+        if (x2 > x1 && v2 > v1) {
+            return "NO";
+        }
+
+        //điểm bắt đầu của 2 kangaroo.
+        let startK1 = x1;
+        let startK2 = x2;
+        const limit = 1000;
+
+        //ktra xem điểm bắt đầu giống nhau không
+        for (let i = 0; i < limit; i++) {
+            //tính toán điểm xuất phát với khoảng cách bước nhảy .
+            startK1 += v1;
+            startK2 += v2;
+
+            if (startK1 === startK2) {
+                return "YES";
+            }
+        }
+
+        //* is start point not same return NO.
+        return "NO";
+    }
+
+    //* expected result: YES
+    console.log(kangaroo(x1, v1, x2, v2));
+</script>
+</body>
+</html>

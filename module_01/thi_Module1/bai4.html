@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //Viết chương trình kiểm tra học lực của học sinh.
+
+    class HocSinh {
+        constructor(stt, hovaten, ngaysinh, diemtrungbinh) {
+            this.id = stt;
+            this.fullName = hovaten;
+            this.birthDay = ngaysinh;
+            this.midScore = diemtrungbinh;
+        }
+
+        getId() {
+            return this.id;
+        }
+
+        getFullName() {
+            return this.fullName;
+        }
+
+        getBirthDay() {
+            return this.birthDay;
+        }
+
+        getMidScore() {
+            return this.midScore;
+        }
+
+        setMidScore(score) {
+            this.average = score;
+        }
+    }
+
+    function displayInformation(hocsinh) {
+        alert("1.So Thu Tu: " + hocsinh.getId() + "\n"
+            + "2.Ho Va Ten: " + hocsinh.getFullName() + "\n"
+            + "3.Ngay Sinh: " + hocsinh.getBirthDay() + "\n"
+            + "4.Diem Trung Binh: " + hocsinh.getMidScore() + "\n");
+    }
+
+    function checkLevel(hocsinh) {
+        let score = hocsinh.getMidScore();
+        if (score > 8) {
+            alert("Hoc Sinh Gioi");
+        } else if (score >= 6.5) {
+            alert("Hoc Sinh Kha");
+        } else if (score >= 5) {
+            alert("Hoc Sinh Trung Binh");
+        } else if (score >= 3.5) {
+            alert("Hoc Sinh Yeu");
+        } else {
+            alert("Hoc Sinh Kem");
+        }
+    }
+    let Diep = new HocSinh(1, "Le Van Diep", "15/04/1991", 10);
+    displayInformation(Diep);
+    checkLevel(Diep);
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // số ký tự trong mã
+        let arr = [];
+        let count = 0;
+        let amount = +prompt("Nhập kích thước của mãng: ");
+        for (let i =0; i<amount;i++){
+            arr[i]= prompt("Nhập phần tử của mảng: ");
+        }
+        for (let i =0; i<amount;i++){
+            let temp = parseInt(arr[i]);
+            if( isNaN(temp)){
+                continue}
+            else {count++;
+        }
+            }
+        alert("Số ký tự số trong mãng: "+ count);
+</script>
+</body>
+</html>

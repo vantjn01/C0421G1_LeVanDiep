@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p >Kết quả hiển thị ở đây <br></p>
+<script>
+    let countPrime = 0
+    let run = 1
+    while (true){
+        let count = 0;
+        // check prime number
+        // run = 1,2,3,4,5
+        for (let i =1; i <= run; i++) {
+            if(run% i === 0){
+                count++;
+            }
+        }
+        if(count===2){
+            document.write(run + "<br>");
+            countPrime++
+        }
+// end check prime number
+        if(countPrime===20 ){
+            break
+        }
+        run++;
+    }
+</script>
+</body>
+</html>

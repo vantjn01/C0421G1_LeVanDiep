@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a=parseInt(prompt('nhập a'));
+    let b=parseInt(prompt('nhập b'));
+    let c=parseInt(prompt('nhập c'));
+    let min=a;
+    function findMin() {
+      if (min>b&&min<c){
+        min=b;
+        return min;
+      }else if(min>c){
+          min=c;
+          return min;
+      }else {
+        min=a;
+        return min;
+      }
+    }
+    alert("số nhỏ nhất trong ba số là " +findMin())
+</script>
+</body>
+</html>

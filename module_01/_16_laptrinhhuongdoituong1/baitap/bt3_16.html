@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // điện thoại
+    class Mobile {
+        constructor(ten, pin, trangthai, nhap, gui, den) {
+            this.ten = ten;
+            this.pin = pin;
+            this.trangthai = trangthai
+            this.nhap = nhap
+            this.gui = gui
+            this.den = den
+        }
+
+        check(pin) {
+            if (this.pin === "đang sạc") {
+                this.pin = this.pin + 1
+            } else {
+                return this.pin
+            }
+        }
+
+        write(tinnhan) {
+            if (this.pin > 0) {
+                this.nhap = tinnhan
+                this.pin = this.pin - 1
+            } else {
+                alert(this.ten + "máy hết pin")
+            }
+        }
+
+        nhan(tinnhan) {
+            if (this.pin > 0) {
+                this.den = this.ten + "đã nhận được tin nhắn với nội dung" + nokia.nhap
+                this.pin = this.pin - 1
+            } else {
+                alert(this.ten + "điện thoại đã hết pin")
+            }
+        }
+
+        guitn(tinnhan) {
+            if (this.pin > 0) {
+                this.guitn = this.ten + "đã gửi được tin nhắn với nội dung" + this.nhap
+                this.pin = this.pin - 1
+            } else {
+                alert(this.ten + "điện thoại đã hết pin")
+            }
+        }
+    }
+    let iPhone = new Mobile("iPhone", 10, "bat", "", "", "");
+    let nokia = new Mobile("Nokia", 10, "bat", "", "", "");
+
+    nokia.write("Hello");
+
+    nokia.guitn();
+
+    iPhone.nhan();
+
+   console.log(nokia);
+
+   console.log(iPhone);
+
+</script>
+</body>
+</html>

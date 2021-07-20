@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // [Bài tập] Xây dựng lớp mô tả Temperature
+    // Khai báo lớp Temperature với các thuộc tính cần thiết
+    class Circle {
+        constructor(c,f,k) {
+            this.c = c;
+            this.f = f;
+            this.k = k;
+        }
+        // Xây dựng phương thức trả về độ c
+        getC(c) {
+            return this.c
+        }
+        // xây dựng phương thức trả về độ f
+        getF(dai) {
+            return c*1.8 + 32;
+        }
+        // xây dựng phương thức trả về độ k
+        getK(k) {
+            return c + 273;
+        }
+    }
+    // Sử dụng lớp vừa tạo. Tạo đối tượng độ c = 25
+    let circle = new Circle(25);
+    // Truy cập phương thức của lớp hình tròn vừa tạo và gán cho các biến rong,dai,cvi,dtci
+    let c = circle.getC(25);// 2
+    let f = circle.getF();
+    let k = circle.getK();
+    // Hiển thị thông tin nhiệt độ
+    alert("độ c là: " + c + "; độ f là: " + f + "; độ k là: " + k);
+</script>
+</body>
+</html>

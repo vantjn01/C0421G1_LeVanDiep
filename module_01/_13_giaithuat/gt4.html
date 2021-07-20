@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // bài 4: tong n số đầu tiên của Sn giai thưa
+    let s = 15;
+    let n = parseInt(prompt("nhập n muốn tìm tổng"));
+    for (let i = 1; i<=n; i++) {
+        s += ((-1)**i)*(1/giaithua(i));
+    }
+    alert(s);
+    function giaithua(number) {
+        let j = 1;
+        for (let i = 1; i <= number; i++) {
+            j += i;
+        }
+        return j;
+    }
+</script>
+</body>
+</html>

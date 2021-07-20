@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</table>
+<script>
+    // bài 1: bảng cửu chương
+    let table =  "<table border='1px solid black col'style=\"collapse: collapse\" >"
+    let i,j;
+    for (i = 1; i <10; i++){
+        table = table + "<tr>"
+        for (j =2; j <10; j++){
+            table = table +"<td width='80px' height='30px'>" + j + "x" + i + "=" + i*j + "</td>";
+        }
+        table = table + "</tr>"
+    }
+    table = table + "</table>"
+    document.write(table)
+</script>
+</body>
+</html>

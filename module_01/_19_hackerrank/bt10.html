@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function timeConversion(s) {
+        let when = s.slice(s.length-2,s.length);
+        let time = s.slice(0,s.length-2);
+        let arr =time.split(':');
+        arr[0]=parseInt(arr[0]);
+
+        if(when==='PM' && arr[0]!=12){
+            arr[0]+=12;
+            time=arr.join(':');
+            return time;
+        }else if(arr[0]===12 && when==='AM'){
+            arr[0]='00';
+            time=arr.join(':');
+            return time;
+        }
+        else if(arr[0]===12 && when==='PM'){
+            return time;
+        }else{
+            return time;
+        }
+
+    }
+
+   alert(timeConversion('12:00AM'));
+</script>
+</body>
+</html>

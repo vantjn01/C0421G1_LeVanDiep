@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // điểm số cao nhất được tìm thấy và vị trí của điểm số cao nhất xuất hiện trong mảng
+    let arrScore = [10, 10, 10, 10, -8, -22];
+    findMaxScore(arrScore);
+
+    function findMaxScore(arrScore) {
+        let max = arrScore[0];
+        let index = 0;
+        for (let i = 1; i < arrScore.length; i++) {
+            if (max <= arrScore[i]) {
+                max = arrScore[i];
+                index = i;
+            }
+        }
+        document.write("Diem so cao nhat la: " + max + "<br>" + "O vi tri: " + index);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai8</title>
+</head>
+<body>
+<script>
+    // sắp xếp mảng theo thứ tự giảm dần và hiển thị ra mảng đã được sắp xếp.
+        let array = [];
+        for (let i = 0; i < 5; i++) {
+            array[i] = parseInt(prompt('Nhập vào số nguyên thứ' + i));
+        }
+        array.sort(function (a, b) {
+            return b - a;
+        });
+        document.write(array)
+</script>
+</body>
+</html>

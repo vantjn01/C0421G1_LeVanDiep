@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // In ra giá trị trung bình của các phần tử trong mảng
+        let a = [1, 2, 10, 55, 80, 117, 162, 30, 5, 1];
+        let tb = a[0];
+        let max = a[0];
+        let i;
+        for (i = 1; i < 10; i++) {
+            tb = tb + a[i];
+            if (a[i] > max) {
+                max = a[i];
+            }
+        }
+        tb = tb / 10;
+        i--;
+         document.write('gia trị lớn nhất' + max +'&nbsp'+ 'giá trị trung bình' +tb )
+</script>
+</body>
+</html>

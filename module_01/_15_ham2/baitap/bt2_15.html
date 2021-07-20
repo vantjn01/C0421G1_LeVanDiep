@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Hàm kiểm tra số nguyên tố
+    function isPrimeNumber(numberUser) {
+        let count = 0;
+        for (let i = 1; i <= numberUser; i++) {
+            if (numberUser % i == 0) {
+                count++;
+            }
+        }
+        if (count === 2) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    // In ra 10 so nguyen to dau tien
+    // cho run = 1 chay vo han lan
+    // countPrime == so luong so nguyen to yeu cau tu nguoi dung
+    let countPrime = 0;
+    let run = 1;
+    while (true) {
+        // check prime number
+        // run = 1, 2, 3, 4, 5, 6...
+        if (isPrimeNumber(run)) {
+            console.log(run);
+            countPrime++;
+        }
+        // end check prime number
+        if (countPrime === 1000) {
+            break;
+        }
+        run++;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Viết một lớp mô tả đối tượng chuột lấy tên là Battery, với những đặc điểm được mô tả như sau:
+    //
+    //     Có thuộc tính energy
+
+    class Battery {
+        constructor(energy) {
+            this.energy = energy;
+        }
+
+        getEnergy() {
+            return this.energy
+        }
+
+        setEnergy(energy) {
+            this.energy = energy
+        }
+    }
+
+    // khai báo lớp FlashLamp
+    class FlashLamp {
+        constructor(status, battery) {
+            this.status = status
+            this.battery = battery
+        }
+
+        getBatteryInfo() {
+            return this.battery.getEnergy();
+        }
+
+        setEnergy(battery) {
+            this.battery = battery
+        }
+
+        checklight() {
+            if (this.status) {
+                alert("Lighting");
+            } else {
+                alert("Not lighting");
+            }
+        };
+
+        turnOn() {
+            this.status = true;
+        };
+
+        turnOff() {
+            this.status = false;
+        }
+    }
+
+    let battery = new Battery();
+    battery.setEnergy(10);
+
+    let flashLamp = new FlashLamp(true,battery);
+
+    document.write("Battery info:" + flashLamp.getBatteryInfo() + "<br/>");
+    // flashLamp.energy();
+    flashLamp.checklight();
+    flashLamp.turnOff();
+    flashLamp.checklight();
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>8
+<body>
+<script>
+    let a = parseInt(prompt('nhập lương của bạn'));
+    let b= " ";
+    if (a<4000000) {
+        alert('bạn không cần nộp thuế');
+    } else if (6000000>a && a>=4000000) {
+        b = 5*a/100;
+        alert('Thuế TNCN của bạn là:' + b);
+    } else if (10000000>=a && a>=6000000 ) {
+        b = 15*a/100;
+        alert('Thuế TNCN của bạn là:' + b);
+    } else {
+        b = 30*a/100;
+        alert('Thuế TNCN của bạn là:' + b);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str = prompt("Nhập vào xâu kí tự").toLowerCase().split(' ');
+    let arr = [];
+
+    function xuLiChuoi(n) {
+        for (let i = 0; i < n.length; i++) {
+            if (n[i].length > 0) {
+                arr.push(n[i]);
+            }
+        }
+        for (let i = 0; i < arr.length; i++) {
+            arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].substring(1);
+        }
+        arr = arr.join(" ");
+        alert(arr);
+    }
+    xuLiChuoi(str)
+    console.log(arr)
+    let newArr = arr.split(" ");
+    console.log(newArr);
+    function tinhDoDai(a){
+        let max = a[0];
+        for (let i=0;i< a.length;i++){
+            if (a[i].length > a[0].length){
+                max = a[i];
+            }
+        }
+        console.log(max);
+    }
+    tinhDoDai(newArr);
+</script>
+</body>
+</html>

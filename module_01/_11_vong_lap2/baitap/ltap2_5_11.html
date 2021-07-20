@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function tinhLai(){
+        let Tienvay = parseInt(document.getElementById("txt").value);
+        let thoiHan = parseInt(document.getElementById("mth").value);
+        let laiSuat = parseInt(document.getElementById("lx").value);
+        let TienLai = 0;
+        let result = 0;
+        if (isNaN(Tienvay)){
+            document.getElementById('month').innerHTML = 'Dứ liệu truyền vào ko phải là số'
+        } else {
+            result = Tienvay / thoiHan;
+            TienLai = (Tienvay * laiSuat*0.1) / thoiHan;
+            document.getElementById('month').innerHTML = 'Số tiền gốc phải đóng hàng tháng là: ' + result;
+            document.getElementById('percent').innerHTML = 'Số tiền lãi hàng tháng là: '+ TienLai;
+            document.getElementById('sotiendong').innerHTML = 'Tổng số tiền phải đóng hàng tháng là : '+ (TienLai+result);
+        }
+    }
+</script>
+</body>
+</html>

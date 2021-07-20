@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+   function swap(myArr) {
+       /*
+       a = arr[0];
+       b = arr[1]
+        */
+       let temp = myArr[0];
+       myArr[0]= myArr[1]; //2
+       myArr[1] = temp; // 1
+       document.write("trong ham: " + myArr[0] + ';' + myArr[1] + '<br>'); // 2 1
+   }
+    let a = parseInt(prompt('input a:')); //1
+    let b = parseInt(prompt('input b:')); //2
+    let arr = [a,b];
+    document.write("Truoc khi swap: " + arr[0] + ';' + arr[1] + '<br>'); //1 2
+    swap(arr);
+    document.write("Sau khi swap: " + arr[0] + ';' + arr[1] + '<br>'); //1 2
+</script>
+</body>
+</html>

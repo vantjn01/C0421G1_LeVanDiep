@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="canvasHTML" width="1000" height="1000"></canvas>
+
+<script>
+    let canvasHTML = document.getElementById("canvasHTML");
+    // lay giay ve
+    let canvasContext = canvasHTML.getContext("2d");
+let x =parseInt(prompt('nhập tôạ độ x'));
+let y =parseInt(prompt('nhập tọa độ y'));
+let z =parseInt(prompt('nhập bán kính z'))
+    // // hinh tron
+    // // uoc luong hinh tron
+    // x = 100, y = 100, ban kinh = 50, goc bat dau ve = 0, goc ket thuc ve = 2 * Math.PI
+    canvasContext.arc(x, y, z, 0, 2 * Math.PI);
+    // ve vien
+    canvasContext.stroke();
+    // xac dinh mau de to
+    canvasContext.fillStyle = "pink";
+    // to mau
+    canvasContext.fill();
+</script>
+</body>
+</html>

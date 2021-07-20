@@ -1,0 +1,6 @@
+H:\C0421G1_LeVanDiep\module_02\src\_16_IO_textFile\New Text Document.txt
+H:\C0421G1_LeVanDiep\module_02\src\_16_IO_textFile\New Text.txt
+
+H:\C0421G1_LeVanDiep\module_02\src\_16_IO_textFile\original.txt
+
+H:\C0421G1_LeVanDiep\module_02\src\_16_IO_textFile\clone.txt

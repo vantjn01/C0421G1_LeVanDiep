@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<fieldset>
+    <legend><h3>Từ điển Anh Việt</h3></legend>
+    <input type="text" id="text">
+    <input type="button" id="btnTrans" value="Dịch" onclick="dich();">
+    <div id="result" ></div>
+</fieldset>
+<script>
+    let eng = ['Zero','one','two','for','handsome'];
+    let vnm = ['Số không','một','hai','ba','mr.diep'];
+    let result ;
+    //let x = document.getElementById('text').value;
+    function dich() {
+        let x = document.getElementById('text').value;
+        for (let i=0;i<eng.length;i++){
+
+            if (x == eng[i]){
+                result = vnm[i];
+                break;
+            }
+            else {
+                result ='Từ bạn vừa nhập không có trong từ điển';
+            }
+        }
+        document.getElementById('result').innerHTML = result;
+    }
+</script>
+</body>
+</html>

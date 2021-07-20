@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Tạo lớp Circle với phương thức khởi tạo có 1 tham số truyền vào
+    class Circle {
+        constructor(rong,dai,cvi,dtich) {
+            this.rong = rong;
+            this.dai = dai;
+            this.cvi = cvi;
+            this.dtich = dtich;
+        }
+        // Xây dựng phương thức trả về chiều rộng hcn
+        getRong(rong) {
+            return this.rong
+        }
+        // xây dựng phương thức trả về chiều dài hcn
+        getDai(dai) {
+            return this.dai;
+        }
+        // xây dựng phương thức trả về chu vi hcn
+        getCvi(cvi) {
+            return (dai + rong) * 2 ;
+        }
+        // Xây dựng phương thức tính diện tích hình chữ nhật
+        getDtich(dtich) {
+            return dai * rong;
+        }
+    }
+    // Sử dụng lớp vừa tạo. Tạo đối tượng chieu rộng = 2, cdai = 3
+    let circle = new Circle(2,3);
+    // Truy cập phương thức của lớp hình chữ nhật vừa tạo và gán cho các biến rong,dai,cvi,dtci
+    // let rong = circle.getRong(2);// 2
+    let rong = parseInt(prompt('nhập chiều rộng'))
+    // let dai = circle.getDai(3);
+    let dai = parseInt(prompt('nhập chiều dài'))
+    let cvi = circle.getCvi();
+    let dtich = circle.getDtich();
+    // Hiển thị thông tin hcn
+    alert("rong: " + rong + "; dai: " + dai + "; cvi: " + cvi + "; dtich " + dtich);
+</script>
+</body>
+</html>

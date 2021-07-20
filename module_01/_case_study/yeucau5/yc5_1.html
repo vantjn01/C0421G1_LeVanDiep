@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n;
+    let m;
+    let sum=0;
+    do {
+        m= prompt('nhập m')
+        n= prompt('nhập n')
+    }while (!(n>0&&n<20) && !(m>0&&m<20) )
+    let arr=[];
+    for (let i=0; i< m; i++){
+        arr[i] = new Array(n);
+        for (let j=0; j < n ; j++){
+            arr[i][j] = parseInt(prompt("nhập phần tử thứ : " + "["+i+"]"+"["+j+"]"));
+            if (arr[i][j] % 2 == 0){
+                sum += arr[i][j];
+            }
+        }
+    }
+    console.log(arr);
+    console.log(sum);
+</script>
+</body>
+</html>

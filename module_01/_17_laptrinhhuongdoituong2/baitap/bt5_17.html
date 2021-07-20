@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // remote và tivi
+    class Remote{
+        constructor(name) {
+            this.name = name;
+        }
+        chuyenkenh(dieukhien,television){
+            television.channels = dieukhien;
+        }
+        chuyenamluong(volumRemote, television){
+            television.volum = television.volum + volumRemote;
+        }
+       chuyentrangthai (status,television){
+            television.status = status;
+            if (television.status==="bật"){
+                return "Tivi đã bật"
+            } else {
+                return "Tivi đã tắt"
+            }
+        }
+    }
+
+    class Television{
+        constructor(channels, volum, status) {
+            this.channels = channels;
+            this.volum = volum;
+            this.status = status;
+        }
+        chuyenkenhOnTV(newChanel){
+            this.channels = newChanel;
+        }
+        thaydoiVolumOnTV(number){
+            this.volum = this.volum + number;
+        }
+    }
+
+    let newRemote = new Remote(100);
+    let newTV = new Television(3, 35, "tắt");
+
+    newTV.status = "bật";
+    newTV.channels = 7;
+
+    console.log("Kênh cũ: "+ newTV.channels);
+    newRemote.chuyenkenh(3,newTV);
+    console.log("Kênh mới: "+ newTV.channels);
+
+    console.log("Volum cũ: "+newTV.volum);
+    newRemote.chuyenamluong(2, newTV);
+    console.log("Volum mới: " + newTV.volum);
+    console.log(newRemote.chuyentrangthai("tắt", newTV));
+
+</script>
+</body>
+</html>

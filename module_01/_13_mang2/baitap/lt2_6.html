@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // tìm tất cả các ký tự trong mảng là (-) và thay thế các ký tự này bởi ký tự ( _ )
+        let arr =[];
+        let text_1 = "";
+        let text_2 = "";
+        alert("Nhập kích thước mãng !!!!");
+        let amount = +prompt("Nhập kích thước mãng: ");
+        alert("Nhập mãng ký tự!!!");
+        for (let i =0; i<amount;i++){
+            arr[i]= prompt("Nhập phần tử ký tự của mảng: ");
+        }
+        text_1 += arr.join(' , ');
+        for (let i =0; i<amount;i++){
+            if(arr[i] === '-') arr[i]='_';
+        }
+        text_2 += arr.join(' , ');
+        alert("Mãng cũ chưa thay thế: "+text_1+ " .Mãng mới đã thay thế: "+text_2);
+</script>
+</body>
+</html>

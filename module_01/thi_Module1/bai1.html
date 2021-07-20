@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // nhập số nguyên từ bàn phím và sắp xếp theo thứ tự tăng dần
+    let arr = new Array(0);
+    for (let i = 0; i < 5; i++) {
+        arr[i] = parseInt(prompt("Vui lòng nhập số nguyên"));
+    }
+    arr = arr.sort(function (a, b) {
+        return a - b;
+    });
+    document.write("5 số nguyên theo thứ tự tăng dần là:" +arr);
+</script>
+</body>
+</html>

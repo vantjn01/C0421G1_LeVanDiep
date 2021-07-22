@@ -121,4 +121,4 @@ where month(ngay_lam_hop_dong) between 10 and 12;
 
 -- 13.Hiển thị thông tin các Dịch vụ đi kèm được sử dụng nhiều nhất bởi các Khách hàng đã đặt phòng.
 -- (Lưu ý là có thể có nhiều dịch vụ có số lần sử dụng nhiều như nhau).
--- join dvdk và hdct lại. group by(id_dvdk) ,count (id_hdct), dùng  count(id_hdct) >= all (select count(id_hdct)
+-- x.join dvdk và hdct lại. group by(id_dvdk) ,count (id_hdct), dùng  count(id_hdct) >= all (select count(id_hdct)

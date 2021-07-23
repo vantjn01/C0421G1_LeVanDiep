@@ -18,8 +18,7 @@ where ( timestampdiff(year,ngay_sinh,current_date()) between 18 and 50) and dia_
 -- Chỉ đếm những khách hàng nào có Tên loại khách hàng là “Diamond”.
 select k.id_khachhang,k.hoten_khach,count(h.id_hopdong)
 from khach_hang k 
-join hop_dong h
-on k.id_khachhang =h.id_khachhang
+join hop_dong h on k.id_khachhang =h.id_khachhang
 where id_loaikhach = 1                                 -- Tên loại khách hàng là “Diamond”
 group by k.id_khachhang
 order by count(h.id_hopdong) asc;
@@ -29,7 +28,7 @@ order by count(h.id_hopdong) asc;
 -- TongTien (Với TongTien được tính theo công thức như sau: ChiPhiThue + SoLuong*Gia,
 -- với SoLuong và Giá là từ bảng DichVuDiKem) cho tất cả các Khách hàng đã từng đặt phỏng. 
 -- Những Khách hàng nào chưa từng đặt phòng cũng phải hiển thị ra.
-select k.id_khachhang, k.hoten_khach, l.ten_loaikhach, h.id_hopdong, d.ten_dichvu, h.ngay_lam_hop_dong, h.ngay_ket_thuc,sum( chi_phi_thue + dvdk.gia_dichvudikem * hdct.so_luong) as tongtien
+select k.id_khachhang, k.hoten_khach, l.ten_loaikhach, h.id_hopdong, d.ten_dichvu, h.ngay_lam_hop_dong, h.ngay_ket_thuc,sum( d.chi_phi_thue + dvdk.gia_dichvudikem * hdct.so_luong) as tongtien
 from (((((khach_hang k 
 left join loai_khach l on k.id_loaikhach = l.id_loaikhach)
 left join hop_dong h on k.id_khachhang = h.id_khachhang)
@@ -64,7 +63,7 @@ and year(ngay_lam_hop_dong)= 2019 and month(ngay_lam_hop_dong) between 1 and 3);
  from dich_vu d
  join loai_dvu lvd on d.id_loaidvu = lvd.id_loaidvu
  join hop_dong h on h.id_dichvu = d.id_dichvu
- where year(ngay_lam_hop_dong)= 2018 ;
+ where year(ngay_lam_hop_dong)= 2018 and not year(ngay_lam_hop_dong) = 2019;
  
  -- 8.	Hiển thị thông tin HoTenKhachHang có trong hệ thống, với yêu cầu HoThenKhachHang không trùng nhau.
 -- Học viên sử dụng theo 3 cách khác nhau để thực hiện yêu cầu trên
@@ -84,7 +83,7 @@ group by hoten_khach;
 
 -- 9.	Thực hiện thống kê doanh thu theo tháng, nghĩa là tương ứng với mỗi tháng trong năm 2019 thì
 -- sẽ có bao nhiêu khách hàng thực hiện đặt phòng.
-select month(h.ngay_lam_hop_dong) as thang , count(h.id_hopdong) as so_hop_dong
+select month(h.ngay_lam_hop_dong) as thang , count(h.id_hopdong) as so_hop_dong 
 from hop_dong h
 where year(h.ngay_lam_hop_dong) = "2019"
 group by month(h.ngay_lam_hop_dong);
@@ -94,7 +93,8 @@ group by month(h.ngay_lam_hop_dong);
 select h.id_hopdong, h.ngay_lam_hop_dong, h.ngay_ket_thuc, h.tien_dat_coc, hdct.so_luong, count(id_hop_dong_chi_tiet)
 from hop_dong h
 join hop_dong_chi_tiet hdct on h.id_hopdong = hdct.id_hopdong
-group by id_hopdong;
+join dichvu_dikem dvdk on hdct.id_dichvudikem = dvdk.id_dichvudikem
+group by h.id_hopdong;
 
 -- 11.	Hiển thị thông tin các Dịch vụ đi kèm đã được sử dụng bởi những Khách hàng có TenLoaiKhachHang
 -- là “Diamond” và có địa chỉ là “Vinh” hoặc “Quảng Ngãi”.
@@ -111,13 +111,17 @@ where l.ten_loaikhach = 'Diamond' and k.dia_chi in ('Vinh','Quảng Ngãi');
 -- TienDatCoc của tất cả các dịch vụ đã từng được khách hàng đặt vào 3 tháng cuối năm 2019
 -- nhưng chưa từng được khách hàng đặt vào 6 tháng đầu năm 2019
 
-select h.id_hopdong, n.hoten_nhanvien, k.hoten_khach, k.sdt, d.ten_dichvu, hdct.so_luong,h.ngay_lam_hop_dong, tien_dat_coc
-from ((((nhan_vien n
+select h.id_hopdong, n.hoten_nhanvien, k.hoten_khach, k.sdt, d.ten_dichvu, hdct.so_luong,h.ngay_lam_hop_dong, h.tien_dat_coc
+from (((nhan_vien n
 join hop_dong h on n.id_nhanvien = h.id_nhanvien)
 join khach_hang k on h.id_khachhang = k.id_khachhang)
 join dich_vu d on h.id_dichvu = d.id_dichvu)
-join hop_dong_chi_tiet hdct on hdct.id_hopdong = h.id_hopdong)
-where month(ngay_lam_hop_dong) between 10 and 12;
+join hop_dong_chi_tiet hdct on hdct.id_hopdong = h.id_hopdong
+where (year(h.ngay_lam_hop_dong)=2019 and month(h.ngay_lam_hop_dong) between 10 and 12)
+and month(ngay_lam_hop_dong) not in
+				                   (select h.ngay_lam_hop_dong
+				                    from hop_dong as h
+									where (year(h.ngay_lam_hop_dong)=2019) and (month(h.ngay_lam_hop_dong) between 1 and 6));
 
 -- 13.Hiển thị thông tin các Dịch vụ đi kèm được sử dụng nhiều nhất bởi các Khách hàng đã đặt phòng.
 -- (Lưu ý là có thể có nhiều dịch vụ có số lần sử dụng nhiều như nhau).

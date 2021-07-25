@@ -41,10 +41,10 @@ donvi int,
 trangthakhadung varchar(45)
 );
 insert into dichvu_dikem(id_dichvudikem,ten_dichvudikem,gia_dichvudikem,donvi,trangthakhadung)
-values(1,'massage',1000,1,'co'),
-(2,'karaoke',2000,2,'không'),
-(3,'ăn uống',3000,3,'co'),
-(4,'thuê xe',4000,4,'không');
+values(1,'massage',1000000,1,'co'),
+(2,'karaoke',2000000,2,'không'),
+(3,'ăn uống',3000000,3,'co'),
+(4,'thuê xe',5000000,4,'không');
 
 create table loai_dvu(
 id_loaidvu int primary key,
@@ -61,9 +61,9 @@ ten_kieuthue varchar(45),
 gia int
 );
 insert into kieu_thue(id_kieuthue,ten_kieuthue,gia)
-values(1,'ngày',1000),
-(2,'tuần',2000),
-(3,'tháng',3000);
+values(1,'ngày',1000000),
+(2,'tuần',3000000),
+(3,'tháng',7000000);
 
 create table loai_khach(
 id_loaikhach int primary key,
@@ -93,36 +93,36 @@ email varchar(45),
 diachi varchar(45)
 );
 insert into nhan_vien(id_nhanvien,hoten_nhanvien,id_vitri,id_trinhdo,id_bophan,ngaysinh,cmnd,luong,sdt,email,diachi)
-values(1,'lê văn diệp',6,4,4,'1991/4/15','111111111','10000','0987654321','vandiep@gmail.com','QT'),
-(2,'nguyễn thanh hà',5,3,4,'1996/6/15','222222222','9000','0987098765','thanhha@gmail.com','DL'),
-(3,'đồng văn nhật',3,2,4,'1998/12/9','333333333','8000','0987654321','vannhat@gmail.com','QT'),
-(4,'hồ kỳ tài',1,4,1,'1999/12/15','444444444','7000','0987827262','kytai@gmail.com','DN'),
-(5,'nguyễn khắc phụt',3,1,4,'1991/4/3','555555555','6000','0987927261','khacphuc@gmail.com','DN'),
-(6,'nguyễn văn đức',4,4,4,'1995/9/15','666666666','5000','0989282722','vanduc@gmail.com','HN'),
-(7,'đặng nhật linh',2,4,1,'1997/10/15','777777777','4000','0987628121','nhatlinh@gmail.com','QT'),
-(8,'trương a quân',2,3,3,'1991/1/1','888888888','3000','0987271222','aquan@gmail.com','HUE'),
-(9,'trần minh chiến',1,1,1,'1998/1/30','999999999','2000','0912292733','minhchien@gmail.com','DL'),
-(10,'tuấn kiệt',3,4,1,'1992/4/15','123456789','1000','0900000122','vankiet@gmail.com','DN');
+values(1,'lê văn diệp',6,4,4,'1991/4/15','111111111','100000000','0987654321','vandiep@gmail.com','Quảng Trị'),
+(2,'nguyễn thanh hà',5,3,4,'1996/6/15','222222222','90000000','0987098765','thanhha@gmail.com','Quãng Ngãi'),
+(3,'đồng văn nhật',3,2,4,'1998/12/9','333333333','80000000','0987654321','vannhat@gmail.com','Vinh'),
+(4,'hồ kỳ tài',1,4,1,'1999/12/15','444444444','20000000','0987827262','kytai@gmail.com','Quảng Ngãi'),
+(5,'nguyễn trương khắc phụt',3,1,4,'1991/4/3','555555555','60000000','0987927261','khacphuc@gmail.com','Đà Nẵng'),
+(6,'nguyễn văn đức',4,4,4,'2010/9/15','666666666','50000000','0989282722','vanduc@gmail.com','Vinh'),
+(7,'đặng nhật linh',2,4,1,'1997/10/15','777777777','45600000','0987628121','nhatlinh@gmail.com','Quảng Trị'),
+(8,'trương a quân',2,3,3,'1991/1/1','888888888','300000','0987271222','aquan@gmail.com','Huế'),
+(9,'trần minh chiến',1,1,1,'1979/1/30','999999999','2000000','0912292733','minhchien@gmail.com','Hà Nội'),
+(10,'trần xuân tuấn kiệt',3,4,1,'1992/4/15','123456789','1000000','0900000122','vankiet@gmail.com','Đà Nẵng');
 
 create table khach_hang(
 id_khachhang int primary key,
 id_loaikhach int,
 foreign key(id_loaikhach) references loai_khach(id_loaikhach),
 hoten_khach varchar(45),
-ngaysinh datetime,
+ngay_sinh datetime,
 cmnd varchar(45),
 sdt varchar(45),
 email varchar(45),
-diachi varchar(45)
+dia_chi varchar(45)
 );
-insert into khach_hang(id_khachhang,id_loaikhach,hoten_khach,ngaysinh,cmnd,sdt,email,diachi)
-values(1,5,'john biden', '1987/12/12','2516228292','02123234','biden@gmail.com','america'),
-(2,3,'jeff bezos', '1967/12/6','643322222','09877655578','jezz@gmail.com','america'),
-(3,1,'Elon Musk', '1985/4/23','234567788','009865545','elon@gmail.com','england'),
-(4,2,'Bill Gates', '1947/1/2','2244211123','076543354','bill@gmail.com','germany'),
-(5,4,'Mark Zuckerberg', '1933/12/5','7544213566','0765443334','mark@gmail.com','america'),
-(6,5,'Warren Buffett', '1987/10/30','654455667','029876557','waren@gmail.com','endland'),
-(7,2,'jack ma', '1981/11/12','644456677','028776556','jackma@gmail.com','china');
+insert into khach_hang(id_khachhang,id_loaikhach,hoten_khach,ngay_sinh,cmnd,sdt,email,dia_chi)
+values(1,5,'john biden', '1987/12/12','2516228292','02123234','biden@gmail.com','Vinh'),
+(2,3,'jeff bezos', '1967/12/6','643322222','09877655578','jezz@gmail.com','Đà Nẵng'),
+(3,1,'Elon Musk', '1985/4/23','234567788','009865545','elon@gmail.com','Quảng Trị'),
+(4,1,'Bill Gates', '1947/1/2','2244211123','076543354','bill@gmail.com','Quảng Ngãi'),
+(5,4,'Mark Zuckerberg', '1933/12/5','7544213566','0765443334','mark@gmail.com','Quảng Trị'),
+(6,5,'Warren Buffett', '1987/10/30','654455667','029876557','waren@gmail.com','Vinh'),
+(7,2,'jack ma', '1981/11/12','644456677','028776556','jackma@gmail.com','Đà Nẵng');
 
 create table dich_vu(
 id_dichvu int primary key,
@@ -138,15 +138,15 @@ foreign key(id_loaidvu) references loai_dvu(id_loaidvu),
 trang_thai varchar(45)
 );
 insert into dich_vu(id_dichvu, ten_dichvu, dien_tich, so_tang, so_nguoi_toi_da, chi_phi_thue, id_kieuthue, id_loaidvu, trang_thai)
-values(1,'room_a',10,5,5,100,1,3,'co'),
-(2,'room_b',10,5,5,100,1,3,'co'),
-(3,'room_c',10,5,5,100,1,3,'không'),
-(4,'house_a',20,10,15,200,2,2,'co'),
-(5,'house_b',20,10,15,200,2,2,'không'),
-(6,'house_c',20,10,15,200,2,2,'co'),
-(7,'villa_a',30,15,25,300,3,1,'không'),
-(8,'villa_b',30,15,25,300,3,1,'co'),
-(9,'villa_c',30,15,25,300,3,1,'co');
+values(1,'room_a',10,5,5,10000000,1,3,'co'),
+(2,'room_b',10,5,5,9080000,1,3,'co'),
+(3,'room_c',10,5,5,16000000,1,3,'không'),
+(4,'house_a',20,10,15,20000000,2,2,'co'),
+(5,'house_b',20,10,15,15000000,2,2,'không'),
+(6,'house_c',20,10,15,35000000,2,2,'co'),
+(7,'villa_a',30,15,25,40000000,3,1,'không'),
+(8,'villa_b',30,15,25,9000000,3,1,'co'),
+(9,'villa_c',30,15,25,50000000,3,1,'co');
 
 create table hop_dong(
 id_hopdong int primary key,
@@ -162,14 +162,14 @@ tien_dat_coc int,
 tong_tien int null
 );
 insert into hop_dong(id_hopdong,id_nhanvien,id_khachhang,id_dichvu,ngay_lam_hop_dong,ngay_ket_thuc,tien_dat_coc,tong_tien)
-values(1,1,1,9,'2019/1/1','2019/1/5',100,300),
-(2,2,2,8,'2018/1/11','2019/1/20',100,300),
-(3,3,3,7,'2019/1/19','2019/4/5',100,300),
-(4,4,4,6,'2020/1/1','2019/1/25',20,200),
-(5,5,5,3,'2019/4/1','2019/6/5',10,100),
-(6,6,6,2,'2019/1/1','2020/1/1',10,100),
-(7,7,7,1,'2019/1/8','2019/1/25',10,100);
-
+values(1,1,1,9,'2019/10/1','2019/12/5',1000000,13000000),
+(2,2,2,8,'2018/1/11','2019/3/20',800000,20000000),
+(3,3,3,7,'2019/1/19','2019/4/5',1200000,20030000),
+(4,4,4,6,'2020/1/1','2019/1/25',3000000,52000000),
+(5,5,3,3,'2019/4/1','2019/6/5',2000000,60000000),
+(6,6,6,2,'2018/1/1','2018/10/1',1000000,30000000),
+(7,7,6,1,'2019/1/8','2019/1/25',1200000,8000000);
+-- 
 create table hop_dong_chi_tiet(
 id_hop_dong_chi_tiet int primary key,
 id_hopdong int,
@@ -179,10 +179,10 @@ foreign key(id_dichvudikem) references dichvu_dikem(id_dichvudikem),
 so_luong int
 );
 insert into hop_dong_chi_tiet(id_hop_dong_chi_tiet, id_hopdong, id_dichvudikem, so_luong)
-values(1,1,4,2),
-(2,2,3,1),
+values(1,1,4,12),
+(2,2,3,11),
 (3,3,1,2),
 (4,4,3,3),
 (5,5,2,5),
-(6,6,4,1),
+(6,6,4,10),
 (7,7,1,2)

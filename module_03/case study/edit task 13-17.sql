@@ -47,10 +47,7 @@ where n.id_nhanvien not in (select h.id_nhanvien
 SET FOREIGN_KEY_CHECKS=1;
 -- 17.	Cập nhật thông tin những khách hàng có TenLoaiKhachHang từ  Platinium lên Diamond,
 -- chỉ cập nhật những khách hàng đã từng đặt phòng với tổng Tiền thanh toán trong năm 2019 là lớn hơn 10.000.000 VNĐ.
- create temporary table test(
--- update khach_hang
--- set id_loaikhach = 1
--- where id_khachhang = 2 and exists(
+create temporary table test(
 select k.id_khachhang, sum( d.chi_phi_thue + dvdk.gia_dichvudikem * hdct.so_luong) as tongtien
 from (((khach_hang k 
 join hop_dong h on h.id_khachhang = k.id_khachhang)
@@ -61,12 +58,15 @@ where year(h.ngay_lam_hop_dong) = 2019 and h.tong_tien > 10000000
 group by k.id_khachhang
 having tongtien > 10000000
 );
-select * from test;
+select *
+from test;
 update khach_hang
 set id_loaikhach = 1
 where id_khachhang in (
-select id_khachhang from test
-) and id_loaikhach =2;
+select id_khachhang 
+from test) 
+and id_loaikhach =2;
 drop table test; 
+
 
 

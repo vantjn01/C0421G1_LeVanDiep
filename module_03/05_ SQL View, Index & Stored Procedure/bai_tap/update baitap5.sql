@@ -81,10 +81,11 @@ DELIMITER //
 create procedure delete_demo (in id_product int)
 begin
 	delete 
-    select *
     from products
     where id = id_product;
 end
 // DELIMITER ;
 call delete_demo(5);
+select *
+from products
 

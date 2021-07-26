@@ -95,14 +95,14 @@ diachi varchar(45)
 insert into nhan_vien(id_nhanvien,hoten_nhanvien,id_vitri,id_trinhdo,id_bophan,ngaysinh,cmnd,luong,sdt,email,diachi)
 values(1,'lê văn diệp',6,4,4,'1991/4/15','111111111','100000000','0987654321','vandiep@gmail.com','Quảng Trị'),
 (2,'nguyễn thanh hà',5,3,4,'1996/6/15','222222222','90000000','0987098765','thanhha@gmail.com','Quãng Ngãi'),
-(3,'đồng văn nhật',3,2,4,'1998/12/9','333333333','80000000','0987654321','vannhat@gmail.com','Vinh'),
+(3,'đồng văn nhật',3,2,4,'1998/12/9','333333333','80000000','0987654321','vannhat@gmail.com','Hải Châu,Đà Nẵng'),
 (4,'hồ kỳ tài',1,4,1,'1999/12/15','444444444','20000000','0987827262','kytai@gmail.com','Quảng Ngãi'),
-(5,'nguyễn trương khắc phụt',3,1,4,'1991/4/3','555555555','60000000','0987927261','khacphuc@gmail.com','Đà Nẵng'),
+(5,'nguyễn trương khắc phụt',3,1,4,'1991/4/3','555555555','60000000','0987927261','khacphuc@gmail.com','Hải Châu,TP.Đà Nẵng'),
 (6,'nguyễn văn đức',4,4,4,'2010/9/15','666666666','50000000','0989282722','vanduc@gmail.com','Vinh'),
 (7,'đặng nhật linh',2,4,1,'1997/10/15','777777777','45600000','0987628121','nhatlinh@gmail.com','Quảng Trị'),
 (8,'trương a quân',2,3,3,'1991/1/1','888888888','300000','0987271222','aquan@gmail.com','Huế'),
 (9,'trần minh chiến',1,1,1,'1979/1/30','999999999','2000000','0912292733','minhchien@gmail.com','Hà Nội'),
-(10,'trần xuân tuấn kiệt',3,4,1,'1992/4/15','123456789','1000000','0900000122','vankiet@gmail.com','Đà Nẵng');
+(10,'trần xuân tuấn kiệt',3,4,1,'1992/4/15','123456789','1000000','0900000122','vankiet@gmail.com','Hải Châu,Đà Nẵng');
 
 create table khach_hang(
 id_khachhang int primary key,
@@ -149,7 +149,7 @@ values(1,'room_a',10,5,5,10000000,1,3,'co'),
 (9,'villa_c',30,15,25,50000000,3,1,'co');
 
 create table hop_dong(
-id_hopdong int primary key,
+id_hopdong int primary key auto_increment,
 id_nhanvien int,
 foreign key (id_nhanvien) references nhan_vien(id_nhanvien),
 id_khachhang int,
@@ -164,7 +164,7 @@ tong_tien int null
 insert into hop_dong(id_hopdong,id_nhanvien,id_khachhang,id_dichvu,ngay_lam_hop_dong,ngay_ket_thuc,tien_dat_coc,tong_tien)
 values(1,1,1,9,'2019/10/1','2019/12/5',1000000,13000000),
 (2,2,2,8,'2018/1/11','2019/3/20',800000,20000000),
-(3,3,3,7,'2019/1/19','2019/4/5',1200000,20030000),
+(3,3,3,7,'2019/12/12','2019/4/5',1200000,20030000),
 (4,4,4,6,'2020/1/1','2019/1/25',3000000,52000000),
 (5,5,3,3,'2019/4/1','2019/6/5',2000000,60000000),
 (6,6,6,2,'2018/1/1','2018/10/1',1000000,30000000),

@@ -30,13 +30,6 @@ group by h.id_nhanvien
 having count(h.ngay_lam_hop_dong) <= 3;
 
 -- 16.	Xóa những Nhân viên chưa từng lập được hợp đồng nào từ năm 2017 đến năm 2019.
-select n.id_nhanvien, n.hoten_nhanvien, n.id_trinhdo,n.id_bophan, n.sdt,n.diachi, count(h.ngay_lam_hop_dong) as so_hd
-from nhan_vien n
-join hop_dong h on n.id_nhanvien = h.id_nhanvien
-where year(h.ngay_lam_hop_dong) in (2018,2019)
-group by h.id_nhanvien
-having count(h.ngay_lam_hop_dong) <= 3;
--- 16.	Xóa những Nhân viên chưa từng lập được hợp đồng nào từ năm 2017 đến năm 2019.
 SET FOREIGN_KEY_CHECKS=0;
 SET SQL_SAFE_UPDATES = 0;
 delete from nhan_vien n

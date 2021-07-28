@@ -47,7 +47,7 @@ join hop_dong h on h.id_khachhang = k.id_khachhang)
 join dich_vu d on h.id_dichvu = d.id_dichvu)
 join hop_dong_chi_tiet hdct on hdct.id_hopdong = h.id_hopdong)
 join dichvu_dikem dvdk on dvdk.id_dichvudikem = hdct.id_dichvudikem
-where year(h.ngay_lam_hop_dong) = 2019 and h.tong_tien > 10000000
+where year(h.ngay_lam_hop_dong) = 2019 
 group by k.id_khachhang
 having tongtien > 10000000
 );

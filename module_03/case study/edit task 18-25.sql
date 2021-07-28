@@ -71,7 +71,7 @@ drop procedure if exists sp_2;
 DELIMITER //
 create procedure sp_2 (id_hd int,id_nv int,id_kh int,id_dv int,ngay_lam_hd datetime,ngay_kt datetime,tien_dc int,tong int)
 begin
-if id_hd in (select id_hopdong from hop_dong) then
+if id_hd not in (select id_hopdong from hop_dong) then
 if id_nv in (select id_nhanvien from nhan_vien) then
 if id_kh in (select id_khachhang from khach_hang) then
 if id_dv in (select id_dichvu from dich_vu)
@@ -99,12 +99,56 @@ set @result =0;
  after delete
  on hop_dong for each row
  begin
-set @result =  (select count(id_hopdong)
-				from hop_dong);
+set @result =  (select count(id_hopdong) from hop_dong);
  end //
  delimiter ;
  delete
  from hop_dong
  where id_hopdong =1;
  select @result;
- drop trigger tr_1
+ drop trigger tr_1;
+ -- 26.	Tạo triggers có tên Tr_2 Khi cập nhật Ngày kết thúc hợp đồng, cần kiểm tra xem thời gian cập nhật
+ -- có phù hợp hay không, với quy tắc sau: Ngày kết thúc hợp đồng phải lớn hơn ngày làm hợp đồng ít nhất là 2 ngày.
+ -- Nếu dữ liệu hợp lệ thì cho phép cập nhật, nếu dữ liệu không hợp lệ thì in ra thông báo
+ -- “Ngày kết thúc hợp đồng phải lớn hơn ngày làm hợp đồng ít nhất là 2 ngày” trên console của database
+
+delimiter //
+create trigger tr_2
+before update
+on hop_dong for each row
+begin
+	DECLARE thong_bao VARCHAR(300);
+    set thong_bao = ' ngày kết thúc hợp đồng phải cách ít nhất 2 ngày với ngày làm hợp đồng';
+    if datediff(new.ngay_ket_thuc,old.ngay_lam_hop_dong) < 2 then
+    SIGNAL SQLSTATE '02000' SET MESSAGE_TEXT = thong_bao;
+    end if;
+end;
+// delimiter ;
+
+update hop_dong set ngay_ket_thuc = '2019/1/11' where id_hopdong = 7;
+drop trigger tr_2;
+-- 28.	Tạo Store procedure Sp_3 để tìm các dịch vụ được thuê bởi khách hàng với loại dịch vụ là “Room”
+-- từ đầu năm 2015 đến hết năm 2019 để xóa thông tin của các dịch vụ đó (tức là xóa các bảng ghi trong bảng DichVu)
+-- và xóa những HopDong sử dụng dịch vụ liên quan (tức là phải xóa những bản gi trong bảng HopDong)
+-- và những bản liên quan khác.
+drop procedure if exists sp_3;
+delimiter //
+create procedure sp_3()
+begin
+delete
+from dich_vu
+where id_dichvu in (
+select * 
+from (select h.id_dichvu
+			from dich_vu d
+            inner join loai_dvu ldv on d.id_loaidvu = ldv.id_loaidvu
+            inner join hop_dong h on h.id_dichvu = d.id_dichvu
+where (year(h.ngay_lam_hop_dong) between 2015 and 2019)
+and ldv.id_loaidvu = 3) as bang_phu
+);
+end;
+// delimiter ;
+call sp_3;
+
+
+

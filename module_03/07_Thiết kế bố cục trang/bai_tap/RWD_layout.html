@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .col-1 {width: 8.33%;}
+        .col-2 {width: 16.66%;}
+        .col-3 {width: 25%;}
+        .col-4 {width: 33.33%;}
+        .col-5 {width: 41.66%;}
+        .col-6 {width: 50%;}
+        .col-7 {width: 58.33%;}
+        .col-8 {width: 66.66%;}
+        .col-9 {width: 75%;}
+        .col-10 {width: 83.33%;}
+        .col-11 {width: 91.66%;}
+        .col-12 {width: 100%;}
+
+        [class*="col-"] {
+            float: left;
+            padding: 10px;
+        }
+
+        .header {
+            background-color: black;
+            color: white;
+            /*text-align: right;*/
+        }
+        .row::after {
+            content: "";
+            clear: both;
+            display: block;
+        }
+        .content1{
+            background-color: darkgray ;
+            height: 500px;
+            color: blue;
+
+        }
+        .content2{
+            background-color: darkgray;
+            height: 500px;
+            text-align: center;
+            display: block;
+            /*margin: 30px 30px 30px 30px;*/
+
+        }
+        .footer{
+            background-color: grey;
+            text-align: center;
+        }
+        /*.ads1{*/
+        /*    padding: 30px 30px 30px 30px;*/
+        /*    font-size: 30px;*/
+        /*}*/
+        /*.ads2{*/
+
+        /*    margin: 5px;*/
+        /*    padding: 18px 30px 30px 30px;*/
+        /*    border-bottom: 50px;*/
+        /*}*/
+
+
+    </style>
+</head>
+<body>
+
+<div class="row">
+
+    <div class="col-11 header">Logo | Home | About | Projects | Contact</div>
+    <div class="col-1 header">Login</div>
+</div>
+<div class="row">
+    <div class="col-2 content1"><p>Link</p> <p>Link</p> <p>Link</p></div>
+    <div class="col-8"><h1><p>Welcome</p></h1>
+        <p>Love is the greatest gift we can ever hope to give or receive. Love is the one thing that can overcome so many of the difficult times that we are faced with in life. Love is so powerful – it can turn frowns into smiles. It can help mend the most broken heart. It can even turn all of the ugliness in the world into the most beautiful portrait we could ever have the pleasure to behold.
+
+        Such a monumental task – of course… it could be. But only if we try to do it alone. Instead, if each of us, in our own small way contributed just a little – together, the task can become the reality we’re reaching for.
+
+        As potent as what love can be, it can only work it’s magic if we choose to allow it to. For that to come to pass we must let go of the other emotions that can get in love’s way. How is that – you may wonder?
+
+        Love can help us to get rid of all emotions: anger, harshness,  impatience, envy, mistakes, revenge, perfection, expectations.
+
+        Instead of any of the above, consider these options…
+
+        Take the time to know each other’s heart – when you do you will be more understanding and less apt to misunderstand another’s intentions, which probably were never meant to hurt or upset you to begin with.</p>
+        <h3>Test</h3>
+    </div>
+    <div class="col-2 content2">
+        <div class="row" style="border: 1px solid black; text-align: center; margin-bottom: 10px">
+            <div class="col-12">ADS</div>
+        </div>
+        <div class="row" style="border: 1px solid black; text-align: center; margin-bottom: 10px">
+            <div class="col-12">ADS</div>
+    </div>
+</div>
+<div class="col-12 footer"><h3>Footer test</h3></div>
+
+</body>
+</html>

@@ -21,6 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="06da8760-0ec1-4494-927f-6df7fa775735" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/texxy.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +52,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../bai_tap/bai_tap3/ChiBangOTamCungNhau.html" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../07_Thiết kế bố cục trang/thuc_hanh" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="SvnConfiguration">
@@ -66,7 +67,7 @@
       <updated>1627445235688</updated>
       <workItem from="1627445237249" duration="1441000" />
       <workItem from="1627461984845" duration="12868000" />
-      <workItem from="1627518431185" duration="278000" />
+      <workItem from="1627518431185" duration="707000" />
     </task>
     <servers />
   </component>
@@ -86,9 +87,9 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1627518817994">
+    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1627519153636">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1627518817994" />
+    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1627519153636" />
   </component>
 </project>

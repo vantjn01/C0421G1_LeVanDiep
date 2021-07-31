@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+<style>
+    h1{
+        text-align: center;
+    }
+   .carousel-inner{
+
+   }
+    div.gallery {
+        border: 1px solid #ccc;
+    }
+
+    div.gallery:hover {
+        border: 1px solid #777;
+    }
+
+    div.gallery img {
+        width: 100%;
+    }
+
+    div.desc {
+        padding: 15px;
+        text-align: center;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+    .responsive {
+        padding: 0 6px;
+        float: left;
+        width: 24.99999%;
+    }
+    .text.tai {
+        color: red;
+        position: absolute;
+        top: 10px;
+
+    }
+</style>
+</head>
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">C0421G1</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Dropdown
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </li>
+            </ul>
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+
+<h1>Chuyên mục bán tutor</h1>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="10000">
+                        <img src="anh_bt2/a.tien.jpg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-bs-interval="2000">
+                        <img src="anh_bt2/chien_tutor.jpg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="anh_bt2/linh.tutor.jpg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<h1>Chọn học viên bạn muốn mua</h1>
+<div class="responsive">
+    <div class="gallery">
+        <a target="_blank" href="https:https://www.facebook.com/hvkt1710">
+            <h1 class="text.tai">Giá : 10.000$</h1>
+            <img src="anh_bt2/kytai.jpg" alt="hihi" style="height: 240px">
+        </a>
+        <div class="desc">Chiều cao,đẹp trai và độ nhăn của não tỉ lệ thuận với nhau.</div>
+        <a href="#" class="btn btn-primary">Xin Info thì click vào ảnh</a>
+    </div>
+</div>
+
+
+<div class="responsive">
+    <div class="gallery">
+        <a target="_blank" href="https://www.facebook.com/photo/?fbid=2134238040049947&set=a.101372156669889">
+            <h1 class="text.tai">Giá : 5.000$</h1>
+            <img src="anh_bt2/dong.nhat.jpg" alt="hi nữa" style="height: 240px" >
+        </a>
+        <div class="desc">Mua về thì hát cho nghe cả ngày.Mỗi tội bê đê</div>
+        <a href="#" class="btn btn-primary">Xin Info thì click vào ảnh</a>
+    </div>
+</div>
+
+<div class="responsive">
+    <div class="gallery">
+        <a target="_blank" href="https://www.facebook.com/nguyenduc2511kaiOkai">
+            <h1 class="text.tai">Giá : 7.000$</h1>
+            <img src="anh_bt2/duc.nguyen.jpg" alt="hi hoài" style="height: 240px">
+        </a>
+        <div class="desc">Chuẩn thanh niên nghiêm túc. Mọi lúc mọi nơi</div>
+        <a href="#" class="btn btn-primary">Xin Info thì click vào ảnh</a>
+    </div>
+</div>
+
+<div class="responsive">
+    <div class="gallery">
+        <a target="_blank" href="https://www.facebook.com/o0SilentRain0o">
+            <h1 class="text.tai">Giá : 10.000$</h1>
+            <img src="anh_bt2/nhat.linh.jpg" alt="hi mãi" style="height: 240px">
+        </a>
+        <div class="desc">Con đại gia. Nhà Hà Lội. Nhanh chân không hết hàng</div>
+        <a href="#" class="btn btn-primary">Xin Info thì click vào ảnh</a>
+    </div>
+</div>
+<!--<div class="clearfix"></div>-->
+<div class="responsive">
+    <div class="gallery">
+        <a target="_blank" href="https://www.facebook.com/mummim.qan">
+            <img src="anh_bt2/anh.quan.jpg" alt="hihi" style="height: 240px">
+            <h1 class="text.tai">Giá : 6.000$</h1>
+        </a>
+        <div class="desc">Được cái hài hước nhưng lúc nào cũng ảo tưởng rằng mình đẹp trai nhất.</div>
+        <a href="#" class="btn btn-primary">Xin Info thì click vào ảnh</a>
+    </div>
+</div>
+
+
+<div class="responsive">
+    <div class="gallery">
+        <a target="_blank" href="https://www.facebook.com/tuankiet.tranxuan/photos">
+            <img src="anh_bt2/kiet.jpg" alt="hi nữa" style="height: 240px" >
+            <h1 class="text.tai">Giá : 6.000$</h1>
+        </a>
+        <div class="desc">75% cơ thể của anh ấy là nước. 25% còn lại là não</div>
+        <a href="#" class="btn btn-primary">Xin Info thì click vào ảnh</a>
+    </div>
+</div>
+
+<div class="responsive">
+    <div class="gallery">
+        <a target="_blank" href="https://www.facebook.com/thanhlam4real">
+            <img src="anh_bt2/lam.nguyen.jpg" alt="hi hoài" style="height: 240px">
+            <h1 class="text.tai">Giá : 10.000$</h1>
+        </a>
+        <div class="desc">Lâm Camry, mê Marvel. Nhà mặt phố, bố làm to. Thích thi sủa với Anh Quân. </div>
+        <a href="#" class="btn btn-primary">Xin Info thì click vào ảnh</a>
+    </div>
+</div>
+
+<div class="responsive">
+    <div class="gallery">
+        <a target="_blank" href="https://www.facebook.com/nhok.haycuoi.50">
+            <img src="anh_bt2/thanh.ha.jpg" alt="hi mãi" style="height: 240px">
+            <h1 class="text.tai">Giá : Hết hàng</h1>
+        </a>
+        <div class="desc">Giống siêu mẫu họ Tăng luôn. Khác mỗi chiều cao. Sở thích: cưỡi voi đi học</div>
+        <a href="#" class="btn btn-primary">Xin Info thì click vào ảnh</a>
+    </div>
+</div>
+<div class="responsive">
+    <div class="gallery">
+        <a target="_blank" href="https://www.facebook.com/profile.php?id=100001704003916">
+            <img src="anh_bt2/nhat.minh.jpg" alt="hihi" style="height: 240px">
+            <h1 class="text.tai">Giá : 6.000$</h1>
+        </a>
+        <div class="desc">Hiền lành, thật thà. Không bao giờ làm được nóc nhà</div>
+        <a href="#" class="btn btn-primary">Xin Info thì click vào ảnh</a>
+    </div>
+</div>
+
+
+<div class="responsive">
+    <div class="gallery">
+        <a target="_blank" href="https://www.facebook.com/profile.php?id=100007425616067&sk=photos">
+            <img src="anh_bt2/tinh.thuong.jpg" alt="hi nữa" style="height: 240px" >
+            <h1 class="text.tai">Giá : 6.000$</h1>
+        </a>
+        <div class="desc">Thanh niên làm gì cũng ngại. Đăng hình cũng ngại nốt</div>
+        <a href="#" class="btn btn-primary">Xin Info thì click vào ảnh</a>
+    </div>
+</div>
+
+<div class="responsive">
+    <div class="gallery">
+        <a target="_blank" href="https://www.facebook.com/BiJunee09/">
+            <img src="anh_bt2/danh.jpg" alt="hi hoài" style="height: 240px">
+            <h1 class="text.tai">Giá : 5.000$</h1>
+        </a>
+        <div class="desc">Bạn thân của Quân. Xấu hơn Quân nên không dám đăng ảnh </div>
+        <a href="#" class="btn btn-primary">Xin Info thì click vào ảnh</a>
+    </div>
+</div>
+
+<div class="responsive">
+    <div class="gallery">
+        <a target="_blank" href="https://www.facebook.com/LeVanDiep/">
+            <img src="anh_bt2/diep.jpg" alt="hi mãi" style="height: 240px">
+            <h1 class="text.tai">Giá : 100.000 $</h1>
+        </a>
+        <div class="desc">Nam thần, hotboy hàn xẻng các kiểu cũng chưa đủ tuổi.</div>
+        <a href="#" class="btn btn-primary">Xin Info thì click vào ảnh</a>
+    </div>
+</div>
+<script src="bootstrap.min.js"> </script>
+</body>
+</html>

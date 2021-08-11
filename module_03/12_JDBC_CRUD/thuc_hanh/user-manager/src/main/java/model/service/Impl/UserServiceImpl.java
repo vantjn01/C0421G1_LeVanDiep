@@ -47,5 +47,23 @@ public class UserServiceImpl implements IUserService {
         return this.iUserRepository.nameSort();
     }
 
+    @Override
+    public void addUserTransaction(User user, int[] permision) {
+        this.iUserRepository.addUserTransaction(user, permision);
+    }
+
+
+    @Override
+    public void insertUpdateWithoutTransaction() {
+         this.iUserRepository.insertUpdateWithoutTransaction();
+    }
+
+    @Override
+    public void insertUpdateUseTransaction() {
+         this.iUserRepository.insertUpdateUseTransaction();
+    }
+
+
+
 
 }

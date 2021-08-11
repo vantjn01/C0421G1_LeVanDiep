@@ -6,6 +6,8 @@ import java.sql.SQLException;
 import java.util.List;
 
 public interface IUserRepository {
+
+
     void insertUser(User user) throws SQLException;
 
     User selectUser(int id);
@@ -19,5 +21,12 @@ public interface IUserRepository {
     List<User> searchByCountry(String country);
 
     List<User> nameSort();
+    public void insertUpdateWithoutTransaction();
+
+    public void insertUpdateUseTransaction();
+
+
+    void addUserTransaction(User user, int[] permision);
+
 
 }

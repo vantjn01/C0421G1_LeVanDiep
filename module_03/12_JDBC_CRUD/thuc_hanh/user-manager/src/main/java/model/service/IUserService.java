@@ -19,4 +19,11 @@ public interface IUserService {
     List<User> searchByCountry(String country);
 
     List<User> nameSort();
+    void addUserTransaction(User user, int[] permision);
+
+    public void insertUpdateWithoutTransaction();
+
+    public void insertUpdateUseTransaction();
+
+
 }

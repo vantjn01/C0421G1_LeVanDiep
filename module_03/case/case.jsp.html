@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .col-1 {width: 8.33%;}
+        .col-2 {width: 16.66%;}
+        .col-3 {width: 25%;}
+        .col-4 {width: 33.33%;}
+        .col-5 {width: 41.66%;}
+        .col-6 {width: 50%;}
+        .col-7 {width: 58.33%;}
+        .col-8 {width: 66.66%;}
+        .col-9 {width: 75%;}
+        .col-10 {width: 83.33%;}
+        .col-11 {width: 91.66%;}
+        .col-12 {width: 100%;}
+
+        [class*="col-"] {
+            float: left;
+            padding: 10px;
+        }
+
+        .header {
+            background-color: black;
+            color: white;
+            /*text-align: right;*/
+        }
+        .row::after {
+            content: "";
+            clear: both;
+            display: block;
+        }
+        .content1{
+            background-color: yellowgreen ;
+            height: 800px;
+            color: blue;
+            text-align: center;
+
+        }
+        .content2{
+            background-color: darkgray;
+            height: 800px;
+            text-align: center;
+
+            padding-top:  200px;
+
+        }
+        .footer{
+            background-color: grey;
+            text-align: center;
+        }
+        /*.ads1{*/
+        /*    padding: 30px 30px 30px 30px;*/
+        /*    font-size: 30px;*/
+        /*}*/
+        /*.ads2{*/
+
+        /*    margin: 5px;*/
+        /*    padding: 18px 30px 30px 30px;*/
+        /*    border-bottom: 50px;*/
+        /*}*/
+
+        @media only screen and (max-width: 768px) {
+            [class*="col-"] {
+                width: 100%;
+            }
+        }
+        @media (prefers-reduced-motion: no-preference) {
+            :root {
+                scroll-behavior: smooth;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            h1, .h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        h3, .h3 {
+            font-size: calc(1.325rem + 0.9vw);
+        }
+        @media (min-width: 1200px) {
+            h3, .h3 {
+                font-size: 2rem;
+            }
+        }
+        /*img{*/
+        /*    */
+        /*}*/
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: rgba(217,215,210,0.94)">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img width="200px" height="60px" src="logoFURAMA.jpg"></a>
+        <span style="float: right; font-size: 25px"><a href="#" id="name" style="text-decoration: none"> Nguyễn Văn A </a></span>
+    </div>
+</nav>
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin: 5px">
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item mx-3">
+                    <a class="nav-link" href="#" style="font-size: 30px; margin-left: 80px">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="font-size: 30px; margin-left: 30px">Employee</a>
+                </li>
+                <li class="nav-item" >
+                    <a class="nav-link" href="#" style="font-size: 30px; margin-left: 30px">Customer</a>
+                </li>
+                <li class="nav-item" >
+                    <a class="nav-link" href="#" style="font-size: 30px; margin-left: 30px">Service</a>
+                </li>
+                <li class="nav-item" >
+                    <a class="nav-link" href="#" style="font-size: 30px; margin-left: 30px">Contract</a>
+                </li>
+            </ul>
+            <form class="d-flex">
+                <input class="form-control me-sm-auto rounded-pill mx-auto" id="demo-2" type="search" placeholder="Search" aria-label="Search" style="width: 300px">
+            </form>
+        </div>
+    </div>
+</nav>
+<div class="row">
+    <div class="col-3 content1">
+        <p>Item One</p>
+        <p>Item Two</p>
+        <p>Item Three</p>
+    </div>
+    <div class="col-9 content2">Body</div>
+</div>
+<div class="col-12 footer">Footer</div>
+<script src="bootstrap.min.js"></script>
+</body>
+</html>

@@ -18,10 +18,8 @@ public class CustomerServlet extends HttpServlet {
 
     ICustomerService iCustomerService = new CustomerServiceImpl();
     ICustomerTypeService iCustomerTypeService = new CustomerTypeSerImpl();
-//    IEmployeeService iEmployeeService = new EmployeeServiceImpl();
-//    IEmployeePosService iEmployeePosService = new EmployeePosSerImpl();
-//    IEmployeeEduService iEmployeeEduService = new EmployeeEduSerImpl();
-//    IEmployeeDivService iEmployeeDivService = new EmployeeDivSerImpl();
+
+
 
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

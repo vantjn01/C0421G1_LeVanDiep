@@ -61,7 +61,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item mx-3 hover-item">
-                    <a class="nav-link" href="#" style="font-size: 30px; margin-left: 80px">Home</a>
+                    <a class="nav-link" href="/furama" style="font-size: 30px; margin-left: 80px">Home</a>
                 </li>
                 <li class="nav-item hover-item">
                     <a class="nav-link " href="/employee" style="font-size: 30px; padding-left: 30px">Employee</a>
@@ -116,7 +116,7 @@
                         <input type="hidden" name="action" value="edit-employee">
                         <table border="1" cellpadding="5">
                             <c:if test="${employee != null}">
-                                <input type="hidden" name="id" value="<c:out value='${employee.employeeId}' />"/>
+                                <input type="hidden" name="id" value="<c:out value='${employee.employee_id}' />"/>
                             </c:if>
                             <tr>
                                 <th>Employee name:</th>
@@ -179,7 +179,7 @@
                                 <td>
                                     <select name="position" style="width: 182px">
                                         <c:forEach var="position" items="${positionList}">
-                                            <option value='${position.position_id}' >${position.position_name}</option>
+                                            <option value='${position.positionId}' >${position.positionName}</option>
                                         </c:forEach>
                                     </select>
                                 </td>
@@ -189,7 +189,7 @@
                                 <td>
                                     <select name="education" style="width: 182px">
                                         <c:forEach var="education" items="${educationList}">
-                                            <option value='${education.education_degree_id}' >${education.education_degree_name}</option>
+                                            <option value='${education.educationId}' >${education.educationName}</option>
                                         </c:forEach>
                                     </select>
                                 </td>
@@ -199,7 +199,7 @@
                                 <td>
                                     <select name="division" style="width: 182px">
                                         <c:forEach var="division" items="${divisionList}">
-                                            <option value='${division.division_id}' >${division.division_name}</option>
+                                            <option value='${division.divisionId}' >${division.divisionName}</option>
                                         </c:forEach>
                                     </select>
                                 </td>

@@ -61,13 +61,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item mx-3 hover-item">
-                    <a class="nav-link" href="/" style="font-size: 30px; margin-left: 80px">Home</a>
+                    <a class="nav-link" href="/furama" style="font-size: 30px; margin-left: 80px">Home</a>
                 </li>
                 <li class="nav-item hover-item">
-                    <a class="nav-link " href="/furama?action=list-employee" style="font-size: 30px; padding-left: 30px">Employee</a>
+                    <a class="nav-link " href="/employee" style="font-size: 30px; padding-left: 30px">Employee</a>
                 </li>
                 <li class="nav-item hover-item" >
-                    <a class="nav-link " href="/furama?action=list-customer" style="font-size: 30px; padding-left: 30px">Customer</a>
+                    <a class="nav-link " href="/furama" style="font-size: 30px; padding-left: 30px">Customer</a>
                 </li>
                 <li class="nav-item hover-item" >
                     <a class="nav-link " href="/furama?action=list-service" style="font-size: 30px; padding-left: 30px">Service</a>

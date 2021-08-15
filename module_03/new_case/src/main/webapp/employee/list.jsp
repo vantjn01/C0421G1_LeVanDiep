@@ -60,13 +60,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item mx-3 hover-item">
-                    <a class="nav-link" href="/" style="font-size: 30px; margin-left: 80px">Home</a>
+                    <a class="nav-link" href="/furama" style="font-size: 30px; margin-left: 80px">Home</a>
                 </li>
                 <li class="nav-item hover-item">
-                    <a class="nav-link " href="/furama?action=list-employee" style="font-size: 30px; padding-left: 30px">Employee</a>
+                    <a class="nav-link " href="/employee" style="font-size: 30px; padding-left: 30px">Employee</a>
                 </li>
                 <li class="nav-item hover-item" >
-                    <a class="nav-link " href="/furama?action=list-customer" style="font-size: 30px; padding-left: 30px">Customer</a>
+                    <a class="nav-link " href="/furama" style="font-size: 30px; padding-left: 30px">Customer</a>
                 </li>
                 <li class="nav-item hover-item" >
                     <a class="nav-link " href="/furama?action=list-service" style="font-size: 30px; padding-left: 30px">Service</a>
@@ -173,9 +173,16 @@
                                                 <c:otherwise>Quản lý</c:otherwise>
                                             </c:choose>
                                         </td>
+<%--                                        <td>--%>
+<%--&lt;%&ndash;                                            <c:choose>&ndash;%&gt;--%>
+<%--&lt;%&ndash;                                                <c:when test="${employee.username == vandiep01}">12345678</c:when>&ndash;%&gt;--%>
+<%--&lt;%&ndash;                                                <c:when test="${employee.username == vandiep02}">12345678</c:when>&ndash;%&gt;--%>
+<%--&lt;%&ndash;                                                <c:otherwise>12345678</c:otherwise>&ndash;%&gt;--%>
+<%--&lt;%&ndash;                                            </c:choose>&ndash;%&gt;--%>
+<%--                                        </td>--%>
                                         <td><c:out value="${employee.username}"/></td>
                                         <td>
-                                            <button style="background-color: rgba(182,201,170,0.82); width: 70px" type="button" class="btn rounded-pill"><a href="/furama?action=edit-employee&id=${employee.employee_id}">Edit</a></button>
+                                            <button style="background-color: rgba(182,201,170,0.82); width: 70px" type="button" class="btn rounded-pill"><a href="/employee?action=edit-employee&id=${employee.employee_id}">Edit</a></button>
                                             <button style="background-color: rgba(188,49,55,0.92)" onclick="onDelete(${employee.employee_id})" type="button" class="btn rounded-pill" data-toggle="modal" data-target="#modelId">Delete</button>
                                         </td>
                                     </tr>

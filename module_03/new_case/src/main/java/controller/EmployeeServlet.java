@@ -111,7 +111,7 @@ public class EmployeeServlet extends HttpServlet {
             case "list-employee":
                 listEmployee(request, response);
                 break;
-            case "edit-customer":
+            case "edit-employee":
                 showEditEmployeeForm(request, response);
                 break;
 
@@ -137,7 +137,7 @@ public class EmployeeServlet extends HttpServlet {
       request.setAttribute("divisionList", employeeDivisions);
       List<User> users = iUserService.selectAllUser();
       request.setAttribute("userList",users);
-      RequestDispatcher dispatcher = request.getRequestDispatcher("employee/edit/jsp");
+      RequestDispatcher dispatcher = request.getRequestDispatcher("employee/edit.jsp");
       request.setAttribute("employee", employee);
         try {
             dispatcher.forward(request,response);

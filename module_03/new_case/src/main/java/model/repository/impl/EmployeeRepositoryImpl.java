@@ -21,6 +21,8 @@ public class EmployeeRepositoryImpl implements IEmployeeRepository {
             " set employee_name = ?,employee_birthday = ?,employee_id_card = ?," +
             "employee_id_salary = ?,employee_id_phone = ?,employee_id_email = ?,employee_id_address  = ?," +
             "position_id = ?,education_degree_id = ?,division_id ,username =? where employee_id = ?;";
+    private static final String SELECT_DELETE_EMPLOYEE = "delete from employee where employee_id = ?;";
+    private static final String SELECT_EMPLOYEE_BY_NAME = "select * from employee where employee_name like concat('%', ? , '%');";
     BaseRepository baseRepository = new BaseRepository();
     @Override
     public void addNewEmployee(Employee employee) throws SQLException {
@@ -106,6 +108,17 @@ public class EmployeeRepositoryImpl implements IEmployeeRepository {
     }
 
     @Override
+    public boolean deleteEmployee(int id) throws SQLException {
+        boolean rowDelete = false;
+        PreparedStatement preparedStatement = baseRepository.getConnection().prepareStatement(SELECT_DELETE_EMPLOYEE);
+        {
+            preparedStatement.setInt(1,id);
+            rowDelete = preparedStatement.executeUpdate()>0;
+        }
+        return rowDelete;
+    }
+
+    @Override
     public boolean updateEmployee(Employee employee) throws SQLException {
         boolean rowUpdated = false;
         PreparedStatement preparedStatement = baseRepository.getConnection().prepareStatement(UPDATE_EMPLOYEE_SQL);
@@ -127,5 +140,35 @@ public class EmployeeRepositoryImpl implements IEmployeeRepository {
             rowUpdated = preparedStatement.executeUpdate() > 0;
         }
         return rowUpdated;
+    }
+
+    @Override
+    public List<Employee> searchByName(String name) {
+      List<Employee> employees = new ArrayList<>();
+        try {
+            PreparedStatement preparedStatement = baseRepository.getConnection().prepareStatement(SELECT_EMPLOYEE_BY_NAME);
+            preparedStatement.setString(1,name);
+            System.out.println(preparedStatement);
+            ResultSet rs = preparedStatement.executeQuery();
+            while (rs.next()){
+                int id = rs.getInt("employee_id");
+                String nameSearch = rs.getString("employee_name");
+                String birthday = rs.getString("employee_birthday");
+                String card = rs.getString("employee_id_card");
+                double salary = rs.getDouble("employee_id_salary");
+                String phone = rs.getString("employee_id_phone");
+                String email = rs.getString("employee_id_email");
+                String address = rs.getString("employee_id_address");
+                int positionId = rs.getInt("position_id");
+                int educationDegreeId = rs.getInt("education_degree_id");
+                int divisionId = rs.getInt("division_id");
+                String username = rs.getString("username");
+                employees.add(new Employee(id,nameSearch,birthday,card,salary,phone,email,address,positionId,educationDegreeId,divisionId,username));
+            }
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return employees;
     }
 }

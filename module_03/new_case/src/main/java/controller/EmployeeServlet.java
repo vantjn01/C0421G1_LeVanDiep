@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet(name = "EmployeeServlet", urlPatterns = {"/employee"})
@@ -34,8 +35,37 @@ public class EmployeeServlet extends HttpServlet {
             case "edit-employee":
                 updateEmployee(request, response);
                 break;
+            case "search-employee":
+                searchByEmployeeName(request, response);
+                break;
+
         }
     }
+
+    private void searchByEmployeeName(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String employeeName = request.getParameter("employeeName");
+        System.out.println(employeeName);
+        List<Employee> employeeList = new ArrayList<>();
+        employeeList.addAll(iEmployeeService.searchByName(employeeName));
+        RequestDispatcher dispatcher = null;
+        if (employeeList.isEmpty()) {
+            request.setAttribute("employeeList", employeeList);
+            dispatcher = request.getRequestDispatcher("employee/searchbyname.jsp");
+            request.setAttribute("msg", "Empty!");
+        } else {
+            request.setAttribute("employeeList", employeeList);
+            dispatcher = request.getRequestDispatcher("employee/searchbyname.jsp");
+            request.setAttribute("msg", employeeList.size() + " record(s)");
+        }
+        try {
+            dispatcher.forward(request, response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        }
 
     private void updateEmployee(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("employee_id"));
@@ -114,14 +144,23 @@ public class EmployeeServlet extends HttpServlet {
             case "edit-employee":
                 showEditEmployeeForm(request, response);
                 break;
-
-//            case "delete-customer":
-//                deleteEmployee(request, response);
-//                break;
-
+            case "delete-employee":
+                deleteEmployee(request, response);
+                break;
             default :
                 listEmployee(request,response);
         }
+    }
+
+    private void deleteEmployee(HttpServletRequest request, HttpServletResponse response) {
+        int id = Integer.parseInt(request.getParameter("id"));
+        try {
+            iEmployeeService.deleteEmployee(id);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        request.setAttribute("msg","deleted employee_id" + id);
+        listEmployee(request,response);
     }
 
     private void showEditEmployeeForm(HttpServletRequest request, HttpServletResponse response) {

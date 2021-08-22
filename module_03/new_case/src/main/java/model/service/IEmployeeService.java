@@ -12,9 +12,9 @@ public interface IEmployeeService {
 //
     List<Employee> selectAllEmployee();
 //
-//    boolean deleteEmployee(int id) throws SQLException;
+    boolean deleteEmployee(int id) throws SQLException;
 //
     boolean updateEmployee(Employee employee) throws SQLException;
 //
-//    List<Employee> searchByName(String name);
+    List<Employee> searchByName(String name);
 }

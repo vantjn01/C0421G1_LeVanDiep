@@ -26,7 +26,17 @@ public class EmployeeServiceImpl implements IEmployeeService {
     }
 
     @Override
+    public boolean deleteEmployee(int id) throws SQLException {
+        return this.iEmployeeRepository.deleteEmployee(id);
+    }
+
+    @Override
     public boolean updateEmployee(Employee employee) throws SQLException {
         return this.iEmployeeRepository.updateEmployee(employee);
+    }
+
+    @Override
+    public List<Employee> searchByName(String name) {
+        return this.iEmployeeRepository.searchByName(name);
     }
 }

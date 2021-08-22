@@ -60,7 +60,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item mx-3 hover-item">
-                    <a class="nav-link" href="/furama" style="font-size: 30px; margin-left: 80px">Home</a>
+                    <a class="nav-link" href="/home" style="font-size: 30px; margin-left: 80px">Home</a>
                 </li>
                 <li class="nav-item hover-item">
                     <a class="nav-link " href="/employee" style="font-size: 30px; padding-left: 30px">Employee</a>
@@ -75,7 +75,7 @@
                     <a class="nav-link " href="/furama?action=list-contract" style="font-size: 30px; padding-left: 30px">Contract</a>
                 </li>
             </ul>
-            <form class="d-flex" style="position: relative" action="/furama?action=search-employee" method="post">
+            <form class="d-flex" style="position: relative" action="/employee?action=search-employee" method="post">
                 <input class="form-control rounded-pill" name="employeeName" id="demo-2" type="search" placeholder="Search employee name" aria-label="Search" style="width: 300px; height: 30px; margin-left: 100px; margin-top: 15px">
             </form>
         </div>
@@ -205,6 +205,29 @@
         </div>
     </div>
 </div>
+<div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Confirm delete</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form>
+                <input type="hidden" name="action" value="delete-employee">
+                <input type="hidden" name="id" value="" id="idEmployeeDelete">
+                <div class="modal-body">
+                    Delete this emplyoyee?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Confirm</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 
 
 
@@ -213,6 +236,9 @@
 <script src="/bootstrap.js"></script>
 
 <script>
+    function onDelete(id) {
+        document.getElementById("idEmployeeDelete").value = id;
+    }
 </script>
 </body>
 </html>

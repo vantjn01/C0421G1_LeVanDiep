@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head">
+</head>
+<body>
+<h3>Result</h3>
+<p>
+    <a th:href="@{/product/list}">
+        Back to product list
+    </a>
+</p>
+<h2 style="color: red" th:text="${resultMessage}"></h2>
+<div th:unless="${products.isEmpty()}">
+    <table id = "products">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Describe</th>
+            <th>Producer</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="product: ${products}">
+            <td th:text="${product.id}"></td>
+            <td th:text="${product.name}"></td>
+            <td th:text="${product.price}"></td>
+            <td th:text="${product.describe}"></td>
+            <td th:text="${product.producer}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<footer th:replace="/layout :: footer"></footer>
+</body>
+</html>

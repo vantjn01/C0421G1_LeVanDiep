@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b6a6cd6a-dc25-46c3-996d-e48d74f7c297" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../_01_Spring_MVC/thuc_hanh/bai2/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../_01_Spring_MVC/thuc_hanh/bai2/customer-management" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_02_Controller_MVC/thuchanh/thuchanh5/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../_02_Controller_MVC/thuchanh/thuchanh5/customer-management" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_05_ORM/baitap/.idea/modules/baitap.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../_05_ORM/baitap/.idea/modules/baitap.main.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_05_ORM/baitap/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../_05_ORM/baitap/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_05_ORM/thuchanh/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../_05_ORM/thuchanh/customer-management" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="1xTSpSklr8WOoMT0KAUV9xI9n8E" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration name="DemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="demo.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.demo.DemoApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b6a6cd6a-dc25-46c3-996d-e48d74f7c297" name="Default Changelist" comment="" />
+      <created>1630377767412</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1630377767412</updated>
+      <workItem from="1630377782211" duration="1038000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="452" y="165" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1630378653917">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="452" y="165" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1630378653917" />
+    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1630378879041">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1630378879041" />
+    <state x="65" y="24" key="new project wizard" timestamp="1630378881493">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="65" y="24" key="new project wizard/0.0.1366.728@0.0.1366.728" timestamp="1630378881493" />
+  </component>
+</project>

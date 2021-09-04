@@ -2,25 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ed621fbf-1f32-400f-b486-0fb83295fdb3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../_03_Thymeleaf_View/baitap/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../_03_Thymeleaf_View/baitap/src/main/webapp/WEB-INF/views/create.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../_03_Thymeleaf_View/baitap/src/main/webapp/WEB-INF/views/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../_01_Spring_MVC/thuc_hanh/bai2/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../_01_Spring_MVC/thuc_hanh/bai2/customer-management" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../_02_Controller_MVC/thuchanh/thuchanh5/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../_02_Controller_MVC/thuchanh/thuchanh5/customer-management" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_03_Thymeleaf_View/baitap/.gradle/6.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../_03_Thymeleaf_View/baitap/.gradle/6.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_03_Thymeleaf_View/baitap/.gradle/6.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../_03_Thymeleaf_View/baitap/.gradle/6.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_03_Thymeleaf_View/baitap/.gradle/6.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../_03_Thymeleaf_View/baitap/.gradle/6.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_03_Thymeleaf_View/baitap/.gradle/6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../_03_Thymeleaf_View/baitap/.gradle/6.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_03_Thymeleaf_View/baitap/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../_03_Thymeleaf_View/baitap/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_03_Thymeleaf_View/baitap/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../_03_Thymeleaf_View/baitap/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_03_Thymeleaf_View/baitap/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../_03_Thymeleaf_View/baitap/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_03_Thymeleaf_View/baitap/src/main/java/com/codegym/config/AppConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../_03_Thymeleaf_View/baitap/src/main/java/com/codegym/config/AppConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_03_Thymeleaf_View/baitap/src/main/java/com/codegym/config/AppInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../_03_Thymeleaf_View/baitap/src/main/java/com/codegym/config/AppInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_03_Thymeleaf_View/baitap/src/main/webapp/create.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_03_Thymeleaf_View/baitap/src/main/webapp/delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../_03_Thymeleaf_View/baitap/src/main/webapp/WEB-INF/views/delete.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_03_Thymeleaf_View/baitap/src/main/webapp/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../_03_Thymeleaf_View/baitap/src/main/webapp/WEB-INF/views/edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_03_Thymeleaf_View/baitap/src/main/webapp/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_03_Thymeleaf_View/baitap/src/main/webapp/view.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../_03_Thymeleaf_View/baitap/src/main/webapp/WEB-INF/views/view.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/baitap.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/baitap.main.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../thuchanh/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../thuchanh/customer-management" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +47,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../_06_JPA_Spring_boot/thuchanh/thuchanh1" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -217,7 +203,8 @@
       <workItem from="1630222733602" duration="3030000" />
       <workItem from="1630246457519" duration="1011000" />
       <workItem from="1630247537756" duration="628000" />
-      <workItem from="1630248228999" duration="529000" />
+      <workItem from="1630248228999" duration="1132000" />
+      <workItem from="1630280971698" duration="2188000" />
     </task>
     <servers />
   </component>
@@ -233,10 +220,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="461" y="241" key="#Tomcat_Server/0.0.1366.728@0.0.1366.728" timestamp="1630248757669" />
-    <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1630248771143">
+    <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1630281513058">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1630248771143" />
+    <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1630281513058" />
     <state x="488" y="70" key="#com.intellij.ide.util.MemberChooser" timestamp="1630224719933">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -249,57 +236,57 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="110" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1630223233819" />
-    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1630248755250">
+    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1630287111915">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1630248755250" />
-    <state width="1084" height="424" key="GridCell.Tab.0.bottom" timestamp="1630248658012">
+    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1630287111915" />
+    <state width="1084" height="424" key="GridCell.Tab.0.bottom" timestamp="1630249586135">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1084" height="424" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1630248658012" />
-    <state width="1084" height="424" key="GridCell.Tab.0.center" timestamp="1630248658012">
+    <state width="1084" height="424" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1630249586135" />
+    <state width="1084" height="424" key="GridCell.Tab.0.center" timestamp="1630249586135">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1084" height="424" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1630248658012" />
-    <state width="1084" height="424" key="GridCell.Tab.0.left" timestamp="1630248658012">
+    <state width="1084" height="424" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1630249586135" />
+    <state width="1084" height="424" key="GridCell.Tab.0.left" timestamp="1630249586135">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1084" height="424" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1630248658012" />
-    <state width="1084" height="424" key="GridCell.Tab.0.right" timestamp="1630248658012">
+    <state width="1084" height="424" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1630249586135" />
+    <state width="1084" height="424" key="GridCell.Tab.0.right" timestamp="1630249586135">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1084" height="424" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1630248658012" />
-    <state width="1084" height="424" key="GridCell.Tab.1.bottom" timestamp="1630248657836">
+    <state width="1084" height="424" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1630249586135" />
+    <state width="1084" height="424" key="GridCell.Tab.1.bottom" timestamp="1630249586135">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1084" height="424" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1630248657836" />
-    <state width="1084" height="424" key="GridCell.Tab.1.center" timestamp="1630248657835">
+    <state width="1084" height="424" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1630249586135" />
+    <state width="1084" height="424" key="GridCell.Tab.1.center" timestamp="1630249586135">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1084" height="424" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1630248657835" />
-    <state width="1084" height="424" key="GridCell.Tab.1.left" timestamp="1630248657835">
+    <state width="1084" height="424" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1630249586135" />
+    <state width="1084" height="424" key="GridCell.Tab.1.left" timestamp="1630249586135">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1084" height="424" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1630248657835" />
-    <state width="1084" height="424" key="GridCell.Tab.1.right" timestamp="1630248657835">
+    <state width="1084" height="424" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1630249586135" />
+    <state width="1084" height="424" key="GridCell.Tab.1.right" timestamp="1630249586135">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1084" height="424" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1630248657835" />
-    <state width="1084" height="424" key="GridCell.Tab.2.bottom" timestamp="1630248657836">
+    <state width="1084" height="424" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1630249586135" />
+    <state width="1084" height="424" key="GridCell.Tab.2.bottom" timestamp="1630249586135">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1084" height="424" key="GridCell.Tab.2.bottom/0.0.1366.728@0.0.1366.728" timestamp="1630248657836" />
-    <state width="1084" height="424" key="GridCell.Tab.2.center" timestamp="1630248657836">
+    <state width="1084" height="424" key="GridCell.Tab.2.bottom/0.0.1366.728@0.0.1366.728" timestamp="1630249586135" />
+    <state width="1084" height="424" key="GridCell.Tab.2.center" timestamp="1630249586135">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1084" height="424" key="GridCell.Tab.2.center/0.0.1366.728@0.0.1366.728" timestamp="1630248657836" />
-    <state width="1084" height="424" key="GridCell.Tab.2.left" timestamp="1630248657836">
+    <state width="1084" height="424" key="GridCell.Tab.2.center/0.0.1366.728@0.0.1366.728" timestamp="1630249586135" />
+    <state width="1084" height="424" key="GridCell.Tab.2.left" timestamp="1630249586135">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1084" height="424" key="GridCell.Tab.2.left/0.0.1366.728@0.0.1366.728" timestamp="1630248657836" />
-    <state width="1084" height="424" key="GridCell.Tab.2.right" timestamp="1630248657836">
+    <state width="1084" height="424" key="GridCell.Tab.2.left/0.0.1366.728@0.0.1366.728" timestamp="1630249586135" />
+    <state width="1084" height="424" key="GridCell.Tab.2.right" timestamp="1630249586135">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1084" height="424" key="GridCell.Tab.2.right/0.0.1366.728@0.0.1366.728" timestamp="1630248657836" />
+    <state width="1084" height="424" key="GridCell.Tab.2.right/0.0.1366.728@0.0.1366.728" timestamp="1630249586135" />
   </component>
 </project>

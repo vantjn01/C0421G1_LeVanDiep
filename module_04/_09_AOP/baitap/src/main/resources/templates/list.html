@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head >
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Book Library</h1>
+<th:block th:if="${message}">
+    <p style="color: red" th:text="${message}"></p>
+</th:block>
+<p>
+    <a href="/pay">Pay Book </a>
+</p>
+<table id="book" border="1">
+    <tr>
+        <th>ID</th>
+        <th>Code Book </th>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Amount</th>
+        <th>Detail</th>
+    </tr>
+    <th:block th:each="item : ${books}">
+        <tr>
+            <td th:text="${item.id}"></td>
+            <td th:text="${item.code}"></td>
+            <td th:text="${item.name}"></td>
+            <td th:text="${item.category}"></td>
+            <td th:text="${item.amount}"></td>
+            <td><a th:href="@{/detail/__${item.id}__ }">Detail</a></td>
+        </tr>
+    </th:block>
+</table>
+<!--<form th:action="@{/give-book-back}">-->
+<!--    <button type="submit">Give book back</button>-->
+<!--</form>-->
+</body>
+</html>

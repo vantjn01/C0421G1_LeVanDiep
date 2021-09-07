@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head >
+    <meta charset="UTF-8">
+    <title>Book</title>
+</head>
+<body>
+<h1>Detail Book</h1>
+<p>
+    <a href="/books">Book list</a>
+</p>
+<form id="form" th:action="@{/pay}" method="post">
+    <input type="text" placeholder="nhap id sach muon tra" name="id">
+    <button type="submit">Tra sach</button>
+</form>
+</body>
+</html>

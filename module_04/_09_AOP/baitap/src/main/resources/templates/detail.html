@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head >
+    <meta charset="UTF-8">
+    <title>Create blog</title>
+</head>
+<body>
+<h1>Detail Book</h1>
+<p>
+    <a href="/books">Book list</a>
+</p>
+<form id="form" th:action="@{/detail}" th:object="${book}" method="post">
+    <input th:type="hidden" name="id" th:field="*{id}">
+    <table>
+        <tr>
+            <td>Code book:</td>
+            <td><input type="text"  th:field="*{code}" readonly/></td>
+        </tr>
+        <tr>
+            <td>Name:</td>
+            <td><input type="text"  th:field="*{name}" readonly/></td>
+        </tr>
+        <tr>
+            <td>Category</td>
+            <td><input type="text"  th:field="*{category}" readonly/></td>
+        </tr>
+        <tr>
+            <td>Amount:</td>
+            <td><input type="text" th:field="*{amount}" readonly/></td>
+
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button type="submit">Muon</button>
+            </td>
+        </tr>
+    </table>
+</form>
+
+</body>
+</html>

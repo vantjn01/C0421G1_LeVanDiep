@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="17bab257-5e55-45a7-9a6a-35af6f87bd55" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../_01_Spring_MVC/thuc_hanh/bai2/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../_01_Spring_MVC/thuc_hanh/bai2/customer-management" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_02_Controller_MVC/thuchanh/thuchanh5/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../_02_Controller_MVC/thuchanh/thuchanh5/customer-management" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_05_ORM/thuchanh/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../_05_ORM/thuchanh/customer-management" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_08_Validate/validate_form_user/src/main/java/com/codegym/ValidateFormUserApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../_08_Validate/validate_form_user/src/main/java/com/codegym/ValidateFormUserApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_08_Validate/validate_form_user/src/main/java/com/codegym/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../_08_Validate/validate_form_user/src/main/java/com/codegym/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_08_Validate/validate_form_user/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../_08_Validate/validate_form_user/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_08_Validate/validate_form_user/src/main/resources/templates/form.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../_08_Validate/validate_form_user/src/main/resources/templates/form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_08_Validate/validate_form_user/src/main/resources/templates/result.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../_08_Validate/validate_form_user/src/main/resources/templates/result.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="1xo2i5MOEoykNrLwnCOjOYHUhjI" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration name="DemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="thuchanh" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.demo.DemoApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="17bab257-5e55-45a7-9a6a-35af6f87bd55" name="Default Changelist" comment="" />
+      <created>1631007244908</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1631007244908</updated>
+      <workItem from="1631007255559" duration="233000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="462" y="104" key="FileChooserDialogImpl" timestamp="1631007480549">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="462" y="104" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1631007480549" />
+    <state x="65" y="24" key="new project wizard" timestamp="1631007495324">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="65" y="24" key="new project wizard/0.0.1366.728@0.0.1366.728" timestamp="1631007495324" />
+  </component>
+</project>

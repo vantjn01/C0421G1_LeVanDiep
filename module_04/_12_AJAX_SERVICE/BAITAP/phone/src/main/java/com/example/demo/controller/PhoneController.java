@@ -46,9 +46,9 @@ public class PhoneController {
         if (smartphoneUpdate == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-        smartphoneUpdate.setModel(smartphone.getModel());
-        smartphoneUpdate.setPrice(smartphone.getPrice());
-        smartphoneUpdate.setProducer(smartphone.getProducer());
+//        smartphoneUpdate.setModel(smartphone.getModel());
+//        smartphoneUpdate.setPrice(smartphone.getPrice());
+//        smartphoneUpdate.setProducer(smartphone.getProducer());
 
         this.phoneService.save(smartphoneUpdate);
         return new ResponseEntity<>(smartphoneUpdate, HttpStatus.OK);

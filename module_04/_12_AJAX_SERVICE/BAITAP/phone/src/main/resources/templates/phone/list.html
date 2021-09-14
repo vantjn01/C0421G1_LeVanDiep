@@ -34,37 +34,6 @@
             event.preventDefault();
         }
 
-        //Cap nhat object
-        function editSmartPhone(event) {
-            //lay du lieu
-            let producer = $('#smartphoneProducer').val();
-            let model = $('#smartphoneModel').val();
-            let price = $('#smartphonePrice').val();
-            let id = $('#idSmartphone').val();
-            let newSmartphone = {
-                id: id,
-                producer: producer,
-                model: model,
-                price: price
-            };
-            // goi ajax
-            $.ajax({
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                type: "PUT",
-                data: JSON.stringify(newSmartphone),
-                //tên API
-                url: "/smartphones/" + id,
-                //xử lý khi thành công
-                success: successHandler
-
-            });
-            //chặn sự kiện mặc định của thẻ
-            event.preventDefault();
-        }
-
 
         function successHandler() {
             $.ajax({
@@ -92,7 +61,6 @@
             return `<tr><td >${smartphone.producer}</td><td >${smartphone.model}</td><td >${smartphone.price}</td>` +
                 `<td><a class="deleteSmartphone" href="${smartphone.id}">Delete</a></td></tr>`;
         }
-
         $(document).ready(function () {
             //sư kiện nào thực hiện Ajax
             $('.deleteSmartphone').click(function (event) {
@@ -154,5 +122,8 @@
         </tr>
     </th:block>
 </table>
+
+
+<!-- Modal -->
 </body>
 </html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New blog</title>
+
+</head>
+<body>
+<h1>Create new category</h1>
+<p>
+    <a href="/category/list">Category list</a>
+</p>
+<th:block th:if="${message}">
+    <p th:text="${message}"></p>
+</th:block>
+<form th:action="@{/category/create}" th:object="${category}" method="post">
+    <p>Name: <input type="text" th:field="*{categoryName}"></p>
+    <input type="submit" value="Create">
+</form>
+</body>
+</html>

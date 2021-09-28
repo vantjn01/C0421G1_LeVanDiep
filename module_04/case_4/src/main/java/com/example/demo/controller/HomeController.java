@@ -7,9 +7,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("")
 public class HomeController {
-    @GetMapping
+    @GetMapping("/home")
     public String showHome(){
-        return "index";
+        return "home";
+    }
+    @GetMapping("/login")
+    public String loginPage(){
+        return "login";
     }
 
 }

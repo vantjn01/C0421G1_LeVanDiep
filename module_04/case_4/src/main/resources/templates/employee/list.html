@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List</title>
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/templatemo-host-cloud.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+</head>
+<body>
+
+<div class="container-fluid bg-light border ">
+    <div class="row">
+        <div class="col-lg-2 border-right">
+            <h3><a class="nav-link" href="/home">Home
+
+            </a></h3>
+
+            <h3><a class="nav-link" href="/customer">Customer</a></h3>
+
+
+            <h3><a class="nav-link" href="/services">Services</a></h3>
+
+
+            <h3> <a class="nav-link" href="/employee">Employee</a></h3>
+        </div>
+        <div class="col-lg-10 pt-3 pb-3" >
+            <h5 style="text-align: center;color: #1e7e34" ><a href="/employee">List Employee</a></h5>
+            <form action="/employee">
+                <div class="row m-3">
+                    <div class="col-sm-5">
+                        <input class="form-control" type="search" placeholder="Search By Employee Name"
+                               aria-label="Search" name="employee">
+                    </div>
+                    <div class="col-sm-5"><select name="position" class="custom-select">
+                        <option disabled="disabled" selected="selected" value="">No</option>
+                        <option th:each="p : ${positionList}" th:value="${p.positionName}"
+                                th:text="${p.positionName}"></option>
+                    </select></div>
+                    <div class="col-sm-2">
+                        <button class="btn btn-outline-success" type="submit" style="width: 100%">Search</button>
+                    </div>
+                </div>
+            </form>
+            <div th:if="${message}" class="alert alert-warning" role="alert">
+                <span th:text="${message}" style="color: red;text-align: center"></span>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                    <tr class="table-success">
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Position</th>
+                        <th scope="col">Education Degree</th>
+                        <th scope="col">Division</th>
+                        <th scope="col">Edit</th>
+                        <th scope="col">Delete</th>
+                        <th scope="col">View</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="employee,status : ${employees}">
+                        <th th:text="${status.count}"></th>
+                        <td th:text="${employee.employeeName}"></td>
+                        <td th:text="${employee.position.positionName}"></td>
+                        <td th:text="${employee.educationDegree.educationDegreeName}"></td>
+                        <td th:text="${employee.division.divisionName}"></td>
+                        <td><a th:href="@{/employee/edit/__${employee.employeeId}__ }">
+                            <button type="button" class="btn btn-primary">Edit</button>
+                        </a></td>
+                        <td>
+                            <button type="button" class="btn btn-danger" data-toggle="modal"
+                                    data-target="#exampleModal" th:onclick="|deleteEmployee(${employee.employeeId})|">
+                                Delete
+                            </button>
+                        </td>
+                        <td><a th:href="@{/employee/view/__${employee.employeeId}__ }">
+                            <button type="button" class="btn btn-warning">View</button>
+                        </a></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div>
+                    <div style="display: inline-block;width: 80%;float: left">
+                        <a class="btn btn-outline-success"
+                           th:href="@{/employee(page=${employees.number - 1},employee=${keywordEmployee},position=${keywordPosition})}"
+                           th:if="${employees.hasPrevious()}"> <span style="font-weight: bold"> < </span>
+                        </a>
+                        <span th:each="p : ${#numbers.sequence(0,employees.totalPages -1)}"
+                              th:if="${employees.hasContent()}">
+                    <a class="btn btn-outline-success"
+                       th:href="@{/employee(page=${p},employee=${keywordEmployee},position=${keywordPosition})}"
+                       th:text="${p +1}"
+                       th:if="${(p >(employees.number)-1)&&(p <(employees.number+2))}"></a></span>
+                        <a class="btn btn-outline-success"
+                           th:href="@{/employee(page=${employees.number + 1},employee=${keywordEmployee},position=${keywordPosition})}"
+                           th:if="${employees.hasNext()}">
+                            <span style="font-weight: bold"> > </span>
+                        </a>
+                    </div>
+                    <div style="display: inline-block;width: 20%;text-align: center">
+                        <a href="/employee/create">
+                            <button type="button" class="btn btn-success m-2">Create New Employee</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Modal-->
+<form action="/employee/delete">
+    <div class="modal" id="exampleModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Delete</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <input type="hidden" id="id" name="id">
+                <div class="modal-body">
+                    <p>Are you sure ?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<!--Modal-->
+<script>
+    function deleteEmployee(id) {
+        document.getElementById('id').value = id;
+    }
+</script>
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="footer-item">
+                    <div class="footer-heading">
+                        <h2>About Us</h2>
+                    </div>
+                    <p>Host Cloud is provided by TemplateMo for free of charge. Anyone can download and use this CSS Bootstrap template for commercial purposes.</p>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="footer-item">
+                    <div class="footer-heading">
+                        <h2>Hosting Plans</h2>
+                    </div>
+                    <ul class="footer-list">
+                        <li><a href="#">Basic Cloud 5X</a></li>
+                        <li><a href="#">Cloud VPS 10X</a></li>
+                        <li><a href="#">Advanced Cloud</a></li>
+                        <li><a href="#">Custom Designs</a></li>
+                        <li><a href="#">Special Solutions</a></li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="footer-item">
+                    <div class="footer-heading">
+                        <h2>Useful Links</h2>
+                    </div>
+                    <ul class="footer-list">
+                        <li><a href="#">Cloud Hosting Platform</a></li>
+                        <li><a href="#">Light Speed Zone</a></li>
+                        <li><a href="#">Content Delivery Network</a></li>
+                        <li><a href="#">Customer Support</a></li>
+                        <li><a href="#">Latest News</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="footer-item">
+                    <div class="footer-heading">
+                        <h2>More Information</h2>
+                    </div>
+                    <ul class="footer-list">
+                        <li>Phone: <a href="#">010-020-0560</a></li>
+                        <li>Email: <a href="#">mail@company.com</a></li>
+                        <li>Support: <a href="#">support@company.com</a></li>
+                        <li>Website: <a href="#">www.company.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="sub-footer">
+                    <p>Copyright &copy; 2020 Cloud Hosting Company
+                        - Designed by <a rel="nofollow" href="https://templatemo.com">TemplateMo</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Additional Scripts -->
+<script src="assets/js/custom.js"></script>
+<script src="assets/js/owl.js"></script>
+<script src="assets/js/accordions.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+</head>
+<body>
+
+<div class="container-fluid bg-light border ">
+    <div class="row">
+        <div class="col-lg-2 border-right">
+
+        </div>
+        <div class="col-lg-10 pt-3 pb-3" >
+            <h5 style="text-align: center;color: #1e7e34" ><a href="/order">Thông kê đơn hàng</a></h5>
+            <form action="/order">
+<!--                <div class="row m-3">-->
+<!--&lt;!&ndash;                    <div class="col-sm-5">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <input class="form-control" type="search" placeholder="tìm tiêu đề"&ndash;&gt;-->
+<!--&lt;!&ndash;                               aria-label="Search" name="title">&ndash;&gt;-->
+<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
+<!--                    <div class="col-sm-5" style="float: right"><select name="questionType" class="custom-select" style="float: right">-->
+<!--                        <option disabled="disabled" selected="selected" value="">All</option>-->
+<!--                        <option value="học tập">Học tập</option>-->
+<!--                        <option value="giáo vụ">Giáo vụ</option>-->
+<!--                        <option value="khác">Khác</option>-->
+<!--                    </select></div>-->
+<!--                    <div class="col-sm-2">-->
+<!--                        <button class="btn btn-outline-success" type="submit" style="width: 100%">Search</button>-->
+<!--                    </div>-->
+<!--                </div>-->
+            </form>
+            <div th:if="${message}" class="alert alert-warning" role="alert">
+                <span th:text="${message}" style="color: red;text-align: center"></span>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                    <tr class="table-success">
+                        <th scope="col">STT</th>
+                        <th scope="col">Mã đơn hàng</th>
+                        <th scope="col">Tên sản phẩm</th>
+                        <th scope="col">Giá</th>
+                        <th scope="col">Loại sản phẩm</th>
+                        <th scope="col">Ngày mua</th>
+                        <th scope="col">Số lượng</th>
+                        <th scope="col">Tổng tiền</th>
+                        <th scope="col">Action</th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="order,status : ${orderList}">
+                        <th th:text="${status.count}"></th>
+                        <td th:text="${order.id}"></td>
+                        <td th:text="${order.product.productName}"></td>
+                        <td th:text="${order.product.price}"></td>
+                        <td th:text="${order.product.productType.productTypeName}"></td>
+                        <td th:text="${order.date_buy}"></td>
+                        <td th:text="${order.quantity}"></td>
+                        <td th:text="${order.quantity*order.product.price}"></td>
+<!--                        <td th:if="${question.status==1}" >Đang chờ</td>-->
+<!--                        <td th:if="${question.status==0}" >Đã phản hồi</td>-->
+                        <!--                        <td th:text="${question.status}"></td>-->
+                        <td><a th:href="@{/order/edit/__${order.id}__ }">
+                            <button type="button" class="btn btn-primary">Edit</button>
+                        </a></td>
+
+
+                    </tr>
+                    </tbody>
+                </table>
+                <div>
+                    <div style="display: inline-block;width: 80%;float: left">
+                        <a class="btn btn-outline-success"
+                           th:href="@{/order(page=${orderList.number - 1},question=${title},questionType=${questionType})}"
+                           th:if="${orderList.hasPrevious()}"> <span style="font-weight: bold"> < </span>
+                        </a>
+                        <span th:each="p : ${#numbers.sequence(0,orderList.totalPages -1)}"
+                              th:if="${orderList.hasContent()}">
+                    <a class="btn btn-outline-success"
+                       th:href="@{/order(page=${p})}"
+                       th:text="${p +1}"
+                       th:if="${(p >(orderList.number)-1)&&(p <(orderList.number+2))}"></a></span>
+                        <a class="btn btn-outline-success"
+                           th:href="@{/question(page=${orderList.number + 1})}"
+                           th:if="${orderList.hasNext()}">
+                            <span style="font-weight: bold"> > </span>
+                        </a>
+                    </div>
+<!--                    <div style="display: inline-block;width: 20%;text-align: center">-->
+<!--                        <a href="/question/create">-->
+<!--                            <button type="button" class="btn btn-success m-2">Create New Question</button>-->
+<!--                        </a>-->
+<!--                    </div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Modal-->
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous">
+</script>
+<!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>-->
+</body>
+</html>

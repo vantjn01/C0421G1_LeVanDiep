@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="position: sticky" >
+    <div class="container-fluid">
+        <img src="https://scontent.fdad8-1.fna.fbcdn.net/v/t1.6435-9/82304827_1760702404070181_4410513023047827456_n.jpg?_nc_cat=100&ccb=1-5&_nc_sid=174925&_nc_ohc=5QZt0HpvZNQAX932DAt&_nc_ht=scontent.fdad8-1.fna&oh=f403b1b036836129ac37126718708897&oe=61702AAF" style="width: 5%"></a>
+        <h4>Đồng Văn Nhật</h4>
+    </div>
+</nav>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light navbar navbar-dark bg-dark " style="position: sticky;top: 0px">
+    <div class="container-fluid">
+
+
+        <li class="nav-item">
+            <a class="navbar-brand" href="/" style="padding-left: 500px">Home</a>
+        </li>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="navbar-brand" href="/customer/list">Customer</a>
+                </li>
+                <li class="nav-item">
+                    <a class="navbar-brand" href="/contract/list">Contract</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="navbar-brand" href="#">Navbar</a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+            <form class="d-flex" action="/" method="get">
+                <input th:value="${searchName}" class="form-control me-2" type="text" name="name" placeholder="Search" aria-label="Search">
+<!--                <input class="form-control me-2" type="text" name="customer">-->
+                                <select name="questionType" style="margin-left: 20px">
+                                    <option value="">Loại câu hỏi</option>
+                                    <option value="học tập">Học tập</option>
+                                    <option value="giáo vụ">Giáo vụ</option>
+                                    <option value="khác">Khác</option>
+                                </select>
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>
+<div class="row" >
+    <div class="col-2 px-0" style="background-color: rgba(221,239,230,0.95); height: 800px;padding-left: 20px" >
+        <div class="row">
+            <img src="https://scontent.fdad8-1.fna.fbcdn.net/v/t1.6435-9/121994622_2028802943926791_5327311356844023179_n.jpg?_nc_cat=105&ccb=1-5&_nc_sid=0debeb&_nc_ohc=ffGGvmgXixMAX_RsWGV&tn=H6YyRzM0pFxwJLi4&_nc_ht=scontent.fdad8-1.fna&oh=f5d3e7cd42634a27f7698c4d79119220&oe=616D1E68">
+        </div>
+        <div class="row">
+            <img src="https://toquoc.mediacdn.vn/thumb_w/640/2018/12/25/cau-vang-ba-na-3-15457134861131150541874.jpg">
+        </div>
+        <div class="row">
+            <img src="https://trieuhaotourist.vn/Uploads/images/nttnhu/HQ%208-min_1.png">
+        </div>
+        <div class="row">
+            <img src="http://truyennganhay.yn.lt/hinh-anh/anh-dong-giang-sinh/anh-dong-2/1">
+        </div>
+    </div>
+    <div class="col-10" style="background-color: #97ada6">
+        <div class="row">
+            <div class="col-12">
+                <th:block th:if="${message}">
+                    <p th:text="${message}" style="color: red;font-size: 30px;font-weight: bolder"></p>
+                </th:block>
+                <a th:href="@{/showCreate}"><button class="btn-info btn m-3">Create</button></a>
+
+                <form>
+                    <table class="table table-success table-striped" style="width: 100%;margin-top: 80px;width: 100%">
+                        <thead>
+                        <tr style="text-align: center">
+                            <th>STT</th>
+                            <th>ID</th>
+                            <th>title</th>
+                            <th>question</th>
+                            <th>answer</th>
+                            <th>dateCreate</th>
+                            <th>questionType</th>
+                            <th>Update</th>
+                            <th>Delete</th>
+                            <th>View</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="item,status: ${questionList}" style="text-align: center">
+                            <th th:text="${status.count}"></th>
+                            <td th:text="${item.questionId}"></td>
+                            <td th:text="${item.title}"></td>
+                            <td th:text="${item.question}"></td>
+                            <td th:text="${item.answer}"></td>
+                            <td th:text="${item.dateCreate}"></td>
+                            <td th:text="${item.questionType.questionTypeName}"></td>
+                            <td><a th:href="@{/showUpdate/__${item.questionId}__}"><button type="button" class="btn-warning btn" style="color: white">Update</button></a> </td>
+                            <td>
+                                <button type="button" class="btn btn-danger" style="font-weight: bold" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal" th:attr="onclick=|onDelete('${item.questionId}', '${item.title}')|">
+                                    Delete
+                                </button>
+                            </td>
+<!--                            <td>-->
+<!--                                <a th:href="@{/contract/view/__${item.contractId}__}"><button class="btn-primary btn" type="button">View</button></a>-->
+<!--                            </td>-->
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </form>
+                <div>
+                    <a th:href="@{'/'(page=${questionList.number - 1},name=${searchName},questionType=${searchQuestionType})}"
+                       th:if="${questionList.hasPrevious()}">Previous</a>
+
+                    <span th:text="${questionList.number+1}"></span>/<span th:text="${questionList.totalPages}"></span>
+
+                    <a th:href="@{'/'(page=${questionList.number + 1},name=${searchName},questionType=${searchQuestionType})}"
+                       th:if="${questionList.hasNext()}">Next</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12" style="height: 100px;background-color: black;font-size: 50px;text-align: center">
+        <span>Facebook |</span>
+        <span style="margin-left: 20px">Zalo |</span>
+        <span style="margin-left: 20px">Google |</span>
+        <h5>Hà Nội ngày 02-09-2021</h5>
+    </div>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Confirm delete</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Bạn có muốn xóa <input name="id" value="" id="onName">
+            </div>
+            <form action="/delete" method="post">
+                <input type="hidden" name="action" value="delete">
+                <input type="hidden" name="id" value="" id="idOnDelete">
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                    <button type="submit" class="btn btn-primary">Yup</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    function onDelete(id,name) {
+        document.getElementById("idOnDelete").value=id
+        document.getElementById("onName").value=name
+    }
+</script>
+</body>
+</html>

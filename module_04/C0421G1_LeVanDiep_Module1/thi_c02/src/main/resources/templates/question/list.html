@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+</head>
+<body>
+
+<div class="container-fluid bg-light border ">
+    <div class="row">
+        <div class="col-lg-2 border-right">
+<!--            <h3><a class="nav-link" href="/home">Home-->
+
+<!--            </a></h3>-->
+
+<!--            <h3><a class="nav-link" href="/customer">Customer</a></h3>-->
+
+
+<!--            <h3><a class="nav-link" href="/services">Services</a></h3>-->
+
+
+<!--            <h3> <a class="nav-link" href="/employee">Employee</a></h3>-->
+        </div>
+        <div class="col-lg-10 pt-3 pb-3" >
+            <h5 style="text-align: center;color: #1e7e34" ><a href="/question">Danh sách câu hỏi</a></h5>
+            <form action="/question">
+                <div class="row m-3">
+                    <div class="col-sm-5">
+                        <input class="form-control" type="search" placeholder="tìm tiêu đề"
+                               aria-label="Search" name="title">
+                    </div>
+                    <div class="col-sm-5" style="float: right"><select name="questionType" class="custom-select" style="float: right">
+                        <option disabled="disabled" selected="selected" value="">All</option>
+                        <option value="học tập">Học tập</option>
+                        <option value="giáo vụ">Giáo vụ</option>
+                        <option value="khác">Khác</option>
+                    </select></div>
+                    <div class="col-sm-2">
+                        <button class="btn btn-outline-success" type="submit" style="width: 100%">Search</button>
+                    </div>
+                </div>
+            </form>
+            <div th:if="${message}" class="alert alert-warning" role="alert">
+                <span th:text="${message}" style="color: red;text-align: center"></span>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                    <tr class="table-success">
+                        <th scope="col">STT</th>
+                        <th scope="col">Tiêu đề</th>
+                        <th scope="col">Loại câu hỏi</th>
+                        <th scope="col">Ngày đăng</th>
+                        <th scope="col">Tình trạng</th>
+                        <th scope="col">Edit</th>
+                        <th scope="col">Delete</th>
+                        <th scope="col">View</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="question,status : ${questions}">
+                        <th th:text="${status.count}"></th>
+                        <td th:text="${question.title}"></td>
+                        <td th:text="${question.questionType.questionTypeName}"></td>
+                        <td th:text="${question.date_create}"></td>
+                        <td th:if="${question.status==1}" >Đang chờ</td>
+                        <td th:if="${question.status==0}" >Đã phản hồi</td>
+<!--                        <td th:text="${question.status}"></td>-->
+                        <td><a th:href="@{/question/edit/__${question.id}__ }">
+                            <button type="button" class="btn btn-primary">Edit</button>
+                        </a></td>
+                        <td>
+                            <button type="button" class="btn btn-danger" data-toggle="modal"
+                                    data-target="#exampleModal" th:onclick="|deleteQuestion(${question.id})|">
+                                Delete
+                            </button>
+                        </td>
+                        <td><a th:href="@{/question/view/__${question.id}__ }">
+                            <button type="button" class="btn btn-warning">View</button>
+                        </a></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div>
+                    <div style="display: inline-block;width: 80%;float: left">
+                        <a class="btn btn-outline-success"
+                           th:href="@{/question(page=${questions.number - 1},question=${title},questionType=${questionType})}"
+                           th:if="${questions.hasPrevious()}"> <span style="font-weight: bold"> < </span>
+                        </a>
+                        <span th:each="p : ${#numbers.sequence(0,questions.totalPages -1)}"
+                              th:if="${questions.hasContent()}">
+                    <a class="btn btn-outline-success"
+                       th:href="@{/question(page=${p},question=${title},questionType=${questionType})}"
+                       th:text="${p +1}"
+                       th:if="${(p >(questions.number)-1)&&(p <(questions.number+2))}"></a></span>
+                        <a class="btn btn-outline-success"
+                           th:href="@{/question(page=${questions.number + 1},question=${title},questionType=${questionType})}"
+                           th:if="${questions.hasNext()}">
+                            <span style="font-weight: bold"> > </span>
+                        </a>
+                    </div>
+                    <div style="display: inline-block;width: 20%;text-align: center">
+                        <a href="/question/create">
+                            <button type="button" class="btn btn-success m-2">Create New Question</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Modal-->
+<form action="/question/delete">
+    <div class="modal" id="exampleModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Delete</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <input type="hidden" id="id" name="id">
+                <div class="modal-body">
+                    <p>Are you sure ?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<!--Modal-->
+<script>
+    function deleteQuestion(id) {
+        document.getElementById('id').value = id;
+    }
+</script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous">
+    </script>
+<!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>-->
+</body>
+</html>

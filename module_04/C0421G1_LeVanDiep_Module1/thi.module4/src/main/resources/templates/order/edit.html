@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+</head>
+<body>
+
+<div class="container-fluid bg-light border ">
+    <div class="row">
+        <div class="col-lg-2 border-right">
+
+        </div>
+        <div class="col-lg-10 pt-3 pb-3">
+            <form th:action="@{/order/edit}" th:object="${orderDto}" method="post">
+                <div class="alert alert-info" role="alert">
+                    <h4 class="alert-heading" style="text-align: center">Chỉnh sửa đơn hàng!</h4>
+                    <hr>
+                    <div style="margin: 0 7%">
+                        <label class="col-md-4 control-label ">Loại sản phẩm</label>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+
+                            </div>
+                            <select th:field="*{product}" class="custom-select">
+                                <option th:each="c : ${productList}" th:value="${c.productId}"
+                                        th:text="${c.productName}"></option>
+                            </select>
+                        </div>
+                        <label class="col-md-4 control-label ">sản phẩm</label>
+                        <div class="input-group mb-2">
+
+                            <select th:field="*{product}" class="custom-select">
+                                <option th:each="c : ${productList}" th:value="${c.productId}"
+                                        th:text="${c.productName}"></option>
+                            </select>
+                        </div>
+                        <label class="col-md-4 control-label ">Ngày mua</label>
+                        <div class="input-group mb-2">
+
+                            <input type="date" th:field="*{date_buy}" class="form-control"/>
+                        </div>
+                        <div th:if="${#fields.hasErrors('date_buy')}" th:errors="*{date_buy}" style="color: red">
+                            Error
+                        </div>
+                        <label class="col-md-4 control-label ">Số lượng</label>
+                        <div class="input-group mb-2">
+
+                            <input type="text" th:field="*{quantity}" class="form-control"/>
+                        </div>
+                        <div th:if="${#fields.hasErrors('quantity')}" th:errors="*{quantity}" style="color: red">Error</div>
+
+                        <hr>
+                        <div class="mb-0" style="margin: 0 90%">
+                            <button type="submit" class="btn btn-warning m-2">Edit</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous">
+</script>
+</body>
+</html>

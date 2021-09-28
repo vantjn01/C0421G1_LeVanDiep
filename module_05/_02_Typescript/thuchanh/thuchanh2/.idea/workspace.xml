@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a741931b-97fd-4d1e-bec8-b199b7fd5c6f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_03/new_case/.gradle/6.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module_03/new_case/.gradle/6.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_03/new_case/.gradle/6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module_03/new_case/.gradle/6.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_03/new_case/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module_03/new_case/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_03/new_case/src/main/webapp/sql.mwb" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module_03/new_case/src/main/webapp/sql.mwb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_04/_01_Spring_MVC/thuc_hanh/bai2/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module_04/_01_Spring_MVC/thuc_hanh/bai2/customer-management" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_04/_02_Controller_MVC/thuchanh/thuchanh5/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module_04/_02_Controller_MVC/thuchanh/thuchanh5/customer-management" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_04/_05_ORM/thuchanh/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module_04/_05_ORM/thuchanh/customer-management" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_04/case_4/src/main/java/com/example/demo/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module_04/case_4/src/main/java/com/example/demo/controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_04/case_4/src/main/java/com/example/demo/model/service/CreateBCryptPass.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module_04/case_4/src/main/java/com/example/demo/model/service/CreateBCryptPass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_04/case_4/src/main/resources/static/bootstrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_04/case_4/src/main/resources/static/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_04/case_4/src/main/resources/static/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_04/case_4/src/main/resources/static/jquery/jquery-3.5.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_04/case_4/src/main/resources/static/jquery/popper.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_04/case_4/src/main/resources/templates/bien.lang.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_04/case_4/src/main/resources/templates/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_04/case_4/src/main/resources/templates/logoFURAMA.jpg" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectId" id="1yl3eRHiaHGBSL6I9sEOT1Q3n7G" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a741931b-97fd-4d1e-bec8-b199b7fd5c6f" name="Default Changelist" comment="" />
+      <created>1632812442625</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1632812442625</updated>
+      <workItem from="1632812443878" duration="171000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="462" y="105" key="FileChooserDialogImpl" timestamp="1632812516734">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="462" y="105" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1632812516734" />
+  </component>
+</project>

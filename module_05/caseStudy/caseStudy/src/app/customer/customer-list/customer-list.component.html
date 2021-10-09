@@ -1,1 +1,72 @@
-<!--<p>customer-list works!</p>-->
+<!--Chuyển trang bằng HTML-->
+<button class="btn btn-dark rounded-pill wow fadeInLeft" [routerLink]="['/customer-create']" style="float: left" routerLinkActive="active"> Create Customer</button>
+<!--Create customer By HTML</a>-->
+<a (click)="movePageCreateCustomer()">Create customer By TS</a>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="card border-primary">
+        <h3 class="card-header bg-primary">Parent Component</h3>
+        <div class="card-body">
+          <h4 class="card-title">Customer List</h4>
+
+          <table class="table">
+            <thead>
+            <tr>
+              <th>Id</th>
+              <th>CodeCustomer</th>
+              <th>NameTypeCustomer</th>
+              <th>Name</th>
+              <th>DateofBirth</th>
+              <th>IdCard</th>
+              <th>Phone</th>
+              <th>Mail</th>
+              <th>Address</th>
+<!--              <th>Detail</th>-->
+            </tr>
+            </thead>
+            <tbody>
+            <!--            Event binding gửi dữ liệu sang ts cái thằng mà chúng ta muốn hiển thị.-->
+            <tr *ngFor="let item of customers; let i = index" (click)="showDetail(item)">
+              <td>{{item.id}}</td>
+              <td>{{item.codeCustomer}}</td>
+<!--              <td [ngClass] = 'item.idTypeCustomer == "VIP" ? "txt-color ,  txt-font-weight": ""'>-->
+                <td>{{item.customerType.nameCustomerType}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.dateOfBirth}}</td>
+                <td>{{item.identityCard}}</td>
+                <td>{{item.phone}}</td>
+                <td>{{item.mail}}</td>
+                <td>{{item.address}}</td>
+<!--              <td [ngSwitch] = "item.gender">-->
+<!--                <span *ngSwitchCase = "0">Female</span>-->
+<!--                <span *ngSwitchCase = "1">Male</span>-->
+<!--                <span *ngSwitchDefault>LGBT</span>-->
+<!--              </td>-->
+<!--              <td [ngStyle]="{-->
+<!--            'color':item.point == 0 ? 'red' : '',-->
+<!--            'font-weight': item.point == 0 ? 'bold' : ''}">-->
+<!--                {{item.point}}-->
+<!--              </td>-->
+<!--              <td>-->
+<!--                <span *ngIf="item.point >=75; else elseBlock">Pass</span>-->
+
+<!--                <ng-template #elseBlock>-->
+<!--                  <span>Fail</span>-->
+<!--                </ng-template>-->
+<!--              </td>-->
+              <!--              Tìm cách chuyển trang bằng file TS-->
+<!--              <td [routerLink]="['/customer/detail',item.id]">Detail</td>-->
+              <!--              => /student/detail/Nguyen Van A-->
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="col-12">
+<app-customer-detail [customerChild]="customerParent"></app-customer-detail>
+      <!--      Chèn directive con bằng component directive. [x] = value. [x] Attribute directive-->
+    </div>
+  </div>
+</div>

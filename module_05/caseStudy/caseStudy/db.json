@@ -1,0 +1,70 @@
+{
+  "customer": [
+    {
+      "id": 2,
+      "codeCustomer": "KH-2222",
+      "dateOfBirth": "14-01-1990",
+      "name": "Nhật",
+      "identityCard": 9876578123,
+      "phone": "0909999999",
+      "mail": "diep@gmail.com",
+      "address": "QT",
+      "customerType": {
+        "idCustomerType": 2,
+        "nameCustomerType": "Platinum"
+      }
+    },
+    {
+      "idCustomer": "",
+      "codeCustomer": "KH-1111",
+      "customerType": {
+        "idCustomerType": 1,
+        "nameCustomerType": "Diamond"
+      },
+      "name": "12312312",
+      "dateOfBirth": "11-11-1991",
+      "identityCard": 123123123,
+      "phone": "0909090909",
+      "mail": "mm@gmail.com",
+      "address": "ĐN",
+      "id": 4
+    },
+    {
+      "idCustomer": "",
+      "codeCustomer": "KH-0999",
+      "customerType": {
+        "idCustomerType": 5,
+        "nameCustomerType": "Member"
+      },
+      "name": "Messi",
+      "dateOfBirth": "01-01-1999",
+      "identityCard": 192837465,
+      "phone": "0909090909",
+      "mail": "hihi@gmail.com",
+      "address": "TBN",
+      "id": 5
+    }
+  ],
+  "customerType": [
+    {
+      "idCustomerType": 1,
+      "nameCustomerType": "Diamond"
+    },
+    {
+      "idCustomerType": 2,
+      "nameCustomerType": "Platinum"
+    },
+    {
+      "idCustomerType": 3,
+      "nameCustomerType": "Gold"
+    },
+    {
+      "idCustomerType": 4,
+      "nameCustomerType": "Silver"
+    },
+    {
+      "idCustomerType": 5,
+      "nameCustomerType": "Member"
+    }
+  ]
+}

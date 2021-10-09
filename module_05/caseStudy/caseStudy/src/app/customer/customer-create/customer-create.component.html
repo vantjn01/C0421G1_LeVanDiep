@@ -1,1 +1,121 @@
-<p>customer-create works!</p>
+<div style="margin: 10px">
+  <button class="btn btn-dark rounded-pill wow fadeInLeft" [routerLink]="['/customer']" style="float: left" routerLinkActive="active"><< Back to list</button>
+</div><br><br>
+
+<div class="container wow fadeInDown" style="margin-bottom: 40px">
+  <form [formGroup]="customerForm" (ngSubmit)="createCustomerReactiveForms()">
+    <h1>CREATE NEW CUSTOMER</h1>
+    <table class="table table-bordered table-hover" style="margin: 0 auto; border: solid black 2px">
+      <thead>
+      <tr>
+        <td>
+          <label class="form-label">Code Customer</label>
+        </td>
+        <td>
+          <input type="text" class="form-control" placeholder="KH-XXXX" style="width: 400px" formControlName="codeCustomer" >
+        </td>
+        <td>
+          <div *ngFor="let valid of validationMessage.codeCustomer">
+            <span class="err" *ngIf="customerForm.get('codeCustomer').hasError(valid.type) && customerForm.get('codeCustomer').dirty">{{valid.message}}</span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label class="form-label">Name</label>
+        </td>
+        <td>
+          <input type="text" class="form-control" style="width: 400px" formControlName="name">
+        </td>
+        <td>
+          <div *ngFor="let valid of validationMessage.name">
+            <span  class="err" *ngIf="customerForm.get('name').hasError(valid.type) && customerForm.get('name').dirty">{{valid.message}}</span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label class="form-label">Day Of Birth</label>
+        </td>
+        <td>
+          <input type="text" class="form-control" placeholder="DD-MM-YYYY" style="width: 400px" formControlName="dateOfBirth">
+        </td>
+        <td>
+          <div *ngFor="let valid of validationMessage.dateOfBirth">
+            <span  class="err" *ngIf="customerForm.get('dateOfBirth').hasError(valid.type) && customerForm.get('dateOfBirth').dirty">{{valid.message}}</span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label class="form-label">Identity Card</label>
+        </td>
+        <td>
+          <input type="number" class="form-control" placeholder="nhap 9 hoac 12 so" style="width: 400px" formControlName="identityCard">
+        </td>
+        <td>
+          <div *ngFor="let valid of validationMessage.identityCard">
+            <span class="err" *ngIf="customerForm.get('identityCard').hasError(valid.type) && customerForm.get('identityCard').dirty">{{valid.message}}</span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label class="form-label">Phone</label>
+        </td>
+        <td>
+          <input type="text" class="form-control"
+                 placeholder="090XXXXXXX / 091XXXXXXX" style="width: 400px" formControlName="phone">
+        </td>
+        <td>
+          <div *ngFor="let valid of validationMessage.phone">
+            <span class="err" *ngIf="customerForm.get('phone').hasError(valid.type) && customerForm.get('phone').dirty">{{valid.message}}</span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label class="form-label">Email</label>
+        </td>
+        <td>
+          <input type="text" class="form-control" placeholder="example@gmail.com" style="width: 400px" formControlName="mail">
+        </td>
+        <td>
+          <div *ngFor="let valid of validationMessage.mail">
+            <span class="err" *ngIf="customerForm.get('mail').hasError(valid.type) && customerForm.get('mail').dirty">{{valid.message}}</span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label class="form-label">Address</label>
+        </td>
+        <td>
+          <input type="text" class="form-control" style="width: 400px" formControlName="address">
+        </td>
+        <td>
+          <div *ngFor="let valid of validationMessage.address">
+            <span class="err" *ngIf="customerForm.get('address').hasError(valid.type) && customerForm.get('address').dirty">{{valid.message}}</span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label class="form-label">Name Customer Type</label>
+        </td>
+        <td>
+          <select style="width: 400px; height: 40px" formControlName="customerType">
+            <option *ngFor="let type of customerType" [ngValue]="type">{{type.nameCustomerType}}</option>
+          </select>
+        </td>
+        <td>
+          <div *ngFor="let valid of validationMessage.customerType">
+            <span class="err" *ngIf="customerForm.get('customerType').hasError(valid.type) && customerForm.get('customerType').dirty">{{valid.message}}</span>
+          </div>
+        </td>
+      </tr>
+      </thead>
+    </table><br>
+    <button type="submit" class="btn btn-primary" style="width: 150px">CREATE</button>
+  </form>
+</div>

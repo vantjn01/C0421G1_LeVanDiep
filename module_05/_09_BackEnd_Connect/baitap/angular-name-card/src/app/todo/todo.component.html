@@ -1,0 +1,51 @@
+
+<!--<h2 class="text-center">Todo App with HttpClient</h2>-->
+<!--<div>-->
+
+<!--  <input type="text"  [formControl]="inputControl" (keydown.enter)="addTodo()" >-->
+<!--  <ul>-->
+<!--&lt;!&ndash;    <li (click)="toggleTodo(i)" [class.complete]="todo.complete"&ndash;&gt;-->
+<!--&lt;!&ndash;        *ngFor="let todo of todos; index as i">{{todo.content}}</li>&ndash;&gt;-->
+<!--    <li *ngFor="let todo of todoList; index as i "-->
+<!--        [class.completed]="todo.complete">-->
+<!--      <div (click)="toggleTodo(i)">-->
+<!--        Id : {{todo.id}}-->
+<!--        <br>-->
+<!--        {{todo.content}}-->
+<!--      </div>-->
+<!--      <button (click)="deleteTodo(i)">delete</button>-->
+<!--      </li>-->
+
+<!--  </ul>-->
+<!--</div>-->
+<div class="col-md-8 offset-md-2">
+  <ul>
+    <li (click)="toggleTodo(i)"
+        *ngFor="let todo of todoList; index as i" [class.complete]="todo.complete">
+      {{todo.content}}
+    </li>
+  </ul>
+</div>
+<table class="table table-striped text-center">
+  <thead>
+  <th>#</th>
+  <th>Content</th>
+  <th>Complete</th>
+  <th>Edit</th>
+  <th>Delete</th>
+  </thead>
+  <tbody>
+  <tr *ngFor="let item of todoList ,let i=index">
+    <td>{{i + 1}}</td>
+    <td>{{item.content}}</td>
+    <td>{{item.complete}}</td>
+    <td>
+      <button [routerLink]="['/edit',item.id]" type="button" class="btn btn-warning">Edit</button>
+    </td>
+    <td>
+      <button (click)="(item.id)" type="button" class="btn btn-danger">Delete</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+

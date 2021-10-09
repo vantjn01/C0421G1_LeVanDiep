@@ -1,0 +1,59 @@
+<div style="margin: 10px">
+  <button class="btn btn-dark rounded-pill wow fadeInLeft" [routerLink]="['/customer']" style="float: left" routerLinkActive="active"><< List Customer</button>
+<!--  <button class="btn btn-dark rounded-pill wow fadeInRight" [routerLink]="['/customer-create']" style="float: right">Create new >></button>-->
+</div><br><br>
+
+<div class="container-fluid wow fadeInDown">
+  <div class="row">
+  <h1>CUSTOMER MANAGEMENT</h1>
+<!--  <div class="input">-->
+<!--    <input type="text" [(ngModel)]="searchValue" name="customerName" (ngModelChange)="Search()" style="width: 350px; height: 35px; align-items: center; text-align: center" placeholder="Search by name or code">-->
+<!--  </div><br><br>-->
+<!--  <pagination-controls (pageChange)="p = $event"></pagination-controls>-->
+  <table class="table table-hover table-bordered" style="margin: 0 auto; border: solid black 2px">
+    <thead>
+    <tr>
+      <th>Id</th>
+      <th>Code Customer</th>
+      <th>Name</th>
+<!--      <th (click)="sort('customerCode')">CODE<sub style="color: red; font-size: 12px">sort</sub></th>-->
+<!--      <th (click)="sort('customerName')">NAME<sub style="color: red; font-size: 12px">sort</sub></th>-->
+      <th>Date Of Birth</th>
+      <th>Identity Card</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th>Address</th>
+      <th>Name Customer Type</th>
+      <th colspan="3">ACTION</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngIf="customerDetail; else emptyCustomer">
+      <td>{{customerDetail.id}}</td>
+      <td>{{customerDetail.codeCustomer}}</td>
+      <td>{{customerDetail.name}}</td>
+      <td>{{customerDetail.dateOfBirth}}</td>
+      <td>{{customerDetail.identityCard}}</td>
+      <td>{{customerDetail.phone}}</td>
+      <td>{{customerDetail.mail}}</td>
+      <td>{{customerDetail.address}}</td>
+      <td>{{customerDetail.customerType.nameCustomerType}}</td>
+
+<!--      <td>-->
+<!--        <app-customer-detail [customerChild]="customerFather" (click)="showDetail(c)"></app-customer-detail>-->
+<!--      </td>-->
+      <td>
+        <button class="btn btn-success rounded-pill" [routerLink]="['/customer-edit/', customerDetail.id]">Edit</button>
+      </td>
+      <td>
+        <button class="btn btn-danger rounded-pill" [routerLink]="['/customer-delete', customerDetail.id]" >Delete</button>
+      </td>
+    </tr>
+    <ng-template #emptyCustomer>
+      <p style="color: red">No data</p>
+    </ng-template>
+    </tbody>
+  </table>
+  </div>
+</div>
+<!--<simple-notifications></simple-notifications>-->

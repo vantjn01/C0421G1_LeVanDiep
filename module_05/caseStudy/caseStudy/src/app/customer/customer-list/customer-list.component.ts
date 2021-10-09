@@ -12,7 +12,9 @@ import {Router} from "@angular/router";
 })
 export class CustomerListComponent implements OnInit {
   customers: Customer[]|any;
-  customerParent: Customer| undefined
+  customerParent: Customer| undefined;
+  name: any;
+  p: number = 1;
 
   constructor(private customerServiceService: CustomerServiceService, private router: Router) {
  this.customerServiceService.findAll().subscribe(next=> {
@@ -35,4 +37,23 @@ console.log(this.customers)
     this.router.navigateByUrl("/customer/create")
   }
 
+  Search() {
+    if(this.name==""){
+      this.ngOnInit();
+    } else {
+      this.customers = this.customers.filter(res=>{
+        return res.name.toLocaleLowerCase().match(this.name.toLocaleLowerCase());
+
+      })
+    }
+
+  }
+  key: string = 'codeCustomer';
+  reverse: boolean = false
+
+  sort(key) {
+    this.key = key;
+    this.reverse = !this.reverse
+
+  }
 }

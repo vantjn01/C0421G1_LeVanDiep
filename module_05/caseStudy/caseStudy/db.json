@@ -43,6 +43,81 @@
       "mail": "hihi@gmail.com",
       "address": "TBN",
       "id": 5
+    },
+    {
+      "idCustomer": "",
+      "codeCustomer": "KH-9876",
+      "customerType": {
+        "idCustomerType": 5,
+        "nameCustomerType": "Member"
+      },
+      "name": "Ronaldo",
+      "dateOfBirth": "01-01-1999",
+      "identityCard": 192837465,
+      "phone": "0909090909",
+      "mail": "hihi@gmail.com",
+      "address": "TBN",
+      "id": 6
+    },
+    {
+      "idCustomer": "",
+      "codeCustomer": "KH-0999",
+      "customerType": {
+        "idCustomerType": 5,
+        "nameCustomerType": "Member"
+      },
+      "name": "Neymar",
+      "dateOfBirth": "01-01-1999",
+      "identityCard": 192837465,
+      "phone": "0909090909",
+      "mail": "hihi@gmail.com",
+      "address": "TBN",
+      "id": 7
+    },
+    {
+      "idCustomer": "",
+      "codeCustomer": "KH-0999",
+      "customerType": {
+        "idCustomerType": 5,
+        "nameCustomerType": "Member"
+      },
+      "name": "Hazard",
+      "dateOfBirth": "01-01-1999",
+      "identityCard": 192837465,
+      "phone": "0909090909",
+      "mail": "hihi@gmail.com",
+      "address": "TBN",
+      "id": 8
+    },
+    {
+      "idCustomer": "",
+      "codeCustomer": "KH-0999",
+      "customerType": {
+        "idCustomerType": 5,
+        "nameCustomerType": "Member"
+      },
+      "name": "Halland",
+      "dateOfBirth": "01-01-1999",
+      "identityCard": 192837465,
+      "phone": "0909090909",
+      "mail": "hihi@gmail.com",
+      "address": "TBN",
+      "id": 9
+    },
+    {
+      "idCustomer": "",
+      "codeCustomer": "KH-0999",
+      "customerType": {
+        "idCustomerType": 5,
+        "nameCustomerType": "Member"
+      },
+      "name": "QH",
+      "dateOfBirth": "01-01-1999",
+      "identityCard": 192837465,
+      "phone": "0909090909",
+      "mail": "hihi@gmail.com",
+      "address": "TBN",
+      "id": 10
     }
   ],
   "customerType": [

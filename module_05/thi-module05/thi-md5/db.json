@@ -1,0 +1,111 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "BenhAn":  [
+    {
+      "idBenhAn": "BA-111",
+      "idBenhNhan": "BN-222",
+      "tenBN": "Ha",
+      "ngayNhapVien": "01-01-2021",
+      "ngayRavien": "10-10-2021",
+      "LyDo": "xxx",
+      "PhuongPhap": "xxx",
+      "BacSi": "xxx"
+    },
+    {
+      "idBenhAn": "BA-111",
+      "idBenhNhan": "BN-222",
+      "tenBN": "Nhung",
+      "ngayNhapVien": "01-01-2021",
+      "ngayRavien": "10-10-2021",
+      "LyDo": "xxx",
+      "PhuongPhap": "xxx",
+      "BacSi": "xxx"
+    },
+    {
+      "idBenhAn": "BA-333",
+      "idBenhNhan": "BN-333",
+      "tenBN": "Hao",
+      "ngayNhapVien": "01-01-2021",
+      "ngayRavien": "10-10-2021",
+      "LyDo": "xxx",
+      "PhuongPhap": "xxx",
+      "BacSi": "xxx"
+    },
+    {
+      "idBenhAn": "BA-444",
+      "idBenhNhan": "BN-444",
+      "tenBN": "Hai",
+      "ngayNhapVien": "01-01-2021",
+      "ngayRavien": "10-10-2021",
+      "LyDo": "xxx",
+      "PhuongPhap": "xxx",
+      "BacSi": "xxx"
+    },
+    {
+      "idBenhAn": "BA-555",
+      "idBenhNhan": "BN-555",
+      "tenBN": "Danh",
+      "ngayNhapVien": "01-01-2021",
+      "ngayRavien": "10-10-2021",
+      "LyDo": "xxx",
+      "PhuongPhap": "xxx",
+      "BacSi": "xxx"
+    },
+    {
+      "idBenhAn": "BA-666",
+      "idBenhNhan": "BN-666",
+      "tenBN": "quan",
+      "ngayNhapVien": "01-01-2021",
+      "ngayRavien": "10-10-2021",
+      "LyDo": "xxx",
+      "PhuongPhap": "xxx",
+      "BacSi": "xxx"
+    },
+    {
+      "idBenhAn": "BA-777",
+      "idBenhNhan": "BN-777",
+      "tenBN": "Chien",
+      "ngayNhapVien": "01-01-2021",
+      "ngayRavien": "10-10-2021",
+      "LyDo": "xxx",
+      "PhuongPhap": "xxx",
+      "BacSi": "xxx"
+    },
+    {
+      "idBenhAn": "BA-888",
+      "idBenhNhan": "BN-888",
+      "tenBN": "Tai",
+      "ngayNhapVien": "01-01-2021",
+      "ngayRavien": "10-10-2021",
+      "LyDo": "xxx",
+      "PhuongPhap": "xxx",
+      "BacSi": "xxx"
+    },
+    {
+      "idBenhAn": "BA-999",
+      "idBenhNhan": "BN-999",
+      "tenBN": "Nhat",
+      "ngayNhapVien": "01-01-2021",
+      "ngayRavien": "10-10-2021",
+      "LyDo": "xxx",
+      "PhuongPhap": "xxx",
+      "BacSi": "xxx"
+    }
+  ]
+}

@@ -13,9 +13,8 @@ import { CustomerDetailComponent } from './customer/customer-list/customer-detai
 import { ContractCreateComponent } from './contract/contract-create/contract-create.component';
 import { ContractDetailCreateComponent } from './contract/contract-detail-create/contract-detail-create.component';
 import { ContractListComponent } from './contract/contract-list/contract-list.component';
-import { EmployeeListComponent } from './employee/employee-list/employee-list.component';
 import { EmployeeCreateComponent } from './employee/employee-create/employee-create.component';
-import { EmployeeDetailComponent } from './employee/employee-detail/employee-detail.component';
+import { EmployeeDetailComponent } from './employee/emloyee-list/employee-detail/employee-detail.component';
 import { EmployeeEditComponent } from './employee/employee-edit/employee-edit.component';
 import { ServiceListComponent } from './service/service-list/service-list.component';
 import { ServiceCreateComponent } from './service/service-create/service-create.component';
@@ -29,6 +28,10 @@ import { CustomerDeleteComponent } from './customer/customer-delete/customer-del
 import {Ng2SearchPipeModule} from "ng2-search-filter";
 import {Ng2OrderModule} from "ng2-order-pipe";
 import {NgxPaginationModule} from "ngx-pagination";
+import { EmloyeeListComponent } from './employee/emloyee-list/emloyee-list.component';
+import { EmployeeDeleteComponent } from './employee/employee-delete/employee-delete.component';
+
+
 
 @NgModule({
   declarations: [
@@ -43,16 +46,18 @@ import {NgxPaginationModule} from "ngx-pagination";
     ContractCreateComponent,
     ContractDetailCreateComponent,
     ContractListComponent,
-    EmployeeListComponent,
     EmployeeCreateComponent,
     EmployeeDetailComponent,
     EmployeeEditComponent,
+    EmloyeeListComponent,
     ServiceListComponent,
     ServiceCreateComponent,
     ServiceDetailComponent,
     ServiceEditComponent,
     HomePageComponent,
-    CustomerDeleteComponent
+    CustomerDeleteComponent,
+    EmloyeeListComponent,
+    EmployeeDeleteComponent
   ],
   imports: [
     BrowserModule,

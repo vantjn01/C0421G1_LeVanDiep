@@ -141,5 +141,154 @@
       "idCustomerType": 5,
       "nameCustomerType": "Member"
     }
+  ],
+  "employee": [
+    {
+      "id": 1,
+      "name": "Diệp",
+      "dateOfBirth": "11-11-1990",
+      "idCard": 199999876,
+      "salary": 10,
+      "phone": "0909090909",
+      "email": "ddd@gmail.com",
+      "address": "QT",
+      "level": {
+        "idLevel": 1,
+        "nameLevel": "Sau dai hoc"
+      },
+      "location": {
+        "idLocation": 1,
+        "nameLocation": "Giam doc"
+      },
+      "part": {
+        "idPart": 1,
+        "namePart": "Ban Giam doc"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Hà",
+      "dateOfBirth": "11-11-1990",
+      "idCard": 199999876,
+      "salary": 10,
+      "phone": "0909090909",
+      "email": "ddd@gmail.com",
+      "address": "QT",
+      "level": {
+        "idLevel": 2,
+        "nameLevel": "Dai Hoc"
+      },
+      "location": {
+        "idLocation": 2,
+        "nameLocation": "Quan Ly"
+      },
+      "part": {
+        "idPart": 2,
+        "namePart": "Van phong"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Tài",
+      "dateOfBirth": "11-11-1990",
+      "idCard": 199999876,
+      "salary": 10,
+      "phone": "0909090909",
+      "email": "ddd@gmail.com",
+      "address": "QT",
+      "level": {
+        "idLevel": 4,
+        "nameLevel": "Trung Cap"
+      },
+      "location": {
+        "idLocation": 2,
+        "nameLocation": "Quan Ly"
+      },
+      "part": {
+        "idPart": 2,
+        "namePart": "Van Phong"
+      }
+    },
+    {
+      "id": 6,
+      "name": "",
+      "level": "",
+      "location": "",
+      "part": "",
+      "dateOfBirth": "",
+      "identityCard": "",
+      "salary": "",
+      "phone": "",
+      "email": "",
+      "address": ""
+    },
+    {
+      "id": 7,
+      "name": "Nhật vl",
+      "dateOfBirth": "11-11-1111",
+      "idCard": 111111111,
+      "salary": "7",
+      "phone": "0909090909",
+      "email": "a@gmail.com",
+      "address": "Quảng trị",
+      "level": {
+        "idLevel": 4,
+        "nameLevel": "Trung Cap"
+      },
+      "part": {
+        "idPart": 3,
+        "namePart": "Cong Nhan"
+      },
+      "location": {
+        "idLocation": 2,
+        "nameLocation": "Quan Ly"
+      }
+    }
+  ],
+  "level": [
+    {
+      "idLevel": 1,
+      "nameLevel": "Sau Dai Hoc"
+    },
+    {
+      "idLevel": 2,
+      "nameLevel": "Dai Hoc"
+    },
+    {
+      "idLevel": 3,
+      "nameLevel": "Cao Dang"
+    },
+    {
+      "idLevel": 4,
+      "nameLevel": "Trung Cap"
+    }
+  ],
+  "location": [
+    {
+      "idLocation": 1,
+      "nameLocation": "Giam Doc"
+    },
+    {
+      "idLocation": 2,
+      "nameLocation": "Quan Ly"
+    },
+    {
+      "idLocation": 3,
+      "nameLocation": "Cong Nhan"
+    }
+  ],
+  "part": [
+    {
+      "idPart": 1,
+      "namePart": "Ban Giam Doc"
+    },
+    {
+      "idPart": 2,
+      "namePart": "Van Phong"
+    },
+    {
+      "idPart": 3,
+      "namePart": "Cong Nhan"
+    }
   ]
 }

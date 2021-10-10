@@ -1,0 +1,83 @@
+<!--// search-->
+<nav class="navbar">
+  <input class="form-control" type="text" name="name" [(ngModel)]="name" (ngModelChange)="Search()"
+         placeholder="Nhap name de search">
+</nav>
+<!--Chuyển trang bằng HTML-->
+<button class="btn btn-dark rounded-pill wow fadeInLeft" [routerLink]="['/employee-create']" style="float: left" routerLinkActive="active"> Create Employee</button>
+<!--Create customer By HTML</a>-->
+<a (click)="movePageCreateEmployee()">Create employee By TS</a>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="card border-primary">
+        <h3 class="card-header bg-primary">Parent Component</h3>
+        <div class="card-body">
+          <h4 class="card-title">Employee List</h4>
+
+          <table class="table">
+            <thead>
+            <tr>
+              <th>Id</th>
+              <th (click)="sort('name')">Name&nbsp;<i class="fa fa-sort"></i></th>
+              <th>Name Level</th>
+              <th>Name Part</th>
+              <th>Name Location</th>
+              <th>DateOfBirth</th>
+              <th>IdCard</th>
+              <th>Salary</th>
+              <th>Phone</th>
+              <th>Mail</th>
+              <th>Address</th>
+              <!--              <th>Detail</th>-->
+            </tr>
+            </thead>
+            <tbody>
+            <!--            Event binding gửi dữ liệu sang ts cái thằng mà chúng ta muốn hiển thị.-->
+            <tr *ngFor="let item of employees | orderBy:key:reverse | paginate:{itemsPerPage:3, currentPage:p}; let i = index" (click)="showDetail(item)">
+              <td>{{item.id}}</td>
+              <td>{{item.name}}</td>
+              <!--              <td [ngClass] = 'item.idTypeCustomer == "VIP" ? "txt-color ,  txt-font-weight": ""'>-->
+              <td>{{item.level.nameLevel}}</td>
+              <td>{{item.part.namePart}}</td>
+              <td>{{item.location.nameLocation}}</td>
+              <td>{{item.dateOfBirth}}</td>
+              <td>{{item.idCard}}</td>
+              <td>{{item.salary}}</td>
+              <td>{{item.phone}}</td>
+              <td>{{item.email}}</td>
+              <td>{{item.address}}</td>
+              <!--              <td [ngSwitch] = "item.gender">-->
+              <!--                <span *ngSwitchCase = "0">Female</span>-->
+              <!--                <span *ngSwitchCase = "1">Male</span>-->
+              <!--                <span *ngSwitchDefault>LGBT</span>-->
+              <!--              </td>-->
+              <!--              <td [ngStyle]="{-->
+              <!--            'color':item.point == 0 ? 'red' : '',-->
+              <!--            'font-weight': item.point == 0 ? 'bold' : ''}">-->
+              <!--                {{item.point}}-->
+              <!--              </td>-->
+              <!--              <td>-->
+              <!--                <span *ngIf="item.point >=75; else elseBlock">Pass</span>-->
+
+              <!--                <ng-template #elseBlock>-->
+              <!--                  <span>Fail</span>-->
+              <!--                </ng-template>-->
+              <!--              </td>-->
+              <!--              Tìm cách chuyển trang bằng file TS-->
+              <!--              <td [routerLink]="['/customer/detail',item.id]">Detail</td>-->
+              <!--              => /student/detail/Nguyen Van A-->
+            </tr>
+            </tbody>
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="col-12">
+      <app-employee-detail [employeeChild]="employeeParent"></app-employee-detail>
+      <!--      Chèn directive con bằng component directive. [x] = value. [x] Attribute directive-->
+    </div>
+  </div>
+</div>
+

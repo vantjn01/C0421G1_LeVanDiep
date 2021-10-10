@@ -1,0 +1,65 @@
+<div style="margin: 10px">
+  <button class="btn btn-dark rounded-pill wow fadeInLeft" [routerLink]="['/employee']" style="float: left" routerLinkActive="active"><< List Employee</button>
+  <!--  <button class="btn btn-dark rounded-pill wow fadeInRight" [routerLink]="['/customer-create']" style="float: right">Create new >></button>-->
+</div><br><br>
+
+<div class="container-fluid wow fadeInDown">
+  <div class="row">
+    <h1>EMPLOYEE MANAGEMENT</h1>
+    <!--  <div class="input">-->
+    <!--    <input type="text" [(ngModel)]="searchValue" name="customerName" (ngModelChange)="Search()" style="width: 350px; height: 35px; align-items: center; text-align: center" placeholder="Search by name or code">-->
+    <!--  </div><br><br>-->
+    <!--  <pagination-controls (pageChange)="p = $event"></pagination-controls>-->
+    <table class="table table-hover table-bordered" style="margin: 0 auto; border: solid black 2px">
+      <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Name Level</th>
+        <th>Name Part</th>
+        <th>Name Location</th>
+        <!--      <th (click)="sort('customerCode')">CODE<sub style="color: red; font-size: 12px">sort</sub></th>-->
+        <!--      <th (click)="sort('customerName')">NAME<sub style="color: red; font-size: 12px">sort</sub></th>-->
+        <th>Date Of Birth</th>
+        <th>Identity Card</th>
+        <th>Salary</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th colspan="3">ACTION</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngIf="employeeDetail; else emptyCustomer">
+        <td>{{employeeDetail.id}}</td>
+        <td>{{employeeDetail.name}}</td>
+        <td>{{employeeDetail.level.nameLevel}}</td>
+        <td>{{employeeDetail.part.namePart}}</td>
+        <td>{{employeeDetail.location.nameLocation}}</td>
+        <td>{{employeeDetail.dateOfBirth}}</td>
+        <td>{{employeeDetail.idCard}}</td>
+        <td>{{employeeDetail.salary}}</td>
+        <td>{{employeeDetail.phone}}</td>
+        <td>{{employeeDetail.email}}</td>
+        <td>{{employeeDetail.address}}</td>
+
+
+        <!--      <td>-->
+        <!--        <app-customer-detail [customerChild]="customerFather" (click)="showDetail(c)"></app-customer-detail>-->
+        <!--      </td>-->
+        <td>
+          <button class="btn btn-success rounded-pill" [routerLink]="['/employee-edit/', employeeDetail.id]">Edit</button>
+        </td>
+        <td>
+          <button class="btn btn-danger rounded-pill" [routerLink]="['/employee-delete', employeeDetail.id]" >Delete</button>
+        </td>
+      </tr>
+      <ng-template #emptyCustomer>
+        <p style="color: red">No data</p>
+      </ng-template>
+      </tbody>
+    </table>
+  </div>
+</div>
+<!--<simple-notifications></simple-notifications>-->
+

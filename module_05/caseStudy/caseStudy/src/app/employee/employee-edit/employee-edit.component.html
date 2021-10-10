@@ -1,1 +1,168 @@
-<p>employee-edit works!</p>
+<div style="margin: 10px">
+  <button class="btn btn-dark rounded-pill wow fadeInLeft" [routerLink]="['/employee']" style="float: left" routerLinkActive="active"><< Back to list</button>
+</div><br><br>
+
+<div class="container wow fadeInDown" style="margin-bottom: 40px" >
+  <form [formGroup]="employeeEditForm" (ngSubmit)="updateEmployee(this.id)" *ngIf="this.employeeEditForm">
+    <h1>EDITING EMPLOYEE</h1>
+    <table class="table table-bordered table-hover" style="margin: 0 auto; border: solid black 2px">
+      <thead>
+      <tr>
+        <td>
+          <label class="form-label">Id</label>
+        </td>
+        <td>
+          <input type="text" class="form-control" style="width: 400px" formControlName="id" readonly>
+        </td>
+        <td></td>
+      </tr>
+
+      <tr>
+        <td>
+          <label class="form-label">Name</label>
+        </td>
+        <td>
+          <input type="text" class="form-control" style="width: 400px" formControlName="name">
+        </td>
+        <td>
+          <div *ngFor="let valid of validationMessageEdit.name">
+            <span  class="err" *ngIf="employeeEditForm.get('name').hasError(valid.type) && employeeEditForm.get('name').dirty">{{valid.message}}</span>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <label class="form-label">Name Level</label>
+        </td>
+        <td>
+          <select style="width: 400px; height: 40px" formControlName="level" >
+            <option *ngFor="let type of levels" [ngValue]="type">{{type.nameLevel}}</option>
+          </select>
+        </td>
+        <td>
+          <div *ngFor="let valid of validationMessageEdit.level">
+            <span class="err" *ngIf="employeeEditForm.get('level').hasError(valid.type) && employeeEditForm.get('level').dirty">{{valid.message}}</span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label class="form-label">Name Location</label>
+        </td>
+        <td>
+          <select style="width: 400px; height: 40px" formControlName="location" >
+            <option *ngFor="let type of locations" [ngValue]="type">{{type.nameLocation}}</option>
+          </select>
+        </td>
+        <td>
+          <div *ngFor="let valid of validationMessageEdit.location">
+            <span class="err" *ngIf="employeeEditForm.get('location').hasError(valid.type) && employeeEditForm.get('location').dirty">{{valid.message}}</span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label class="form-label">Name part</label>
+        </td>
+        <td>
+          <select style="width: 400px; height: 40px" formControlName="part" >
+            <option *ngFor="let type of parts" [ngValue]="type">{{type.namePart}}</option>
+          </select>
+        </td>
+        <td>
+          <div *ngFor="let valid of validationMessageEdit.part">
+            <span class="err" *ngIf="employeeEditForm.get('part').hasError(valid.type) && employeeEditForm.get('part').dirty">{{valid.message}}</span>
+          </div>
+        </td>
+      </tr>
+
+
+
+      <tr>
+        <td>
+          <label class="form-label">Date Of Birth</label>
+        </td>
+        <td>
+          <input type="text" class="form-control" placeholder="DD-MM-YYYY" style="width: 400px" formControlName="dateOfBirth">
+        </td>
+        <td>
+          <div *ngFor="let valid of validationMessageEdit.dateOfBirth">
+            <span  class="err" *ngIf="employeeEditForm.get('dateOfBirth').hasError(valid.type) && employeeEditForm.get('dateOfBirth').dirty">{{valid.message}}</span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label class="form-label">Identity Card</label>
+        </td>
+        <td>
+          <input type="number" class="form-control" placeholder="9 or 12 number chain" style="width: 400px" formControlName="idCard">
+        </td>
+        <td>
+          <div *ngFor="let valid of validationMessageEdit.idCard">
+            <span class="err" *ngIf="employeeEditForm.get('idCard').hasError(valid.type) && employeeEditForm.get('idCard').dirty">{{valid.message}}</span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label class="form-label">Salary</label>
+        </td>
+        <td>
+          <input type="text" class="form-control"
+                 placeholder="" style="width: 400px" formControlName="salary">
+        </td>
+        <td>
+          <div *ngFor="let valid of validationMessageEdit.salary">
+            <span class="err" *ngIf="employeeEditForm.get('salary').hasError(valid.type) && employeeEditForm.get('salary').dirty">{{valid.message}}</span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label class="form-label">Phone</label>
+        </td>
+        <td>
+          <input type="text" class="form-control"
+                 placeholder="090XXXXXXX / 091XXXXXXX / (84)+90XXXXXXX / (84)+91XXXXXXX" style="width: 400px" formControlName="phone">
+        </td>
+        <td>
+          <div *ngFor="let valid of validationMessageEdit.phone">
+            <span class="err" *ngIf="employeeEditForm.get('phone').hasError(valid.type) && employeeEditForm.get('phone').dirty">{{valid.message}}</span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label class="form-label">email</label>
+        </td>
+        <td>
+          <input type="text" class="form-control" placeholder="example@gmail.com" style="width: 400px" formControlName="email">
+        </td>
+        <td>
+          <div *ngFor="let valid of validationMessageEdit.email">
+            <span class="err" *ngIf="employeeEditForm.get('email').hasError(valid.type) && employeeEditForm.get('email').dirty">{{valid.message}}</span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label class="form-label">Address</label>
+        </td>
+        <td>
+          <input type="text" class="form-control" style="width: 400px" formControlName="address">
+        </td>
+        <td>
+          <div *ngFor="let valid of validationMessageEdit.address">
+            <span class="err" *ngIf="employeeEditForm.get('address').hasError(valid.type) && employeeEditForm.get('address').dirty">{{valid.message}}</span>
+          </div>
+        </td>
+      </tr>
+
+      </thead>
+    </table><br>
+    <button type="submit" class="btn btn-primary" style="width: 150px" [disabled]="employeeEditForm.invalid">UPDATE</button>
+  </form>
+</div>
+

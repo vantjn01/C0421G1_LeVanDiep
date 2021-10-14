@@ -1,0 +1,70 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "movie": [
+    {
+      "id": 3,
+      "codeMovie": "CI-3333",
+      "nameMovie": "thor2",
+      "date": "01-03-2022",
+      "quantityCard": 2
+    },
+    {
+      "id": 4,
+      "codeMovie": "CI-4444",
+      "nameMovie": "thor4",
+      "date": "01-04-2022",
+      "quantityCard": 2
+    },
+    {
+      "id": 6,
+      "codeMovie": "CI-9876",
+      "nameMovie": "avenger",
+      "date": "11-11-2022",
+      "quantityCard": 1
+    },
+    {
+      "id": 7,
+      "codeMovie": "CI-0909",
+      "nameMovie": "Avenger 2",
+      "date": "02-22-2022",
+      "quantityCard": 5
+    },
+    {
+      "id": 8,
+      "codeMovie": "CI-7654",
+      "nameMovie": "Spider man",
+      "date": "2021-01-01",
+      "quantityCard": 8
+    },
+    {
+      "id": 9,
+      "codeMovie": "CI-7777",
+      "nameMovie": "xxx",
+      "date": "2021-10-13",
+      "quantityCard": 4
+    },
+    {
+      "id": 10,
+      "codeMovie": "CI-9988",
+      "nameMovie": "aaa",
+      "date": "2021-10-20",
+      "quantityCard": 22
+    }
+  ]
+}

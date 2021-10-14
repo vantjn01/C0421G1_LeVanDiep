@@ -16,7 +16,7 @@ import {EmployeeDeleteComponent} from "./employee/employee-delete/employee-delet
 const routes: Routes = [
   {path: "", pathMatch: 'full', component: HomePageComponent},
   {path: "customer", component: CustomerListComponent},
-  {path: "customer/detail/:id", component: CustomerDetailComponent},
+  // {path: "customer/detail/:id", component: CustomerDetailComponent},
   {path: "customer-create", component: CustomerCreateComponent},
   {path: "customer-edit/:id", component: CustomerEditComponent},
   {path: "customer-delete/:id", component: CustomerDeleteComponent},

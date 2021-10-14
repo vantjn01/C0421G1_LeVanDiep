@@ -1,0 +1,69 @@
+<div style="margin: 10px">
+  <button class="btn btn-dark rounded-pill wow fadeInLeft" [routerLink]="['/customer']" style="float: left" routerLinkActive="active"><< Back to list</button>
+</div><br><br>
+
+<div class="container wow fadeInDown" style="margin-bottom: 40px">
+  <form [formGroup]="movieForm" (ngSubmit)="createMovieReactiveForms()">
+      <h1>Create movie</h1>
+    <table class="table table-striped text-center" style="margin: 0 auto; border: solid black 2px">
+      <thead>
+      <tr>
+        <td>
+          <label class="form-label">Code Movie</label>
+        </td>
+        <td>
+          <input type="text" class="form-control" placeholder="CI-XXXX" style="width: 400px" formControlName="codeMovie" >
+        </td>
+        <td>
+          <div *ngFor="let valid of validationMessage.codeMovie">
+            <span class="err" *ngIf="movieForm.get('codeMovie').hasError(valid.type) && movieForm.get('codeMovie').dirty">{{valid.message}}</span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label class="form-label">Name movie</label>
+        </td>
+        <td>
+          <input type="text" class="form-control" style="width: 400px" formControlName="nameMovie">
+        </td>
+        <td>
+          <div *ngFor="let valid of validationMessage.nameMovie">
+            <span  class="err" *ngIf="movieForm.get('nameMovie').hasError(valid.type) && movieForm.get('nameMovie').dirty">{{valid.message}}</span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label class="form-label">Ngày chiếu</label>
+        </td>
+        <td>
+          <input type="date" class="form-control" placeholder="DD-MM-YYYY" style="width: 400px" formControlName="date">
+        </td>
+        <td>
+          <div *ngFor="let valid of validationMessage.date">
+            <span  class="err" *ngIf="movieForm.get('date').hasError(valid.type) && movieForm.get('date').dirty">{{valid.message}}</span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label class="form-label">Quantity Card</label>
+        </td>
+        <td>
+          <input type="number" class="form-control" placeholder="nhap so ve" style="width: 400px" formControlName="quantityCard">
+        </td>
+        <td>
+          <div *ngFor="let valid of validationMessage.quantityCard">
+            <span class="err" *ngIf="movieForm.get('quantityCard').hasError(valid.type) && movieForm.get('quantityCard').dirty">{{valid.message}}</span>
+          </div>
+        </td>
+      </tr>
+
+
+
+      </thead>
+    </table><br>
+    <button type="submit" class="btn btn-primary" style="width: 150px" >CREATE</button>
+  </form>
+</div>

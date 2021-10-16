@@ -1,0 +1,104 @@
+{
+  "car": [
+    {
+      "id": 7,
+      "numberCar": 2302,
+      "nameCar": "MaiLinhhhh",
+      "fromCar": {
+        "id": 2,
+        "nameFromCar": "SG"
+      },
+      "toCar": {
+        "id": 3,
+        "nameToCar": "TH"
+      },
+      "typeCar": "Giuong nam",
+      "phone": "0909090908",
+      "email": "ml@gmail.com",
+      "fromHour": "13.00",
+      "toHour": "22.00"
+    },
+    {
+      "id": 3,
+      "numberCar": 2322,
+      "nameCar": "MaiLinh",
+      "fromCar": {
+        "id": 2,
+        "nameFromCar": "SG"
+      },
+      "toCar": {
+        "id": 2,
+        "nameToCar": "HN"
+      },
+      "typeCar": "Giuong nam",
+      "phone": "0909090908",
+      "email": "ml@gmail.com",
+      "fromHour": "12:00",
+      "toHour": "14:00"
+    },
+    {
+      "id": 4,
+      "numberCar": 4444,
+      "nameCar": "Phuong Trang",
+      "fromCar": {
+        "id": 1,
+        "nameFromCar": "DN"
+      },
+      "toCar": {
+        "id": 2,
+        "nameToCar": "HN"
+      },
+      "typeCar": "Ghe ngoi",
+      "phone": "0909090909",
+      "email": "pt@gmail.com",
+      "fromHour": "12:00",
+      "toHour": "14:00"
+    },
+    {
+      "id": 8,
+      "numberCar": "1119",
+      "nameCar": "Xe cho",
+      "fromCar": {
+        "id": 2,
+        "nameFromCar": "SG"
+      },
+      "toCar": {
+        "id": 2,
+        "nameToCar": "HN"
+      },
+      "typeCar": "Ghe ngoi",
+      "phone": "0977777777",
+      "email": "a@gmail.com",
+      "fromHour": "22.00",
+      "toHour": "22.00"
+    }
+  ],
+  "fromCar": [
+    {
+      "id": 1,
+      "nameFromCar": "DN"
+    },
+    {
+      "id": 2,
+      "nameFromCar": "SG"
+    }
+  ],
+  "toCar": [
+    {
+      "id": 1,
+      "nameToCar": "QN"
+    },
+    {
+      "id": 2,
+      "nameToCar": "HN"
+    },
+    {
+      "id": 3,
+      "nameToCar": "TH"
+    },
+    {
+      "id": 4,
+      "nameToCar": "Hue"
+    }
+  ]
+}

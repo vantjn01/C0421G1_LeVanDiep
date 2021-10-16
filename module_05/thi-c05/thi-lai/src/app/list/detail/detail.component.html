@@ -1,0 +1,58 @@
+<div style="margin: 10px">
+  <button class="btn btn-dark rounded-pill wow fadeInLeft" [routerLink]="['/car']" style="float: left" routerLinkActive="active"><< List Car</button>
+    <button class="btn btn-dark rounded-pill wow fadeInRight" [routerLink]="['/car-create']" style="float: right">Create new >></button>
+</div><br><br>
+
+<div class="container-fluid wow fadeInDown">
+  <div class="row">
+    <h1>Car Detail</h1>
+    <!--  <div class="input">-->
+    <!--    <input type="text" [(ngModel)]="searchValue" name="customerName" (ngModelChange)="Search()" style="width: 350px; height: 35px; align-items: center; text-align: center" placeholder="Search by name or code">-->
+    <!--  </div><br><br>-->
+    <!--  <pagination-controls (pageChange)="p = $event"></pagination-controls>-->
+    <table class="table table-success table-striped" style="margin: 0 auto; border: solid black 2px">
+      <thead>
+      <tr>
+        <th>Id</th>
+        <th>So xe</th>
+        <th>Loai xe</th>
+        <!--      <th (click)="sort('customerCode')">CODE<sub style="color: red; font-size: 12px">sort</sub></th>-->
+        <!--      <th (click)="sort('customerName')">NAME<sub style="color: red; font-size: 12px">sort</sub></th>-->
+        <th>Ten nha xe</th>
+        <th>Diem di</th>
+        <th>Diem den</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Gio di</th>
+        <th>Gio den</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngIf="carDetail; else emptyCar">
+        <td>{{carDetail.id}}</td>
+        <td>{{carDetail.numberCar}}</td>
+        <td>{{carDetail.typeCar}}</td>
+        <td>{{carDetail.nameCar}}</td>
+        <td>{{carDetail.fromCar.nameFromCar}}</td>
+        <td>{{carDetail.toCar.nameToCar}}</td>
+        <td>{{carDetail.phone}}</td>
+        <td>{{carDetail.email}}</td>
+        <td>{{carDetail.fromHour}}</td>
+        <td>{{carDetail.toHour}}</td>
+
+
+<!--        <td>-->
+<!--          <button class="btn btn-success rounded-pill" [routerLink]="['/car-edit/', customerDetail.id]">Edit</button>-->
+<!--        </td>-->
+<!--        <td>-->
+<!--          <button class="btn btn-danger rounded-pill" [routerLink]="['/customer-delete', customerDetail.id]" >Delete</button>-->
+<!--        </td>-->
+      </tr>
+      <ng-template #emptyCar>
+        <p style="color: red">No data</p>
+      </ng-template>
+      </tbody>
+    </table>
+  </div>
+</div>
+<!--<simple-notifications></simple-notifications>-->

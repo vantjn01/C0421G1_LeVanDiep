@@ -1,0 +1,138 @@
+<div style="margin: 10px">
+  <button class="btn btn-dark rounded-pill wow fadeInLeft" [routerLink]="['/car']" style="float: left" routerLinkActive="active"><< Back to list</button>
+</div><br><br>
+
+<div class="container wow fadeInDown" style="margin-bottom: 40px">
+  <form [formGroup]="carForm" (ngSubmit)="createCarReactiveForms()">
+    <h1>CREATE NEW CAR</h1>
+    <table class="table table-bordered table-hover" style="margin: 0 auto; border: solid black 2px">
+      <thead>
+      <tr>
+        <td>
+          <label class="form-label">So xe</label>
+        </td>
+        <td>
+          <input type="text" class="form-control" placeholder="nhap 4 con so" style="width: 400px" formControlName="numberCar" >
+        </td>
+        <td>
+          <div *ngFor="let valid of validationMessage.numberCar">
+            <span class="err" *ngIf="carForm.get('numberCar').hasError(valid.type) && carForm.get('numberCar').dirty">{{valid.message}}</span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label class="form-label">Loai xe</label>
+        </td>
+        <td>
+          <input type="text" class="form-control" style="width: 400px" formControlName="typeCar">
+        </td>
+        <td>
+          <div *ngFor="let valid of validationMessage.typeCar">
+            <span  class="err" *ngIf="carForm.get('typeCar').hasError(valid.type) && carForm.get('typeCar').dirty">{{valid.message}}</span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label class="form-label">Ten nha xe</label>
+        </td>
+        <td>
+          <input type="text" class="form-control" placeholder="ten nha xe" style="width: 400px" formControlName="nameCar">
+        </td>
+        <td>
+          <div *ngFor="let valid of validationMessage.nameCar">
+            <span  class="err" *ngIf="carForm.get('nameCar').hasError(valid.type) && carForm.get('nameCar').dirty">{{valid.message}}</span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label class="form-label">Diem di</label>
+        </td>
+        <td>
+          <select style="width: 400px; height: 40px" formControlName="fromCar">
+            <option *ngFor="let type of fromCar" [ngValue]="type">{{type.nameFromCar}}</option>
+          </select>
+        </td>
+        <td>
+          <div *ngFor="let valid of validationMessage.fromCar">
+            <span class="err" *ngIf="carForm.get('fromCar').hasError(valid.type) && carForm.get('fromCar').dirty">{{valid.message}}</span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label class="form-label">Diem den</label>
+        </td>
+        <td>
+          <select style="width: 400px; height: 40px" formControlName="toCar">
+            <option *ngFor="let type of toCar" [ngValue]="type">{{type.nameToCar}}</option>
+          </select>
+        </td>
+        <td>
+          <div *ngFor="let valid of validationMessage.toCar">
+            <span class="err" *ngIf="carForm.get('toCar').hasError(valid.type) && carForm.get('toCar').dirty">{{valid.message}}</span>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <label class="form-label">Phone</label>
+        </td>
+        <td>
+          <input type="text" class="form-control"
+                 placeholder="090XXXXXXX / 093XXXXXXX" style="width: 400px" formControlName="phone">
+        </td>
+        <td>
+          <div *ngFor="let valid of validationMessage.phone">
+            <span class="err" *ngIf="carForm.get('phone').hasError(valid.type) && carForm.get('phone').dirty">{{valid.message}}</span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label class="form-label">Email</label>
+        </td>
+        <td>
+          <input type="text" class="form-control" placeholder="example@gmail.com" style="width: 400px" formControlName="email">
+        </td>
+        <td>
+          <div *ngFor="let valid of validationMessage.email">
+            <span class="err" *ngIf="carForm.get('email').hasError(valid.type) && carForm.get('email').dirty">{{valid.message}}</span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label class="form-label">Gio di</label>
+        </td>
+        <td>
+          <input type="text" class="form-control" style="width: 400px" formControlName="fromHour">
+        </td>
+        <td>
+          <div *ngFor="let valid of validationMessage.fromHour">
+            <span class="err" *ngIf="carForm.get('fromHour').hasError(valid.type) && carForm.get('fromHour').dirty">{{valid.message}}</span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label class="form-label">Gio den</label>
+        </td>
+        <td>
+          <input type="text" class="form-control" style="width: 400px" formControlName="toHour">
+        </td>
+        <td>
+          <div *ngFor="let valid of validationMessage.toHour">
+            <span class="err" *ngIf="carForm.get('toHour').hasError(valid.type) && carForm.get('toHour').dirty">{{valid.message}}</span>
+          </div>
+        </td>
+      </tr>
+
+      </thead>
+    </table><br>
+    <button type="submit" class="btn btn-primary" style="width: 150px">CREATE</button>
+  </form>
+</div>

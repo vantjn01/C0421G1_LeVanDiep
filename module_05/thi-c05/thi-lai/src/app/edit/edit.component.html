@@ -1,0 +1,132 @@
+<div style="margin: 10px">
+  <button class="btn btn-dark rounded-pill wow fadeInLeft" [routerLink]="['/car']" style="float: left" routerLinkActive="active"><< Back to list</button>
+</div><br><br>
+
+<div class="container wow fadeInDown" style="margin-bottom: 40px" >
+  <form [formGroup]="carEditForm" (ngSubmit)="updateCar(this.id)" *ngIf="this.carEditForm">
+    <h1>EDITING CAR</h1>
+    <table class="table table-bordered table-hover" style="margin: 0 auto; border: solid black 2px">
+      <thead>
+      <tr>
+        <td>
+          <label class="form-label">Id</label>
+        </td>
+        <td>
+          <input type="text" class="form-control" style="width: 400px" formControlName="id" readonly>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>
+          <label class="form-label">Bien so xe</label>
+        </td>
+        <td>
+          <input type="text" class="form-control" style="width: 400px" formControlName="numberCar" readonly>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>
+          <label class="form-label">Loai xe</label>
+        </td>
+        <td>
+          <input type="text" class="form-control" placeholder="ten loai xe" style="width: 400px" formControlName="typeCar">
+        </td>
+        <td>
+          <div *ngFor="let valid of validationMessageEdit.typeCar">
+            <span  class="err" *ngIf="carEditForm.get('typeCar').hasError(valid.type) && carEditForm.get('typeCar').dirty">{{valid.message}}</span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label class="form-label">Ten nha xe</label>
+        </td>
+        <td>
+          <input type="text" class="form-control" placeholder="ten nha xe" style="width: 400px" formControlName="nameCar">
+        </td>
+        <td>
+          <div *ngFor="let valid of validationMessageEdit.nameCar">
+            <span  class="err" *ngIf="carEditForm.get('nameCar').hasError(valid.type) && carEditForm.get('nameCar').dirty">{{valid.message}}</span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label class="form-label">Diem di</label>
+        </td>
+        <td>
+          <select style="width: 400px; height: 40px" formControlName="fromCar" >
+            <option *ngFor="let type of fromCars" [ngValue]="type" [selected]="type.id==carEditForm.controls.fromCar?.value.id">{{type.nameFromCar}}</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label class="form-label">Diem den</label>
+        </td>
+        <td>
+          <select style="width: 400px; height: 40px" formControlName="toCar" >
+            <option *ngFor="let type of toCars" [ngValue]="type" [selected]="type.id==carEditForm.controls.toCar?.value.id">{{type.nameToCar}}</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label class="form-label">So dien thoai</label>
+        </td>
+        <td>
+          <input type="text" class="form-control"
+                 placeholder="090XXXXXXX / 093XXXXXXX  " style="width: 400px" formControlName="phone">
+        </td>
+        <td>
+          <div *ngFor="let valid of validationMessageEdit.phone">
+            <span class="err" *ngIf="carEditForm.get('phone').hasError(valid.type) && carEditForm.get('phone').dirty">{{valid.message}}</span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label class="form-label">Email</label>
+        </td>
+        <td>
+          <input type="text" class="form-control" placeholder="example@gmail.com" style="width: 400px" formControlName="email">
+        </td>
+        <td>
+          <div *ngFor="let valid of validationMessageEdit.email">
+            <span class="err" *ngIf="carEditForm.get('email').hasError(valid.type) && carEditForm.get('email').dirty">{{valid.message}}</span>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <label class="form-label">Gio di</label>
+        </td>
+        <td>
+          <input type="text" class="form-control" placeholder="gio di" style="width: 400px" formControlName="fromHour">
+        </td>
+        <td>
+          <div *ngFor="let valid of validationMessageEdit.fromHour">
+            <span  class="err" *ngIf="carEditForm.get('fromHour').hasError(valid.type) && carEditForm.get('fromHour').dirty">{{valid.message}}</span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label class="form-label">Gio den</label>
+        </td>
+        <td>
+          <input type="text" class="form-control" placeholder="gio den" style="width: 400px" formControlName="toHour">
+        </td>
+        <td>
+          <div *ngFor="let valid of validationMessageEdit.toHour">
+            <span  class="err" *ngIf="carEditForm.get('toHour').hasError(valid.type) && carEditForm.get('toHour').dirty">{{valid.message}}</span>
+          </div>
+        </td>
+      </tr>
+      </thead>
+    </table><br>
+    <button type="submit" class="btn btn-primary" style="width: 150px">UPDATE</button>
+  </form>
+</div>

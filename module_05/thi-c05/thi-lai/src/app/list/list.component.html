@@ -1,0 +1,66 @@
+<!--// search-->
+<nav class="navbar">
+  <input class="form-control" type="text" name="nameCar" [(ngModel)]="nameCar" (ngModelChange)="Search()"
+         placeholder="Nhap name de search">
+</nav>
+<!--Chuyển trang bằng HTML-->
+<button class="btn btn-dark rounded-pill wow fadeInLeft" [routerLink]="['/car-create']" style="float: left" routerLinkActive="active"> Create Car</button>
+<!--Create customer By HTML</a>-->
+<a (click)="movePageCreateCar()">Create car By TS</a>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="card border-primary">
+        <h3 class="card-header bg-primary">Parent Component</h3>
+        <div class="card-body">
+          <h4 class="card-title">Car List</h4>
+
+          <table class="table table-success table-striped">
+            <thead>
+            <tr>
+              <th>Id</th>
+              <th>So xe</th>
+              <th>Loai xe</th>
+              <th (click)="sort('nameCar')">Ten nha xe&nbsp;<i class="fa fa-sort"></i></th>
+              <th>Diem di</th>
+              <th>Diem den</th>
+              <th>SDT</th>
+              <th>Email</th>
+              <th>Gio di</th>
+              <th>Gio den</th>
+              <th colspan="2">ACTION</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            <!--            Event binding gửi dữ liệu sang ts cái thằng mà chúng ta muốn hiển thị.-->
+            <tr *ngFor="let item of cars | orderBy:key:reverse| paginate:{itemsPerPage:2, currentPage:p}; let i = index" (click)="showDetail(item)">
+              <td>{{item.id}}</td>
+              <td>{{item.numberCar}}</td>
+              <!--              <td [ngClass] = 'item.idTypeCustomer == "VIP" ? "txt-color ,  txt-font-weight": ""'>-->
+              <td>{{item.typeCar}}</td>
+              <td>{{item.nameCar}}</td>
+              <td>{{item.fromCar?.nameFromCar}}</td>
+              <td>{{item.toCar?.nameToCar}}</td>
+              <td>{{item.phone}}</td>
+              <td>{{item.email}}</td>
+              <td>{{item.fromHour}}</td>
+              <td>{{item.toHour}}</td>
+              <td>
+                <button class="btn btn-success rounded-pill" [routerLink]="['/car-edit/', item.id]">Edit</button>
+              </td>
+              <td>
+                <button class="btn btn-danger" [routerLink]="['/car-delete/', item.id]">Delete</button>
+              </td>
+            </tbody>
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="col-12">
+      <app-car-detail [carChild]="carParent"></app-car-detail>
+      <!--      Chèn directive con bằng component directive. [x] = value. [x] Attribute directive-->
+    </div>
+  </div>
+</div>

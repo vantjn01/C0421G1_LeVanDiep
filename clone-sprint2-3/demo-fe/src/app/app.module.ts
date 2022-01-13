@@ -1,44 +1,44 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {HttpClientModule} from '@angular/common/http';
-import { ShareModule } from './share-module/share.module';
-import { FeatureModule } from './feature-module/feature.module';
 import { AppRoutingModule } from './app-routing.module';
-import {OrderModule} from "./feature-module/order/order.module";
-import {FoodAndDrinkModule} from "./feature-module/food-and-drink/food-and-drink.module";
-import {CategoryModule} from "./feature-module/category/category.module";
-import { TableModule} from "./feature-module/table/table.module";
-import {MatDialogModule} from '@angular/material/dialog';
-import {MatButtonModule} from '@angular/material/button';
+import { AppComponent } from './app.component';
+import {FooterComponent} from "./layout/footer/footer.component";
+import {HeaderComponent} from "./layout/header/header.component";
+import {HomeComponent} from "./layout/home/home.component";
+import {CartComponent} from "./feature-module/cart/cart.component";
+import {DetailComponent} from "./feature-module/detail/detail.component";
+import {CustomerListComponent} from "./feature-module/customer-list/customer-list.component";
+import {ConfirmPaypalComponent} from "./feature-module/confirm-paypal/confirm-paypal.component";
+import {PaymentComponent} from "./feature-module/payment/payment.component";
+import {TransactionComponent} from "./feature-module/transaction/transaction.component";
+import {HttpClientModule} from "@angular/common/http";
+// import {SecurityModule} from "./security/security.module";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {FormsModule} from "@angular/forms";
+import {RouterModule} from "@angular/router";
+import {ToastrModule} from "ngx-toastr";
 
-
-
-//TỰ THÊM VÀO PHUCnK
-import localeVi from '@angular/common/locales/vi';
-import {registerLocaleData} from "@angular/common";
-
-registerLocaleData(localeVi, "vi-VN");
 
 @NgModule({
   declarations: [
     AppComponent,
+    FooterComponent,
+    HeaderComponent,
+    HomeComponent
   ],
   imports: [
-    TableModule,
     BrowserModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
-    ShareModule,
-    FeatureModule,
     AppRoutingModule,
-    FoodAndDrinkModule,
-    CategoryModule,
-    OrderModule
+    HttpClientModule,
+    ToastrModule.forRoot(),
+    RouterModule,
+    FormsModule,
+    BrowserAnimationsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

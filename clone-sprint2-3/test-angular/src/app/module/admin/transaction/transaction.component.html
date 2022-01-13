@@ -1,0 +1,53 @@
+<div class="main">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <fieldset class="scheduler-border">
+          <legend class="scheduler-border">Lịch Sử Giao Dịch</legend>
+          <div class="myorder-content myorder-detail-content clearfix">
+            <div class="myorder-block">
+              <div class="table-responsive clearfix myorder-info">
+                <!--              <div ><h2 style="font-size: 20px;font-family: Roboto;color: #d85909">THÔNG TIN GIỎ HÀNG</h2></div>-->
+                <table class="table table-mycart" *ngIf="orderFoods!=null;else nodata">
+                  <thead style="background-color:  #0f9ed8">
+                  <tr style="color: white">
+                    <th>STT</th>
+                    <th style="width: 250px; text-align: center">Hình Ảnh</th>
+                    <th style="text-align: left">Tên Sản Phẩm</th>
+                    <th style="text-align: left">Ngày Đặt Hàng</th>
+                    <th style="text-align: right;width: 160px">Giá</th>
+                    <th style="text-align: center">Số Lượng</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr *ngFor="let o of orderFoods ; let i=index">
+                    <th scope="row">{{i + 1}}</th>
+                    <td>
+                      <a><img style="width: 160px;height: 80px" class="img-responsive" [src]="o.food.image"></a>
+                    </td>
+                    <td style="text-align: left">{{o.food.foodName}}</td>
+                    <td style="text-align: left">{{o.orders.dateOrders}}</td>
+                    <td style="text-align: right">{{o.food.foodPrice |currency:"VND"}}</td>
+                    <td style="text-align: center">{{o.quantityFood}}</td>
+                  </tr>
+                  </tbody>
+                </table>
+                <ng-template #nodata>
+                  <h5 style="color: rgba(255,91,32,0.99)" class="text-center">---------- Lịch Sử Giao Dịch Không Tồn Tại
+                    ----------</h5>
+                </ng-template>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+

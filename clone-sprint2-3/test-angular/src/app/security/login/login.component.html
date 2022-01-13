@@ -1,0 +1,48 @@
+<div class="rơ col-md-12"
+     style="background-image: url(https://media.istockphoto.com/vectors/fast-food-and-seafood-vector-seamless-pattern-vector-id826276628)">
+  <div class="card card-container">
+<!--    <img id="profile-img" src="https://ebazzarbd.com/wp-content/uploads/2021/03/Food.jpg"-->
+<!--         class="profile-img-card w-50 h-50"/>-->
+    <form *ngIf="!isLoggedIn" name="form" (ngSubmit)="myForm.form.valid && onSubmit()" #myForm="ngForm" novalidate>
+      <div class="form-group">
+        <label for="name" class="text-primary">Username :</label>
+        <input id="name" type="text" class="form-control" name="username" [(ngModel)]="form.username" required
+               #username="ngModel"/>
+        <div class="alert alert-danger" role="alert" *ngIf="myForm.submitted && username.invalid">
+          Yêu cầu nhập tên đăng nhập
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="pass" class="text-primary">Password :</label>
+        <input id="pass" type="password" class="form-control" name="password" [(ngModel)]="form.password" required
+               minlength="6" #password="ngModel"/>
+        <div class="alert alert-danger mt-1" role="alert" *ngIf="myForm.submitted && password.invalid">
+          <div *ngIf="password.errors.required">Yêu cầu nhập mật khẩu</div>
+          <div *ngIf="password.errors.minlength">
+            Mật khẩu ít nhất 6 kí tự
+          </div>
+        </div>
+      </div>
+      <div class="form-check m-b-15">
+        <input class="form-check-input" type="checkbox" name="remember" id="defaultCheck1" [(ngModel)]="remember">
+        <span class="form-check-label text-primary" for="defaultCheck1">
+         Remember me
+        </span>
+      </div>
+      <div class="form-group m-3 text-center">
+        <button class="btn btn-primary btn-block">Đăng nhập</button>
+      </div>
+      <div class="form-group">
+        <div class="alert alert-danger mt-1" role="alert" *ngIf="myForm.submitted && isLoginFailed">
+          Đăng nhập không thành công do sai tên đăng nhập hoặc mật khẩu
+        </div>
+      </div>
+    </form>
+    <div class=" alert alert-success btn-block" *ngIf="isLoggedIn" style="margin-top: 20px">
+      <p style="text-align: center"> Bạn Đã Đăng Nhập Thành Công.</p>
+    </div>
+    <!--    <button class="btn btn-outline-danger mx-3" [routerLink]="['']">Trở về trang chủ</button>-->
+    <button class="btn btn-check-out btn-block" [routerLink]="['']"> Về trang chủ</button>
+  </div>
+</div>
+

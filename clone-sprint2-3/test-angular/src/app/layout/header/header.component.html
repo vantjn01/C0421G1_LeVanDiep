@@ -1,0 +1,179 @@
+<div class="header sticky" style="margin-bottom: 0; background-color: yellowgreen">
+  <header id="header" class="">
+    <div id="header_main">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-3 col-sm-4 col-xs-8">
+            <!--logo-->
+<!--            <span class="pull-left">-->
+<!--                            <a href="/" class="logo">-->
+<!--                             <img [src]="defaultImgUrl" style="width: 285px; height: 79px" alt="">-->
+<!--                            </a>-->
+<!--                        </span>-->
+            <span style="color: #39ac31; font-size: 40px; font-style: italic; font-family: 'Patrick Hand'; font-weight: bold" [routerLink]="['']">
+              DiepFastFood
+            </span>
+            <!-- end logo -->
+          </div>
+          <div class="col-lg-6 col-md-5 col-sm-4 hidden-xs">
+            <!-- Search -->
+            <!--            <div class="search_box">-->
+            <!--              <div class="search_wrapper">-->
+            <!--                <input [(ngModel)]="keySearch" type="text">-->
+            <!--                <button (click)="search()">Tim Ngay</button>-->
+            <!--              </div>-->
+            <!--            </div>-->
+            <div class="search_box">
+              <div class="search_wrapper">
+                <input [(ngModel)]="keySearch" type="text" name="search" class="index_input_search" id="txtsearch"
+                       onblur="if(this.value=='')this.value='Nhập từ khóa tìm kiếm...'"
+                       onfocus="if(this.value=='Nhập từ khóa tìm kiếm...')this.value=''"
+                       value="Nhập từ khóa tìm kiếm...">
+                <button (click)="search()" class="btn_search_submit btn-warning " type="button" id="btnsearch">
+                  <span style="margin-left: 10px">Tìm Kiếm</span></button>
+              </div>
+            </div>
+            <!-- End Search -->
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+            <!-- Cart -->
+            <div class="cart_header" *ngIf="showCartBoard">
+              <a title="Giỏ hàng" [routerLink]="['/admin/cart']">
+                <span class="cart_header_icon"></span>
+                <span class="box_text">
+                                        <strong class="cart_header_count"></strong>
+                  <strong class="cart_header_count" style="color: #d85909">{{numberOfCart}}</strong>
+                  <!--                                        <span class="cart_price">hiện tại</span>-->
+                                    </span>
+              </a>
+              <div class="cart_clone_box">
+                <div class="cart_box_wrap hidden">
+                  <div class="cart_item original clearfix">
+                    <div class="cart_item_image"></div>
+                    <div class="cart_item_info">
+                      <p class="cart_item_title"><a href="" title=""></a></p>
+                      <span class="cart_item_quantity"></span>
+                      <span class="cart_item_price"></span>
+                      <span class="remove"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+<!--              <div class="cart_header_top_box">-->
+<!--                <div class="cart_empty">Giỏ hàng hiện tại của bạn là: <span style="color: #d85909">{{numberOfCart}} sản phẩm </span>-->
+<!--                </div>-->
+<!--              </div>-->
+            </div>
+            <!-- End Cart -->
+            <!-- Account -->
+            <div class="user_login">
+              <div class="user_login_icon"></div>
+              <div class="box_text">
+                <strong *ngIf="username!=null;else noUsername"><span style="font-size: 14px; color: #c7254e"> Hi {{username}}</span></strong>
+                <ng-template #noUsername>
+                  <strong>Đăng ký</strong>
+                </ng-template>
+                <!--<span class="cart_price">Đăng nhập, đăng ký</span>-->
+              </div>
+              <div class="user_box">
+                <ul *ngIf="username!=null;else nodata ">
+                  <li>
+                    <a (click)="logout()">Đăng Xuất</a>
+                  </li>
+<!--                  <li>-->
+<!--                    <a [routerLink]="['/admin/transaction/']">Lịch Sử Giao Dịch</a>-->
+<!--                  </li>-->
+<!--                  <li>-->
+<!--                    <a [routerLink]="['/changePass/']">Thay Đổi Mật Khẩu </a>-->
+<!--                  </li>-->
+<!--                  <li>-->
+<!--                    <a [routerLink]="['/admin/infoCustomer/']">Thông Tin Khách Hàng </a>-->
+<!--                  </li>-->
+
+                </ul>
+                <ng-template #nodata>
+                  <ul>
+                    <li><a [routerLink]="['/login/']">Đăng nhập</a></li>
+<!--                    <li><a href="dang-ky.html">Đăng Ký</a></li>-->
+                  </ul>
+                </ng-template>
+              </div>
+            </div>
+            <!-- End account -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="header_mobile">
+      <div class="container">
+        <div class="row">
+          <!-- Menu mobile -->
+          <button type="button" class="navbar-toggle collapsed" id="trigger_click_mobile">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div id="mobile_wrap_menu" class="visible-xs visible-sm">
+            <div class="user_mobile">
+              <div class="icon_user_mobile">
+                <img src="" alt="account">
+              </div>
+              <div class="login_mobile">
+
+                <a href="/dang-nhap.html" class="login-btn">Đăng nhập </a><a href="/dang-ky.html" class="login-btn"> /
+                Đăng ký</a>
+              </div>
+              <div class="close_menu"></div>
+            </div>
+            <div class="content_menu ">
+              <ul>
+                <li class="level0"><a class=""><span>Trang chủ</span></a></li>
+                <li class="level0"><a class="" href="/gioi-thieu.html"><span>Giới thiệu</span></a></li>
+                <li class="level0"><a class="" href="/san-pham.html"><span>Sản phẩm</span></a></li>
+                <li class="level0"><a class="" href="/tin-tuc.html"><span>Tin tức</span></a></li>
+                <li class="level0"><a class="" href="/lien-he.html"><span>Liên hệ</span></a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- End menu mobile -->
+          <div class="pull-right mobile-menu-icon-wrapper">
+            <!-- Logo mobile -->
+            <div class="logo logo-mobile">
+              <a href="/" title="CÔNG TY TNHH PHÁT TRIỂN CÔNG NGHỆ RUNTIME">
+                <img src="/Uploads/shop2005/images/logo.png" alt="CÔNG TY TNHH PHÁT TRIỂN CÔNG NGHỆ RUNTIME">
+              </a>
+            </div>
+            <!-- End Logo mobile -->
+            <!-- Cart mobile -->
+            <div class="cart_header" id="cart-target">
+              <a href="gio-hang.html" title="Giỏ hàng">
+                <div class="cart_header_icon"></div>
+                <div class="box_text">
+                  <strong class="cart_header_count"><span>0</span></strong>
+                </div>
+              </a>
+            </div>
+            <!-- End Cart mobile -->
+          </div>
+          <div class="clearfix"></div>
+          <!-- Search mobile -->
+          <div class="search_mobile col-md-12">
+            <div class="search_box">
+              <div class="search_wrapper">
+                <input type="text" name="search" class="index_input_search" id="txtsearch2"
+                       onblur="if(this.value=='')this.value='Nhập từ khóa tìm kiếm...'"
+                       onfocus="if(this.value=='Nhập từ khóa tìm kiếm...')this.value=''"
+                       value="Nhập từ khóa tìm kiếm...">
+                <button class="btn_search_submit btn " type="button" id="btnsearch2"><span><i class="fa fa-search"></i></span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- End search mobile -->
+        </div>
+      </div>
+    </div>
+  </header>
+
+</div>

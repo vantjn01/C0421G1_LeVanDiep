@@ -1,0 +1,56 @@
+<div class="col-md-12" style="background-image: url(https://thumbs.dreamstime.com/z/asian-food-background-various-ingredients-rustic-stone-top-view-vietnam-thai-cuisine-148762904.jpg);background-size: cover;height: 100%">
+  <div class="card card-container" style="background-image: url(https://thiepnhanai.com/wp-content/uploads/2021/05/hinh-nen-powerpoint-dep-nhat-1.jpg);opacity: 52;">
+    <div class="dialog" style="margin-top: 20px">
+<!--      <h4 STYLE="text-align: center; color: #d85909;font-size: 20px"><b>Thông Tin Khách Hàng</b></h4>-->
+      <div class="item row">
+      <fieldset class="scheduler-border ">
+        <legend class="scheduler-border" style="color: yellow; font-size: 25px" >Thông Tin Chi Tiết Khách Hàng</legend>
+          <div class="row mt-4">
+            <div class="col-lg-3" style="height: 300px">
+            <img src="{{imageCus}}" style="height: 268px;width: 100%; margin-top: 10px" id="img3">
+            </div>
+            <div class="col-lg-9">
+              <div class="row mt-4">
+              <div class="col-lg-6">
+                <label class="style-span">Tên Khách Hàng </label>
+                <input type="text" value= "{{customer.customerName}}" class=" form-control is-valid " readonly>
+              </div>
+              <div class="col-lg-6">
+                <label class="style-span">Username </label>
+                <input type="text" value="{{customer.account.username}}" class="form-control is-valid "readonly>
+              </div>
+              </div>
+
+              <div class="row mt-4">
+                <div class="col-lg-6">
+                  <label class="style-span">Địa Chỉ </label>
+                  <input type="text" value="{{customer.customerAddress}}" class="form-control is-valid "readonly>
+                </div>
+                <div class="col-lg-6">
+                  <label class="style-span">Email </label>
+                  <input type="text" value="{{customer.customerEmail}}" class="form-control is-valid "readonly>
+                </div>
+              </div>
+
+              <div class="row mt-4">
+                <div class="col-lg-6">
+                  <label class="style-span">Số Điện Thoại </label>
+                  <input type="text" style="color: black" value="{{customer.customerPhone}}" class="form-control is-valid "readonly>
+                </div>
+                <div class="col-lg-6">
+                  <label class="style-span">Giới Tính </label>
+                  <input type="text" value="{{customer.gender.genderName}}" class="form-control is-valid "readonly>
+                </div>
+              </div>
+            </div>
+          </div>
+      </fieldset>
+      </div>
+      <div class="form-group m-3 text-center">
+        <button style="font-size: 15px" class="btn btn-primary btn-block" routerLink="">Quay Lại Trang Chủ</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+

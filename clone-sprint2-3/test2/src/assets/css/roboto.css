@@ -1,0 +1,82 @@
+/********************  Begin Roboto *********************/
+/*********** Roboto thin *********/
+@font-face {
+	font-family:'Roboto';
+	font-style: normal;
+	font-weight: 100;
+
+
+}
+
+/*********** Roboto thin italic *********/
+@font-face {
+	font-family:'Roboto';
+	font-style: italic;
+	font-weight: 100;
+
+}
+
+/*********** Roboto light *********/
+@font-face {
+	font-family:'Roboto';
+	font-style: normal;
+	font-weight: 300;
+
+}
+
+/*********** Roboto light italic *********/
+@font-face {
+	font-family:'Roboto';
+	font-style: italic;
+	font-weight: 300;
+
+}
+
+/*********** Roboto regular *********/
+@font-face {
+	font-family:'Roboto';
+	font-style: normal;
+	font-weight: 400;
+
+}
+
+/*********** Roboto italic *********/
+@font-face {
+	font-family:'Roboto';
+	font-style: italic;
+	font-weight: 400;
+}
+
+/*********** Roboto medium *********/
+@font-face {
+	font-family:'Roboto';
+	font-style: normal;
+	font-weight: 500;
+
+}
+
+/*********** Roboto medium italic *********/
+@font-face {
+	font-family:'Roboto';
+	font-style: italic;
+	font-weight: 500;
+
+}
+
+/*********** Roboto bold *********/
+@font-face {
+	font-family:'Roboto';
+	font-style: normal;
+	font-weight: 700;
+
+}
+
+/*********** Roboto bold italic *********/
+@font-face {
+	font-family:'Roboto';
+	font-style: italic;
+	font-weight: 700;
+
+}
+
+/********************  END Roboto font *********************/

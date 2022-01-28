@@ -66,7 +66,7 @@ export class ComfirmPaypalComponent implements OnInit {
     console.log(carts);
     console.log('confirm= ' + this.username);
     this.foodService.CreateOrders(carts, this.username).subscribe(data => {
-      this.toast.success('Shipper Sẽ Nhanh Chóng Giao Hàng Cho Bạn ');
+      this.toast.success('Thanh toán hàng thành công');
       localStorage.clear();
       this.router.navigateByUrl('');
     }, error => (

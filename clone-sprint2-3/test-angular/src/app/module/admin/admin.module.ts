@@ -9,8 +9,6 @@ import {HttpClientModule} from '@angular/common/http';
 import {ToastrModule} from 'ngx-toastr';
 import { CartComponent } from './cart/cart.component';
 import { ListComponent } from './customer/list/list.component';
-import { TransactionComponent } from './transaction/transaction.component';
-import { InfoCustomerComponent } from './info-customer/info-customer.component';
 import {SortPipe} from "./sort.pipe";
 import {ComfirmPaypalComponent} from "./comfirm-paypal/comfirm-paypal.component";
 import {PaymentComponent} from "./payment/payment.component";
@@ -21,8 +19,6 @@ import {PaymentComponent} from "./payment/payment.component";
     DetailComponent,
     CartComponent,
     ListComponent,
-    TransactionComponent,
-    InfoCustomerComponent,
     SortPipe,
     ComfirmPaypalComponent,
     PaymentComponent

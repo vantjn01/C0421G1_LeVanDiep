@@ -1,0 +1,32 @@
+<div class="col-md-12" style="background-image: url(https://thumbs.dreamstime.com/z/asian-food-background-various-ingredients-rustic-stone-top-view-vietnam-thai-cuisine-148762904.jpg);background-size: cover;">
+  <div class="card card-container"style="background-image: url(https://thiepnhanai.com/wp-content/uploads/2021/05/hinh-nen-powerpoint-dep-nhat-1.jpg);opacity: 2">
+<!--    <h5 class="text-danger text-center">Tài khoản đã quá hạn đăng nhập sau 30 ngày yêu cầu thay đổi mật khẩu</h5>-->
+    <img id="profile-img"
+         src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/hijabi-cook-chef-spoons-food-avatar-logo-design-template-71d5c034dcc7d89fcda2ddf386bb676c_screen.jpg?ts=1619324492"
+         class="profile-img-card w-50 h-50"/>
+    <h5 class="text-center text-success" style="color:yellow; font-size: 25px" >{{username}}</h5>
+    <form [formGroup]="formPassword" (ngSubmit)="changePassword()" novalidate>
+      <div class="form-group">
+        <label for="username" class="text-warning" style="color: #00b74a; font-weight: bold;font-size: 16px;">Mật khẩu mới</label>
+        <input id="username" class="form-control" type="password" formControlName="newPassword" style="margin-bottom: 14px"/>
+        <div style="margin-left: 20px" class="fontError mt-1 d-block" *ngIf="formPassword.get('newPassword')?.hasError('required')
+                                && formPassword.get('newPassword')?.touched">
+          Yêu cầu nhập mật khẩu mới.</div>
+        <div style="margin-left: 20px" class="fontError mt-1 d-block" *ngIf="(formPassword.get('newPassword')?.hasError('minlength') || formPassword.get('newPassword')?.hasError('maxlength'))
+                                && formPassword.get('newPassword')?.dirty">Mật khẩu ít nhất 8 kí tự và tối đa 20 kí tự.</div>
+      </div>
+      <div class="form-group">
+        <label for="password2" class="text-warning" style="color: #00b74a; font-weight: bold;font-size: 16px;">Nhập lại mật khẩu</label>
+        <input id="password2" class="form-control" type="password" formControlName="repeatNewPassword" style="margin-bottom: 14px"/>
+        <div style="margin-left: 20px" class="fontError mt-1 d-block" *ngIf="formPassword.get('repeatNewPassword')?.hasError('required')
+                                && formPassword.get('repeatNewPassword')?.touched">
+          Yêu cầu nhập lại mật khẩu.</div>
+        <div style="margin-left: 20px" class="fontError mt-1 d-block" *ngIf="formPassword.controls.repeatNewPassword.dirty && formPassword.errors?.checkPassWord">
+          Mật khẩu chưa khớp.</div>
+      </div>
+      <div class="form-group m-3 text-center">
+        <button class="btn btn-primary btn-block" style="font-size: 15px">Thay đổi mật khẩu</button>
+      </div>
+    </form>
+  </div>
+</div>

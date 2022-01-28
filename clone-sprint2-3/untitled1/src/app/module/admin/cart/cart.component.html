@@ -1,0 +1,84 @@
+<div class="main">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <fieldset class="scheduler-border">
+          <legend class="scheduler-border" style="font-size: 50px">Thông Tin Giỏ Hàng</legend>
+          <div class="myorder-content myorder-detail-content clearfix">
+            <div class="myorder-block">
+              <div class="table-responsive clearfix myorder-info">
+                <!--              <div ><h2 style="font-size: 20px;font-family: Roboto;color: #d85909">THÔNG TIN GIỎ HÀNG</h2></div>-->
+                <table class="table table-mycart" *ngIf="cards!=null;else nodata">
+                  <thead style="background-color:  #0f9ed8">
+                  <tr style="color: white">
+                    <th>STT</th>
+                    <th style="width: 250px; text-align: center">Hình Ảnh</th>
+                    <th style="text-align: left">Tên Sản Phẩm</th>
+                    <th style="text-align: right;width: 160px">Giá</th>
+                    <th style="text-align: center">Số Lượng</th>
+<!--                    <th style="text-align: right;width: 160px">Thành Tiền</th>-->
+                    <th style="text-align: center;width: 200px" > Chức Năng</th>
+
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr *ngFor="let c of cards; let i=index">
+                    <th scope="row">{{i + 1}}</th>
+                    <td>
+                      <a><img style="width: 160px;height: 80px" class="img-responsive" [src]="c.food.image"></a>
+                    </td>
+                    <td style="text-align: left">{{c.food.foodName | titlecase}}</td>
+                    <td style="text-align: right">{{c.food.foodPrice| currency: 'VND'}}</td>
+                    <td style="text-align: center">{{c.quantity}}</td>
+<!--                    <td style="text-align: right">{{c.food.foodPrice * c.quantity | currency: 'VND'}}</td>-->
+                    <td>
+                      <button  type="button" class="btn btn-danger btn-sm mr-1" data-toggle="modal"
+                              data-target="#deleteModal"
+                              (click)="deleteOrderFood()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                             fill="currentColor"
+                             class="bi bi-trash-fill" viewBox="0 0 16 16">
+                          <path
+                            d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+                        </svg>
+                      </button>
+                      <button type="button" data-toggle="modal" id="#deleteModal" data-target=".viewModal" class="btn btn-success btn-sm mr-1" style="margin-left: 10px">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-credit-card" viewBox="0 0 16 16">
+                          <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1H2zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V7z"/>
+                          <path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1z"/>
+                        </svg>
+                      </button>
+                    </td>
+
+                  </tr>
+                  </tbody>
+                </table>
+                <ng-template #nodata>
+                  <div ><img src="{{imageCartEmpty}}" style="height:auto;width: 150px"></div>
+                </ng-template>
+              </div>
+              <div *ngIf="totalMoney!=0; else noTotalMoney" style="text-align: right;margin-right: 394px" class="p-b-20">
+                <b style="font-size: 18px; margin-right: 1px">TỔNG TIỀN: </b>
+                <b  style="width: 243px; font-size: 18px;color: #d85909">{{totalMoney | currency: 'VND'}}</b>
+              </div>
+              <ng-template #noTotalMoney>
+              </ng-template>
+
+
+              <div class="button text-right" >
+                <a style="font-size: 15px" class="btn btn-default m-r-5" [routerLink]="['']">Quay Lại Trang Chủ</a>
+                <a style="font-size: 15px" class="btn btn-primary" (click)="payPal(totalMoney/23)">Thanh Toán</a>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+

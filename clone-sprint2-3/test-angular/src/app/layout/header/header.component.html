@@ -1,18 +1,15 @@
-<div class="header sticky" style="margin-bottom: 0; background-color: yellowgreen">
+<div class="header sticky" style="margin-bottom: 0; background-color: #1A94FF">
   <header id="header" class="">
     <div id="header_main">
       <div class="container">
         <div class="row">
           <div class="col-lg-3 col-md-3 col-sm-4 col-xs-8">
             <!--logo-->
-<!--            <span class="pull-left">-->
-<!--                            <a href="/" class="logo">-->
-<!--                             <img [src]="defaultImgUrl" style="width: 285px; height: 79px" alt="">-->
-<!--                            </a>-->
-<!--                        </span>-->
-            <span style="color: #39ac31; font-size: 40px; font-style: italic; font-family: 'Patrick Hand'; font-weight: bold" [routerLink]="['']">
-              DiepFastFood
-            </span>
+            <span class="pull-left">
+                            <a href="/" class="logo">
+                             <img [src]="defaultImgUrl" style="width: 285px; height: 79px" alt="">
+                            </a>
+                        </span>
             <!-- end logo -->
           </div>
           <div class="col-lg-6 col-md-5 col-sm-4 hidden-xs">
@@ -29,8 +26,8 @@
                        onblur="if(this.value=='')this.value='Nhập từ khóa tìm kiếm...'"
                        onfocus="if(this.value=='Nhập từ khóa tìm kiếm...')this.value=''"
                        value="Nhập từ khóa tìm kiếm...">
-                <button (click)="search()" class="btn_search_submit btn-warning " type="button" id="btnsearch">
-                  <span style="margin-left: 10px">Tìm Kiếm</span></button>
+                <button (click)="search()" class="btn_search_submit btn " type="button" id="btnsearch">
+                  <span>Tìm Kiếm</span></button>
               </div>
             </div>
             <!-- End Search -->
@@ -41,7 +38,7 @@
               <a title="Giỏ hàng" [routerLink]="['/admin/cart']">
                 <span class="cart_header_icon"></span>
                 <span class="box_text">
-                                        <strong class="cart_header_count"></strong>
+<!--                                        <strong class="cart_header_count"; style="color: red">Giỏ hàng</strong>-->
                   <strong class="cart_header_count" style="color: #d85909">{{numberOfCart}}</strong>
                   <!--                                        <span class="cart_price">hiện tại</span>-->
                                     </span>
@@ -59,118 +56,57 @@
                   </div>
                 </div>
               </div>
-<!--              <div class="cart_header_top_box">-->
-<!--                <div class="cart_empty">Giỏ hàng hiện tại của bạn là: <span style="color: #d85909">{{numberOfCart}} sản phẩm </span>-->
-<!--                </div>-->
-<!--              </div>-->
+              <!--              <div class="cart_header_top_box">-->
+              <!--                <div class="cart_empty">Giỏ hàng hiện tại của bạn là: <span style="color: #d85909">{{numberOfCart}} sản phẩm </span>-->
+              <!--                </div>-->
+              <!--              </div>-->
             </div>
             <!-- End Cart -->
             <!-- Account -->
             <div class="user_login">
-              <div class="user_login_icon"></div>
+              <div class="user_login_icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" routerLink="/login" color="white"
+                     fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                  <path
+                    d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+
+                </svg>
+                <!--                <a [routerLink]="['/login/']" style="color: white"></a>-->
+              </div>
               <div class="box_text">
-                <strong *ngIf="username!=null;else noUsername"><span style="font-size: 14px; color: #c7254e"> Hi {{username}}</span></strong>
+                <strong *ngIf="username!=null;else noUsername"
+                        style="color: white;font-size: 18px">Hi {{username}}</strong>
                 <ng-template #noUsername>
-                  <strong>Đăng ký</strong>
+                  <strong></strong>
                 </ng-template>
                 <!--<span class="cart_price">Đăng nhập, đăng ký</span>-->
               </div>
               <div class="user_box">
-                <ul *ngIf="username!=null;else nodata ">
+                <ul *ngIf="username!=null ">
                   <li>
                     <a (click)="logout()">Đăng Xuất</a>
                   </li>
-<!--                  <li>-->
-<!--                    <a [routerLink]="['/admin/transaction/']">Lịch Sử Giao Dịch</a>-->
-<!--                  </li>-->
-<!--                  <li>-->
-<!--                    <a [routerLink]="['/changePass/']">Thay Đổi Mật Khẩu </a>-->
-<!--                  </li>-->
-<!--                  <li>-->
-<!--                    <a [routerLink]="['/admin/infoCustomer/']">Thông Tin Khách Hàng </a>-->
-<!--                  </li>-->
+                  <!--                  <li>-->
+                  <!--                    <a [routerLink]="['/admin/transaction/']">Lịch Sử Giao Dịch</a>-->
+                  <!--                  </li>-->
+                  <li>
+                    <a>Đổi Mật Khẩu </a>
+                  </li>
+                  <li>
+                    <a>Thông Tin Khách Hàng </a>
+                  </li>
 
                 </ul>
-                <ng-template #nodata>
-                  <ul>
-                    <li><a [routerLink]="['/login/']">Đăng nhập</a></li>
-<!--                    <li><a href="dang-ky.html">Đăng Ký</a></li>-->
-                  </ul>
-                </ng-template>
+                <!--                <ng-template #nodata>-->
+                <!--&lt;!&ndash;                  <ul>&ndash;&gt;-->
+                <!--&lt;!&ndash;&lt;!&ndash;                    <li><a [routerLink]="['/login/']">Đăng nhập</a></li>&ndash;&gt;&ndash;&gt;-->
+                <!--&lt;!&ndash;&lt;!&ndash;                    <li><a href="dang-ky.html">Đăng Ký</a></li>&ndash;&gt;&ndash;&gt;-->
+                <!--&lt;!&ndash;                  </ul>&ndash;&gt;-->
+                <!--                </ng-template>-->
               </div>
             </div>
             <!-- End account -->
           </div>
-        </div>
-      </div>
-    </div>
-    <div id="header_mobile">
-      <div class="container">
-        <div class="row">
-          <!-- Menu mobile -->
-          <button type="button" class="navbar-toggle collapsed" id="trigger_click_mobile">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <div id="mobile_wrap_menu" class="visible-xs visible-sm">
-            <div class="user_mobile">
-              <div class="icon_user_mobile">
-                <img src="" alt="account">
-              </div>
-              <div class="login_mobile">
-
-                <a href="/dang-nhap.html" class="login-btn">Đăng nhập </a><a href="/dang-ky.html" class="login-btn"> /
-                Đăng ký</a>
-              </div>
-              <div class="close_menu"></div>
-            </div>
-            <div class="content_menu ">
-              <ul>
-                <li class="level0"><a class=""><span>Trang chủ</span></a></li>
-                <li class="level0"><a class="" href="/gioi-thieu.html"><span>Giới thiệu</span></a></li>
-                <li class="level0"><a class="" href="/san-pham.html"><span>Sản phẩm</span></a></li>
-                <li class="level0"><a class="" href="/tin-tuc.html"><span>Tin tức</span></a></li>
-                <li class="level0"><a class="" href="/lien-he.html"><span>Liên hệ</span></a></li>
-              </ul>
-            </div>
-          </div>
-          <!-- End menu mobile -->
-          <div class="pull-right mobile-menu-icon-wrapper">
-            <!-- Logo mobile -->
-            <div class="logo logo-mobile">
-              <a href="/" title="CÔNG TY TNHH PHÁT TRIỂN CÔNG NGHỆ RUNTIME">
-                <img src="/Uploads/shop2005/images/logo.png" alt="CÔNG TY TNHH PHÁT TRIỂN CÔNG NGHỆ RUNTIME">
-              </a>
-            </div>
-            <!-- End Logo mobile -->
-            <!-- Cart mobile -->
-            <div class="cart_header" id="cart-target">
-              <a href="gio-hang.html" title="Giỏ hàng">
-                <div class="cart_header_icon"></div>
-                <div class="box_text">
-                  <strong class="cart_header_count"><span>0</span></strong>
-                </div>
-              </a>
-            </div>
-            <!-- End Cart mobile -->
-          </div>
-          <div class="clearfix"></div>
-          <!-- Search mobile -->
-          <div class="search_mobile col-md-12">
-            <div class="search_box">
-              <div class="search_wrapper">
-                <input type="text" name="search" class="index_input_search" id="txtsearch2"
-                       onblur="if(this.value=='')this.value='Nhập từ khóa tìm kiếm...'"
-                       onfocus="if(this.value=='Nhập từ khóa tìm kiếm...')this.value=''"
-                       value="Nhập từ khóa tìm kiếm...">
-                <button class="btn_search_submit btn " type="button" id="btnsearch2"><span><i class="fa fa-search"></i></span>
-                </button>
-              </div>
-            </div>
-          </div>
-          <!-- End search mobile -->
         </div>
       </div>
     </div>

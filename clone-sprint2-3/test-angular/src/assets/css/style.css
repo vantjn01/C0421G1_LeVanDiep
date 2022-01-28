@@ -274,7 +274,7 @@ fieldset legend {display: inline-block;color: inherit;background: none;vertical-
 }
 .cart_header_icon{
   vertical-align: bottom;
-  color: #39ac31;
+  color: red;
   width:40px;
   min-height: 40px;
   background: url(../image/cart.png) no-repeat 0 50%;
@@ -283,7 +283,7 @@ fieldset legend {display: inline-block;color: inherit;background: none;vertical-
 .cart_header_count span{
   display: inline;
   font-weight: 700;
-  color: dodgerblue;
+  color: #000;
 }
 /*NAV*/
 #mb_mainnav {
@@ -815,7 +815,7 @@ span.small-text {font-size: 14px;color: #888;}
 #blog_index_list .article_item .article_content .des{font-size: 14px;}
 
 /*footer*/
-footer {background: coral;}
+footer {background: #f1f2f2;}
 footer .footer_block a{	color: #333333;}
 footer .footer_block a:hover{	color: #0f9ed8;}
 footer .footer_top_wrap{padding: 20px 0;}
@@ -1139,7 +1139,7 @@ footer .copy_right p a{color: #0f9ed8;}
   color:#ffffff;
 }
 .cart_header_top_box .cart-buttons .btn-check-out{
-  background: #39ac31;
+  background: #0f9ed8;
   color:#ffffff;
   width: 49%;
   margin-left: 1%;
@@ -1159,13 +1159,13 @@ footer .copy_right p a{color: #0f9ed8;}
   margin-bottom: 10px;
   text-align: center;
   padding: 10px;
-  background: green;
+  background: #ff7200;
   color: #ffffff;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
 }
-.user_box ul li:hover{background: green;}
+.user_box ul li:hover{background: #ff7200;}
 .user_box ul li.facebook{background:#3b5998;}
 .user_box ul li.google{background:#d34836;}
 .user_box ul li a{color: #ffffff;display:block;}
@@ -1776,7 +1776,7 @@ a.toggle_filter.collapsed {
   color:#ff7200;
 }
 .widget_block_sidebar .widget_list_sidebar .pro-loop .product_related_price .product_related_old_price{
-  text-decoration: none;
+  text-decoration: line-through;
   font-size: 13px;
 }
 /*Page*/

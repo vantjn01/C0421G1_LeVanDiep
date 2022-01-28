@@ -14,7 +14,7 @@ import {Cart} from '../../entity/Cart';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  defaultImgUrl = 'https://image.similarpng.com/very-thumbnail/2020/04/fast-food-logo-emblem.png';
+  defaultImgUrl = 'https://previews.123rf.com/images/marylia17/marylia171701/marylia17170100023/69256309-vector-fastfood-restaurant-cafe-colorful-logo-burger-fried-potatoes.jpg?fj=1';
   keySearch: string = '';
   page = 0;
   numberOfCart: number;

@@ -1,11 +1,11 @@
-<div class="main" style="margin-top:0; background-color: #38d2c7">
+<div class="main" style="margin-top:0">
   <div class="container">
     <div class="row ">
       <div class="col-md-12  ">
         <div class="product_home ">
           <div class="clearfix">
 
-              <select class="form-control mt-3" [(ngModel)]="sortPrice" style="width: 200px; font-size: 17px; ">
+              <select class="form-control mt-3" [(ngModel)]="sortPrice" style="width: 200px; font-size: 17px; margin-top: 10px">
                 <option selected value="" style="font-weight: bold">---Sắp xếp theo---</option>
                 <option value="foodPrice" style="font-weight: bold">Giá</option>
                 <option value="dateCreate" style="font-weight: bold">Món ăn mới nhất</option>
@@ -22,7 +22,7 @@
                   <div class="product-image image-resize" style="height: 160px;">
 <!--                    <div class="sold-out" style="color: white">{{f.statusFood.statusFoodName}}</div>-->
                     <div >
-                      <a [routerLink]="['/detail/',f.foodId]">
+                      <a [routerLink]="['/detail/',f.foodId]" ngCl>
                         <img  class="first-img" [src]="f.image" alt="">
                       </a>
                     </div>

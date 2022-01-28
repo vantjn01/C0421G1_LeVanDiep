@@ -1,0 +1,11 @@
+legend.scheduler-border {
+  font-size: 18px !important;
+  font-weight: bold !important;
+  text-align: left !important;
+  width: auto;
+  padding: 0 2px;
+  border-bottom: none;
+  margin-top: -15px;
+  /*background-color: white;*/
+  color: coral;
+}

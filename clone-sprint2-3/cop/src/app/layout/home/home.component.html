@@ -1,0 +1,114 @@
+<div class="main" style="margin-top:0">
+  <div class="container">
+    <div class="row ">
+      <div class="col-md-12  ">
+        <div class="product_home ">
+          <div class="clearfix">
+            <h1 class="title clearfix"><span>Sản phẩm</span></h1>
+            <nav class="navbar navbar-default filter">
+              <ul class="display">
+                <li id="grid" class="active grid"><a href="#" title="Grid"><i class="fa fa-th-large"></i></a></li>
+                <li id="list" class="list"><a href="#" title="List"><i class="fa fa-th-list"></i></a></li>
+              </ul>
+              <div class="limit">
+                <span style="margin-right: 5px">Sản phẩm/trang</span>
+                <select id="lblimit" name="lblimit" class="nb_item"
+                        onchange="window.location.href = this.options[this.selectedIndex].value">
+                  <option value="?limit=10">10</option>
+                  <option selected="selected" value="?limit=12">12</option>
+                  <option value="?limit=20">20</option>
+                  <option value="?limit=50">50</option>
+                  <option value="?limit=100">100</option>
+                  <option value="?limit=250">250</option>
+                  <option value="?limit=500">500</option>
+                </select>
+              </div>
+              <div class="sort">
+                <span style="margin-right: 5px">Sắp xếp</span>
+                <select class="selectProductSort" id="lbsort">
+                  <option selected="selected" value="?sort=index&amp;order=asc">Mặc định</option>
+                  <option value="?sort=price&amp;order=asc">Giá tăng dần</option>
+                  <option value="?sort=price&amp;order=desc">Giá giảm dần</option>
+                  <option value="?sort=name&amp;order=asc">Tên sản phẩm: A to Z</option>
+                  <option value="?sort=name&amp;order=desc">Tên sản phẩm: Z to A</option>
+                </select>
+              </div>
+            </nav>
+          </div>
+          <!--list-->
+          <div class="clearfix">
+            <div class="product-list">
+              <div *ngFor="let f of foodList" class="col-lg-2 col-md-3 col-sm-6 col-xs-6 product-wrapper zoomIn wow"
+                   style="visibility: visible; animation-name: zoomIn;">
+                <div class="product-block product-resize fixheight" style="height: 280px;">
+                  <div class="product-image image-resize" style="height: 160px;">
+                    <div class="sold-out" style="color: white">{{f.statusFood.statusFoodName}}</div>
+                    <div >
+                      <a>
+                        <img  class="first-img" [src]="f.image" alt="">
+                      </a>
+                    </div>
+                    <div class="product-actions hidden-xs">
+                      <div class="btn-add-to-cart" (click)="addToCard(food)">
+                        <a href="javascript:void(0);"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a>
+                      </div>
+                      <div class="btn_quickview">
+                        <a class="quickview" [routerLink]="['/admin/detail/',f.foodId]"><i class="fa fa-eye"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-info text-center m-t-xxs-20">
+                    <h2 class="pro-name" style="font-size: 22px;">
+                      <a><b style="color: #d85909">{{f.foodName | titlecase}}</b></a>
+                    </h2>
+                    <h3 class="pro-name" style="color: #3a3a3a; font-size: 14px;">
+                      {{f.address | titlecase}}
+                    </h3>
+                    <div class="pro-prices">
+                      <span class="pro-price">{{f.foodPrice | currency:'VND':true}}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!--    <div class="row navigation">-->
+    <!--      <button  style="width: 100%; height: 32px; color: white;background-color: #0F9ED8" (click)="upPage()"> Xem thêm</button>-->
+    <!--    </div>-->
+    <!--page-->
+    <div class="navigation">
+      <ul class="pagination">
+        <li>
+          <a  aria-label="Previous" (click)="previousPage()">
+            <span aria-hidden="true">«</span>
+          </a>
+        </li>
+        <li class="active"><a>{{page+1}}</a></li>
+        <li class="active"><a> <span style="color:black">/</span></a></li>
+        <li><a >{{totalPage}}</a></li>
+        <li>
+          <a  aria-label="Next" (click)="nextPage()">
+            <span aria-hidden="true" >»</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!--page-->
+  </div>
+</div>
+
+
+<!--<div class="search_box">-->
+<!--  <div class="search_wrapper">-->
+<!--    <input #keyS type="text" name="search" class="index_input_search" id="txtsearch" onblur="if(this.value=='')this.value='Nhập từ khóa tìm kiếm...'"-->
+<!--            onfocus="if(this.value=='Nhập từ khóa tìm kiếm...')this.value=''" value="Nhập từ khóa tìm kiếm..." (keyup.enter)="search(keyS.value)">-->
+<!--    <button  (click)="search(keyS.value)" class="btn_search_submit btn " type="button" id="btnsearch"><span>Tìm ngay</span></button>-->
+<!--  </div>-->
+<!--</div>-->
+
+

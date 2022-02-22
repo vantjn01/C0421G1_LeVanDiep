@@ -1,0 +1,69 @@
+package com.example.webfastfood.repository;
+
+
+
+import com.example.webfastfood.entity.about_account.Account;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
+import java.util.Optional;
+
+@Repository
+public interface AccountRepository extends JpaRepository<Account, Long> {
+    @Transactional
+    @Modifying
+    @Query(value = "INSERT into account (username,password,user_time,status) values (?1,?2,curdate(),0);", nativeQuery = true)
+    void saveAccount(String username, String password);
+
+    @Query(value = "select * from account", nativeQuery = true)
+    List<Account> getAccountList();
+
+    @Query(value = "select * from account where account_id = ?1", nativeQuery = true)
+    Optional<Account> findById(Long id);
+
+    @Query(value = "select * from account where username = ?1", nativeQuery = true)
+    Optional<Account> findByUsername(String username);
+
+    @Transactional
+    @Modifying
+    @Query(value = "UPDATE account set username = ?1, password = ?2 where account_id = ?3 ", nativeQuery = true)
+    void editAccount(String username, String password, Long id);
+
+    @Transactional
+    @Modifying
+    @Query(value = "INSERT INTO `fooddd`.`account_role` (`account_id`, `role_id`) " +
+            "VALUES (?1, ?2);", nativeQuery = true)
+    void saveRoleForAccount(Long accountId, Long role);
+
+    @Query(value = "select * from account where username = ?1 ", nativeQuery = true)
+    Optional<Account> findByUserNames(String username);
+
+    @Query(value = " select (orders.orders_id) as ordersId " +
+            " from orders join `account` on orders.account_id =`account`.account_id " +
+            " where `account`.username= ?1 ", nativeQuery = true)
+    Long getAccountByUsernameDto(String username);
+
+    @Transactional
+    @Modifying
+    @Query(value = "UPDATE `account` " +
+            "SET `account`.password = ?1 , `account`.user_time = curdate() " +
+            "WHERE `account`.account_id = ?2 ", nativeQuery = true)
+    void changePassWord(String newPassword, Long accountId);
+
+    @Transactional
+    @Modifying
+    @Query(value = "insert into account_role (account_role.account_id, account_role.role_id) " +
+            "value ( ?1 , ?2 )", nativeQuery = true)
+    void setAccountRole(Long accountId, Long roleId);
+
+    @Transactional
+    @Modifying
+    @Query(value = "UPDATE account SET account.status =?1 WHERE account.account_id =?2", nativeQuery = true)
+    void changeStatus(int Status, Long accountId);
+
+
+}
